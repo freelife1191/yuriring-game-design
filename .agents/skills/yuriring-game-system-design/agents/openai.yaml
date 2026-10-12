@@ -1,0 +1,4 @@
+interface:
+  display_name: "유리링 게임 시스템 기획"
+  short_description: "책의 원칙으로 게임 규칙·데이터·UX/UI와 기획서를 설계하고 검토"
+  default_prompt: "$yuriring-game-system-design을 사용해 이 게임 기능의 의도, 규칙과 예외, 데이터, UX/UI를 연결해 설계해줘."

@@ -1,0 +1,1 @@
+$yuriring-game-system-design 보유량 12인 아이템 수량 스테퍼의 상태와 오류를 명세해줘. 기본 수량은 미정이야.

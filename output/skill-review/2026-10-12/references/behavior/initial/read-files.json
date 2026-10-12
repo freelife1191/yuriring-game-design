@@ -1,0 +1,20 @@
+{
+  "scope": "Only files inside .agents/skills/yuriring-game-system-design were read. No source PDF, prior review output, or external search was used.",
+  "files": [
+    "SKILL.md",
+    "chapters/ch07-rule-components.md",
+    "chapters/ch09-flowcharts.md",
+    "chapters/ch10-table-foundations.md",
+    "chapters/ch11-table-design.md",
+    "chapters/ch12-table-cases.md",
+    "chapters/ch15-ux-ui-design.md",
+    "chapters/ch16-ui-components.md",
+    "chapters/ch18-document-workshop.md",
+    "references/index.md"
+  ],
+  "cases": {
+    "case-1.md": ["SKILL.md", "chapters/ch10-table-foundations.md", "chapters/ch11-table-design.md", "chapters/ch12-table-cases.md", "chapters/ch15-ux-ui-design.md"],
+    "case-2.md": ["SKILL.md", "chapters/ch07-rule-components.md", "chapters/ch15-ux-ui-design.md", "chapters/ch16-ui-components.md"],
+    "case-3.md": ["SKILL.md", "chapters/ch07-rule-components.md", "chapters/ch09-flowcharts.md", "chapters/ch11-table-design.md", "chapters/ch15-ux-ui-design.md", "chapters/ch18-document-workshop.md"]
+  }
+}

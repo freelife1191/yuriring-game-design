@@ -1,0 +1,13 @@
+{
+  "documents": 35,
+  "local_links_checked": 352,
+  "standalone_skill_links": 144,
+  "broken_links": 0,
+  "standalone_skill_files": 28,
+  "chapters": 21,
+  "source_hash": "matched",
+  "claude_link": "matched",
+  "advanced_guide": "unchanged",
+  "extra_reference_advisory_scan": "passed",
+  "source_reports_json": "parsed"
+}

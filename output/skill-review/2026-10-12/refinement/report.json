@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-12",
+  "standard": "skill-creator",
+  "basis": [
+    "prompt-examples/report.md",
+    "host-smoke/report.md"
+  ],
+  "improvements": [
+    "행 의미·기본 키·업무상 중복 금지 범위의 일치 점검",
+    "단일 행 참조와 반복 그룹 조회의 연결",
+    "확정 정책의 필수 QA 결과와 미정 정책별 조건부 결과의 분리",
+    "검증 기반 적용 지침을 책 직접 서술과 구분"
+  ],
+  "changed_skill_files": [
+    "SKILL.md",
+    "patterns.md",
+    "cheatsheet.md",
+    "references/index.md",
+    "source.json"
+  ],
+  "changed_documents": [
+    "README.md",
+    "docs/workflow.md",
+    "docs/validation.md"
+  ],
+  "preserved": {
+    "chapter_files": 21,
+    "skill_file_count": 28,
+    "chapter_examples": 42,
+    "followups": 21,
+    "common_prompts": 4,
+    "linked_scenarios": 3,
+    "skill_name": "yuriring-game-system-design",
+    "invocation_policy": "unchanged"
+  },
+  "initial_tests": {
+    "fresh_evaluators": 2,
+    "parent_history_inherited": false,
+    "data": "PARTIAL",
+    "data_semantics": "PASS",
+    "data_attribution": "PARTIAL",
+    "qa": "PASS"
+  },
+  "postfix_tests": {
+    "data": "PASS",
+    "qa": "PASS",
+    "data_scope": "same evaluator full regeneration from unchanged request and updated skill",
+    "qa_scope": "initial fresh evaluator; QA guidance unchanged by attribution clarification"
+  },
+  "behavioral_evidence": {
+    "data": [
+      "request/selection row distinction",
+      "request-scoped rank and character uniqueness",
+      "same character reusable across requests",
+      "reference and lookup consistency",
+      "technology and ID rules remain undecided",
+      "book principles / validation guidance / fictional design separated"
+    ],
+    "qa": [
+      "R2 duplicate payout invariant retained",
+      "R1/D1 versus U2 conflict identified",
+      "undecided response/recovery separated",
+      "static title has no input/storage conditions",
+      "scenario generation not claimed as runtime execution"
+    ]
+  },
+  "limits": [
+    "전체 프롬프트 전수 실행이나 원문 재대조 아님",
+    "이번 보완 후 호스트 CLI·GUI 재호출 없음; 앞선 CLI 검사는 해당 시점의 스킬 대상",
+    "게임 UI·서버·저장소 런타임 및 실제 QA 실행 아님"
+  ],
+  "read_record_correction": {
+    "corrected_by": "parent",
+    "scope": "읽기 목록의 경로 1곳 정정; 답변 재생성이나 의미 변경 아님",
+    "before": "/Users/freelife/ai/yuriring-game-system-design/.agents/skills/yuriring-game-system-design/patterns.md",
+    "after": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/patterns.md",
+    "basis": "평가자가 보고한 프로젝트 루트의 상대 경로를 부모가 절대 경로로 해석하고 직접 읽기 가능 여부를 확인",
+    "corrected_file_sha256": "dff7784453ce35a39a7cde5e9d27241072a31c4b1b2e1373a64c7f83efa0e9ea",
+    "original_record": "data-read-files-before-path-fix.json",
+    "limitation": "평가자의 수동 기록 정정이며 실제 CLI 명령 로그와 같은 증거로 표현하지 않음"
+  },
+  "validation": {
+    "markdown_documents": 38,
+    "local_links_checked": 407,
+    "broken_links": [],
+    "skill_quick_validate": "PASS",
+    "standalone_skill_copy": "PASS",
+    "skill_file_count": 28,
+    "unchanged_chapter_files": 21,
+    "chapter_examples": 42,
+    "followups": 21,
+    "common_prompts": 4,
+    "linked_scenarios": 3,
+    "advanced_fences": 73,
+    "patterns": 8,
+    "reference_cases": 26,
+    "chapter_anchor_adjacency": "PASS",
+    "claude_link_reads_updated_source": "PASS",
+    "previous_source_metadata_preserved": true,
+    "converter_mentions_in_project_docs": 0,
+    "modified_original_files": [
+      ".agents/skills/yuriring-game-system-design/SKILL.md",
+      ".agents/skills/yuriring-game-system-design/cheatsheet.md",
+      ".agents/skills/yuriring-game-system-design/patterns.md",
+      ".agents/skills/yuriring-game-system-design/references/index.md",
+      ".agents/skills/yuriring-game-system-design/source.json",
+      "README.md",
+      "docs/validation.md",
+      "docs/workflow.md"
+    ],
+    "behavior_record_paths_checked": 14,
+    "behavior_record_path_corrections": 1
+  },
+  "temporary_workspace_cleaned": true
+}

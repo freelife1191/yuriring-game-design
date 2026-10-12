@@ -1,0 +1,32 @@
+{
+  "markdown_documents": 38,
+  "local_links_checked": 407,
+  "broken_links": [],
+  "skill_quick_validate": "PASS",
+  "standalone_skill_copy": "PASS",
+  "skill_file_count": 28,
+  "unchanged_chapter_files": 21,
+  "chapter_examples": 42,
+  "followups": 21,
+  "common_prompts": 4,
+  "linked_scenarios": 3,
+  "advanced_fences": 73,
+  "patterns": 8,
+  "reference_cases": 26,
+  "chapter_anchor_adjacency": "PASS",
+  "claude_link_reads_updated_source": "PASS",
+  "previous_source_metadata_preserved": true,
+  "converter_mentions_in_project_docs": 0,
+  "modified_original_files": [
+    ".agents/skills/yuriring-game-system-design/SKILL.md",
+    ".agents/skills/yuriring-game-system-design/cheatsheet.md",
+    ".agents/skills/yuriring-game-system-design/patterns.md",
+    ".agents/skills/yuriring-game-system-design/references/index.md",
+    ".agents/skills/yuriring-game-system-design/source.json",
+    "README.md",
+    "docs/validation.md",
+    "docs/workflow.md"
+  ],
+  "behavior_record_paths_checked": 14,
+  "behavior_record_path_corrections": 1
+}

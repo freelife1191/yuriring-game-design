@@ -1,0 +1,491 @@
+--- before/.agents/skills/book-to-skill/README.md
++++ after/README.md
+@@ -2,7 +2,7 @@
+ 
+ 책과 문서를 **판단에 재사용할 수 있는 에이전트 스킬**로 만드는 도구입니다. 저자의 프레임워크·원칙·기법·안티패턴을 정리하고, 관련 장을 필요할 때 읽도록 색인을 구성합니다.
+ 
+-이 README는 이 프로젝트에 설치된 변환기의 시작 안내입니다. 상세 설명은 [한국어 가이드](docs/ko/index.md), 에이전트의 실행 지침은 [SKILL.md](SKILL.md)를 확인하세요. 문서는 설치본 패키지 버전 `1.4.0`의 로컬 코드와 지침을 기준으로 작성했습니다.
++이 README는 이 프로젝트에 설치된 변환기의 시작 안내입니다. 상세 설명은 [한국어 가이드](docs/index.md), 에이전트의 실행 지침은 [SKILL.md](.agents/skills/book-to-skill/SKILL.md)를 확인하세요. 문서는 설치본 패키지 버전 `1.4.0`의 로컬 코드와 지침을 기준으로 작성했습니다.
+ 
+ ## 빠르게 시작하기
+ 
+@@ -20,14 +20,14 @@
+ 원문 사례와 새 적용 예시를 구분하고, 추출 한계와 출처 쪽수를 기록해줘.
+ ```
+ 
+-현재 프로젝트에는 [yuriring-game-system-design](../yuriring-game-system-design/SKILL.md)이 이미 생성되어 있습니다. 책의 방법을 사용하려면 생성된 스킬을 호출합니다.
++현재 프로젝트에는 [yuriring-game-system-design](.agents/skills/yuriring-game-system-design/SKILL.md)이 이미 생성되어 있습니다. 책의 방법을 사용하려면 생성된 스킬을 호출합니다.
+ 
+ ```text
+ $yuriring-game-system-design 길드 기부 시스템의 의도, 규칙과 예외,
+ 데이터 테이블, UX/UI를 연결해 설계해줘.
+ ```
+ 
+-변환기의 설치 위치와 **새 스킬의 저장 범위는 별개**입니다. 프로젝트에 결과를 두려면 요청에 프로젝트 범위를 명시하세요. 처음이라면 [시작하기](docs/ko/getting-started.md)를 읽으세요.
++변환기의 설치 위치와 **새 스킬의 저장 범위는 별개**입니다. 프로젝트에 결과를 두려면 요청에 프로젝트 범위를 명시하세요. 처음이라면 [시작하기](docs/getting-started.md)를 읽으세요.
+ 
+ ## 무엇을 하는가
+ 
+@@ -43,18 +43,19 @@
+ 
+ | 지금 하려는 일 | 문서 | 다루는 내용 |
+ |---|---|---|
+-| 전체 흐름과 문서 위치 파악 | [가이드 홈](docs/ko/index.md) | 읽는 순서, 역할 구분, 관련 문서 |
+-| 처음 변환하거나 생성 스킬 사용 | [시작하기](docs/ko/getting-started.md) | 설치 확인, Codex 요청, 프로젝트 범위 |
+-| 분석만 하기·자료 추가·기존 분석 사용 | [변환과 업데이트](docs/ko/workflow.md) | 4가지 모드, 깊이, 생성 구조, 재실행 |
+-| 직접 CLI 실행·추출 품질 확인 | [추출과 실행 옵션](docs/ko/extraction.md) | 형식별 도구, OCR, 옵션, 메타데이터 |
+-| 잘못된 정보와 적용 범위 점검 | [검수와 테스트](docs/ko/validation.md) | 원문 대조, 링크·형식·스캔, 실제 사용 테스트 |
+-| 실패·빈 텍스트·이상한 장 수 해결 | [문제 해결](docs/ko/troubleshooting.md) | 증상별 확인, 복구, 업데이트 전 보존 |
++| 전체 흐름과 문서 위치 파악 | [가이드 홈](docs/index.md) | 읽는 순서, 역할 구분, 관련 문서 |
++| 처음 변환하거나 생성 스킬 사용 | [시작하기](docs/getting-started.md) | 설치 확인, Codex 요청, 프로젝트 범위 |
++| Codex·Claude Code·Antigravity에서 사용 | [에이전트별 사용](docs/agents.md) | 탐색 경로, 호출 예시, 공유 구성, 확인 방법 |
++| 분석만 하기·자료 추가·기존 분석 사용 | [변환과 업데이트](docs/workflow.md) | 4가지 모드, 깊이, 생성 구조, 재실행 |
++| 직접 CLI 실행·추출 품질 확인 | [추출과 실행 옵션](docs/extraction.md) | 형식별 도구, OCR, 옵션, 메타데이터 |
++| 잘못된 정보와 적용 범위 점검 | [검수와 테스트](docs/validation.md) | 원문 대조, 링크·형식·스캔, 실제 사용 테스트 |
++| 실패·빈 텍스트·이상한 장 수 해결 | [문제 해결](docs/troubleshooting.md) | 증상별 확인, 복구, 업데이트 전 보존 |
+ 
+ ## 입력과 생성 결과
+ 
+ **입력:** 파일 하나, 여러 파일, 폴더, glob 패턴. 폴더는 지원 파일을 재귀적으로 찾습니다.
+ 
+-**형식:** PDF, EPUB, DOCX, HTML/XHTML, RTF, TXT, Markdown, reStructuredText, AsciiDoc. MOBI/AZW/AZW3는 Calibre의 `ebook-convert`가 필요합니다. 텍스트 층이 없는 스캔 PDF는 OCR을 먼저 수행해야 합니다. [추출 안내](docs/ko/extraction.md)에서 대체 경로와 제약을 확인하세요.
++**형식:** PDF, EPUB, DOCX, HTML/XHTML, RTF, TXT, Markdown, reStructuredText, AsciiDoc. MOBI/AZW/AZW3는 Calibre의 `ebook-convert`가 필요합니다. 텍스트 층이 없는 스캔 PDF는 OCR을 먼저 수행해야 합니다. [추출 안내](docs/extraction.md)에서 대체 경로와 제약을 확인하세요.
+ 
+ 일반적인 생성 구조입니다. 문서가 단순하면 필요한 자료만 구성합니다.
+ 
+@@ -71,26 +72,34 @@
+ 
+ ## 지원 환경과 기존 영문 문서
+ 
+-설치본은 Codex, Claude Code, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, OpenClaw의 사용 경로를 안내합니다. 호출 문법과 탐색 경로는 호스트별로 다릅니다. 이 프로젝트의 Codex 예시는 `$book-to-skill`과 `.agents/skills/`를 사용합니다.
++이 프로젝트는 Codex·Claude Code·Antigravity가 같은 원본 스킬을 사용하도록 구성했습니다.
+ 
+-영문 설명: [설치](docs/install.md) · [사용](docs/usage.md) · [동작 방식](docs/how-it-works.md) · [아키텍처](docs/architecture.md) · [FAQ](docs/faq.md) · [성능 측정](docs/performance.md). 다른 언어는 [Русский](README.ru.md) · [简体中文](README.zh-CN.md)에 있습니다.
++| 에이전트 | 프로젝트 경로 | 호출 예시 |
++|---|---|---|
++| Codex | `.agents/skills/` 원본 | `$book-to-skill` |
++| Claude Code | `.claude/skills/<이름>` → 원본 링크 | `/book-to-skill` |
++| Antigravity | `.agents/skills/` 원본 직접 사용 | “book-to-skill 스킬을 사용해…” |
+ 
+-English summary: Turn any technical book, document folder, or collection of sources into a reusable agent skill with Codex, Claude Code, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, or OpenClaw.
++변환기와 생성된 `yuriring-game-system-design` 모두 이 구성을 적용했습니다. Antigravity 2.0·CLI의 슬래시 호출과 IDE 확인 방법, 공식 문서 근거는 [에이전트별 사용](docs/agents.md)을 읽으세요. 파일 구성 확인과 실제 앱의 스킬 인식 확인은 구분합니다. 그 외 GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, OpenClaw의 경로는 상위 문서에 있습니다.
+ 
+-Works with any host that supports the required Agent Skills workflow; this package documents integrations for Codex, Claude Code, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, and OpenClaw.
++영문 설명: [설치](.agents/skills/book-to-skill/docs/install.md) · [사용](.agents/skills/book-to-skill/docs/usage.md) · [동작 방식](.agents/skills/book-to-skill/docs/how-it-works.md) · [아키텍처](.agents/skills/book-to-skill/docs/architecture.md) · [FAQ](.agents/skills/book-to-skill/docs/faq.md) · [성능 측정](.agents/skills/book-to-skill/docs/performance.md). 다른 언어는 [Русский](.agents/skills/book-to-skill/README.ru.md) · [简体中文](.agents/skills/book-to-skill/README.zh-CN.md)에 있습니다.
++
++English summary: Turn any technical book, document folder, or collection of sources into a reusable agent skill with Codex, Claude Code, Antigravity, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, or OpenClaw.
++
++Works with any host that supports the required Agent Skills workflow; this package documents integrations for Codex, Claude Code, Antigravity, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, and OpenClaw.
+ 
+ ## ⚖️ Copyright & fair use
+ 
+ 추출기는 로컬에서 파일을 읽습니다. 클라우드 모델의 에이전트에 원문을 전달하면 해당 서비스의 데이터 처리 조건이 적용됩니다. 로컬 추출과 모델 처리를 구분하세요.
+ 
+-생성 자료는 원문을 길게 복제하는 대신 지식을 합성합니다. 상위 스킬의 배포 정책에 따라 제3자 저작권 도서에서 만든 스킬은 비공개로 유지하고, 내부 문서는 공개 권한이 확인된 경우에만 외부 공유합니다. 공개 여부와 실제 배포는 변환과 별도입니다. [공유와 배포](docs/ko/validation.md#공유와-배포)를 확인하세요.
++생성 자료는 원문을 길게 복제하는 대신 지식을 합성합니다. 상위 스킬의 배포 정책에 따라 제3자 저작권 도서에서 만든 스킬은 비공개로 유지하고, 내부 문서는 공개 권한이 확인된 경우에만 외부 공유합니다. 공개 여부와 실제 배포는 변환과 별도입니다. [공유와 배포](docs/validation.md#공유와-배포)를 확인하세요.
+ 
+-변환기의 [MIT 라이선스](LICENSE.md)는 처리하는 책이나 문서의 권리를 변경하지 않습니다.
++변환기의 [MIT 라이선스](.agents/skills/book-to-skill/LICENSE.md)는 처리하는 책이나 문서의 권리를 변경하지 않습니다.
+ 
+ ## 프로젝트 정보
+ 
+-[원본 저장소](https://github.com/virgiliojr94/book-to-skill) · [변경 기록](CHANGELOG.md) · [기여 안내](CONTRIBUTING.md) · [보안 안내](SECURITY.md) · [후원](https://github.com/sponsors/virgiliojr94) · [후원자](BACKERS.md)
++[원본 저장소](https://github.com/virgiliojr94/book-to-skill) · [변경 기록](.agents/skills/book-to-skill/CHANGELOG.md) · [기여 안내](.agents/skills/book-to-skill/CONTRIBUTING.md) · [보안 안내](.agents/skills/book-to-skill/SECURITY.md) · [후원](https://github.com/sponsors/virgiliojr94) · [후원자](.agents/skills/book-to-skill/BACKERS.md)
+ 
+-이 README와 `docs/ko/`는 프로젝트용 한국어 안내입니다. 상위 설치본 업데이트 전에 로컬 변경을 보존하고 코드·`SKILL.md`·명령 옵션과 다시 대조하세요.
++사용자 문서의 실제 위치는 프로젝트 루트 `README.md`와 `docs/`입니다. 이전 설치본의 README·한국어 가이드 경로는 이 파일을 가리키는 호환 링크입니다. 상위 설치본 업데이트 전에 루트 문서와 스킬의 로컬 보완을 보존하고 코드·지침·명령 옵션을 다시 대조하세요.
+ 
+ 
+--- before/.agents/skills/book-to-skill/SKILL.md
++++ after/.agents/skills/book-to-skill/SKILL.md
+@@ -1,6 +1,6 @@
+ ---
+ name: book-to-skill
+-description: "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an author's frameworks while working, or build a reusable knowledge base from a file."
++description: "Converts books and documents into reusable agent skills with frameworks, principles, techniques, and anti-patterns. Use to study source material, apply an author's methods while working, or update a document-based knowledge skill. Supports Codex, Claude Code, Antigravity, and other Agent Skills hosts."
+ ---
+ 
+ <!--
+@@ -13,6 +13,8 @@
+     ~/.agents/skills only with the default state).
+     OpenCode (~/.config/opencode/skills, ~/.claude/skills, .opencode/skills,
+     ~/.agents/skills, .agents/skills).
++    Antigravity (.agents/skills; legacy .agent/skills; personal roots depend on
++    2.0/IDE/CLI — see references/antigravity.md).
+   - `allowed-tools` is intentionally omitted to stay agent-neutral: Copilot CLI uses
+     `shell`/MCP-server names, Claude uses `Bash`/`Read`/`Write`/`Glob`/`Grep`, Amp
+     adds `shell_command`. The skill needs shell (to run extract.py) and file
+@@ -26,7 +28,7 @@
+ 
+ ## Philosophy
+ 
+-Books contain crystallized expertise: frameworks, principles, and techniques that took years to develop. This skill extracts that knowledge into a format GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, OpenClaw, or another compatible agent can leverage repeatedly.
++Books contain crystallized expertise: frameworks, principles, and techniques that took years to develop. This skill extracts that knowledge into a format Codex, Claude Code, Antigravity, GitHub Copilot CLI, Amp, Hermes Agent, OpenCode, OpenClaw, or another compatible agent can leverage repeatedly.
+ **Extract structure, not summaries.** A skill isn't a book report. It's a toolkit of:
+ - Named frameworks (mental models with clear application)
+ - Actionable principles (rules that guide decisions)
+@@ -82,10 +84,12 @@
+ 10. Hermes Agent project skills: `.hermes/skills/` or `.agents/skills/`
+ 11. OpenClaw personal skills: `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills/` (active state; `~/.agents/skills/` is shared only with the default state)
+ 12. OpenClaw project skills: `.agents/skills/` or `skills/`
+-11. OpenCode personal skills: `~/.config/opencode/skills/` or `~/.agents/skills/`
+-12. OpenCode project skills: `.opencode/skills/` or `.agents/skills/`
+-
+-For **generated** book skills, prefer the user-level cross-agent root `~/.agents/skills/` — one physical copy serves the cross-agent hosts and OpenClaw when it uses its default state. Copilot CLI and Amp discover it natively; Claude Code needs a symlink from `~/.claude/skills/<skill_name>` (created in Step 10, see Step 5 for the rules). Pick a host-private or project-local root only when the user explicitly asks for one. `BOOK_TO_SKILL_SCOPE=project` or `personal` can make that choice explicit for automation; do not ask a mandatory scope question merely because both scopes are available.
++13. OpenCode personal skills: `~/.config/opencode/skills/` or `~/.agents/skills/`
++14. OpenCode project skills: `.opencode/skills/` or `.agents/skills/`
++15. Antigravity project skills: `.agents/skills/` (legacy `.agent/skills/` is also supported)
++16. Antigravity personal skills: see [host reference](references/antigravity.md) for 2.0/IDE/CLI roots.
++
++For **generated** book skills, prefer the user-level cross-agent root `~/.agents/skills/` where the host supports it. Hermes and Antigravity use their documented personal roots. Copilot CLI and Amp discover the shared root natively; Claude Code needs a symlink from `~/.claude/skills/<skill_name>` (created in Step 10). Honor explicit project or host-private destinations. `BOOK_TO_SKILL_SCOPE=project` or `personal` can make the choice explicit; do not ask a mandatory scope question merely because both scopes are available.
+ 
+ ---
+ 
+@@ -158,6 +162,9 @@
+   "$HOME/.copilot/skills/book-to-skill/scripts/extract.py"
+   "$HOME/.agents/skills/book-to-skill/scripts/extract.py"
+   "$HOME/.claude/skills/book-to-skill/scripts/extract.py"
++  "$HOME/.gemini/config/skills/book-to-skill/scripts/extract.py"
++  "$HOME/.gemini/antigravity-cli/skills/book-to-skill/scripts/extract.py"
++  "$HOME/.gemini/antigravity/skills/book-to-skill/scripts/extract.py"
+   "${OPENCLAW_STATE_DIR_RESOLVED}/skills/book-to-skill/scripts/extract.py"
+   "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/book-to-skill/scripts/extract.py
+   "${OPENCLAW_STATE_DIR_RESOLVED}/skills"/*/*/book-to-skill/scripts/extract.py
+@@ -180,6 +187,7 @@
+       "$PROJECT_ROOT/.github/skills/book-to-skill/scripts/extract.py"
+       "$PROJECT_ROOT/.claude/skills/book-to-skill/scripts/extract.py"
+       "$PROJECT_ROOT/.agents/skills/book-to-skill/scripts/extract.py"
++      "$PROJECT_ROOT/.agent/skills/book-to-skill/scripts/extract.py"
+       "$PROJECT_ROOT/.opencode/skills/book-to-skill/scripts/extract.py"
+     )
+   fi
+@@ -187,6 +195,7 @@
+     ".github/skills/book-to-skill/scripts/extract.py"
+     ".claude/skills/book-to-skill/scripts/extract.py"
+     ".agents/skills/book-to-skill/scripts/extract.py"
++    ".agent/skills/book-to-skill/scripts/extract.py"
+     "skills/book-to-skill/scripts/extract.py"
+     "skills"/*/book-to-skill/scripts/extract.py
+     "skills"/*/*/book-to-skill/scripts/extract.py
+@@ -388,7 +397,7 @@
+ 
+ Default to author-concept format if the book has a strong methodological identity.
+ 
+-Choose the destination skill root (`SKILLS_HOME`). First resolve **scope** from an explicit user request or `BOOK_TO_SKILL_SCOPE`, then probe **host**. A request for project-local/project output selects the project-local row; a request for personal/global output selects the personal row. If neither scope is requested, preserve the established personal default (`~/.agents/skills` for non-Hermes hosts). Do not ask a mandatory scope question solely because project-local roots exist. The selected root may still require host approval before writing.
++Choose the destination skill root (`SKILLS_HOME`). First resolve **scope** from an explicit user request or `BOOK_TO_SKILL_SCOPE`, then probe **host**. A request for project-local/project output selects the project-local row; a request for personal/global output selects the personal row. If neither scope is requested, preserve the established personal default (`~/.agents/skills`, except for the Hermes and Antigravity host roots below). Do not ask a mandatory scope question solely because project-local roots exist. The selected root may still require host approval before writing.
+ 
+ | Host agent | Personal skill root | Project-local root |
+ |---|---|---|
+@@ -397,26 +406,29 @@
+ | **OpenAI Codex** | `~/.agents/skills` (discovered natively; follows symlinks) | `.agents/skills` |
+ | **Hermes Agent** | `$HERMES_HOME/skills/<category>` (defaults to `~/.hermes/skills/<category>`) | `.hermes/skills/<category>` → `.agents/skills` |
+ | **Claude Code** | `~/.agents/skills` + symlink from `~/.claude/skills/<skill_name>` | `.claude/skills` |
++| **Antigravity** | Version/interface-specific root; see [host reference](references/antigravity.md) | `.agents/skills` (legacy `.agent/skills`) |
+ | **OpenClaw** | `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills` (active state; `~/.agents/skills` only with default state) | `.agents/skills` → `skills/` |
+-
+-Hermes Agent is the one host that keeps its own personal root: it partitions personal skills by category and does not scan the cross-agent root. Use the active profile's `HERMES_HOME` and choose a category that matches the generated skill's subject. Do not construct profile paths manually. If the user selects a project-local Hermes root, run `hermes skills trust <project-root>` after generation and verify discovery with `hermes skills list`; project skills remain unavailable until the project is trusted.
++| **OpenCode** | `~/.agents/skills` (discovered natively; `~/.config/opencode/skills` and `~/.claude/skills` are read too) | `.opencode/skills` → `.agents/skills` → `.claude/skills` |
++
++Hermes Agent partitions its own personal skills by category and does not scan the cross-agent root. Use the active profile's `HERMES_HOME` and choose a category that matches the generated skill's subject. Do not construct profile paths manually. If the user selects a project-local Hermes root, run `hermes skills trust <project-root>` after generation and verify discovery with `hermes skills list`; project skills remain unavailable until the project is trusted.
+ 
+ For OpenClaw, use the active state directory's `skills/` root: `${OPENCLAW_STATE_DIR:-~/.openclaw}/skills/`. The shared `~/.agents/skills` compatibility root is discoverable only when `OPENCLAW_STATE_DIR` is unset or the default `~/.openclaw`; with a non-default state, do not claim that OpenClaw will see a shared-root install. Verify discovery with `openclaw skills list` after generation.
+-| **OpenCode** | `~/.agents/skills` (discovered natively; `~/.config/opencode/skills` and `~/.claude/skills` are read too) | `.opencode/skills` → `.agents/skills` → `.claude/skills` |
+-
+-Hermes Agent is the one host that keeps its own personal root: it partitions personal skills by category and does not scan the cross-agent root. Use the active profile's `HERMES_HOME` and choose a category that matches the generated skill's subject. Do not construct profile paths manually. If the user selects a project-local Hermes root, run `hermes skills trust <project-root>` after generation and verify discovery with `hermes skills list`; project skills remain unavailable until the project is trusted.
+-
+ OpenCode scans the cross-agent `~/.agents/skills` root natively, so the generated-skill default above already serves it — no symlink and no trust step. It also reads its own managed `~/.config/opencode/skills` root and the Claude compatibility root `~/.claude/skills`; use the OpenCode-managed root only when the user asks for it. Project skills are discovered by walking up from the working directory to the git worktree, so start a new session after generation if the skill does not appear. (`~/.cache/opencode/skills` is the remote-skill download cache from `skills.urls`, not an authoring root — never write a generated skill there.)
+ 
++Antigravity reads project `.agents/skills` directly; do not create a duplicate `.agent/skills` copy. For personal scope or interface-specific invocation, read [references/antigravity.md](references/antigravity.md). Do not assume it discovers personal `~/.agents/skills`.
++
++When the user requests a shared project install for Codex, Claude Code, and Antigravity, keep the requested `.agents/skills/<skill_name>` as the physical source. Expose it to Claude Code through the individual `.claude/skills/<skill_name>` link, without changing or replacing an existing real directory. Antigravity uses the source directly. Verify the link target and `SKILL.md` read-back before reporting filesystem readiness; app discovery is a separate check.
++
+ Selection rules:
+-1. Personal install: set `SKILLS_HOME` to `~/.agents/skills` (create the directory if missing). One exception, so the default does not invent a convention in someone else's house: if `~/.agents/skills` does not exist **and** the host's private root already contains skills, use the private root instead and say why in the report.
++1. Personal install: set `SKILLS_HOME` to `~/.agents/skills` for shared-root hosts; Hermes and Antigravity use their documented personal roots. If the shared root is selected, create it when missing. If `~/.agents/skills` does not exist **and** that host's private root already contains skills, use the private root instead and say why in the report.
+ 2. **Claude Code does not scan `~/.agents/skills`** — after generation completes, Step 10 links the skill in with `ln -sfn "$HOME/.agents/skills/<skill_name>" "$HOME/.claude/skills/<skill_name>"`.
+ 3. **Hermes Agent personal installs use the Hermes row above**, not the cross-agent root, and take no symlink.
+ 4. If the user explicitly asks for a host-private root (`~/.copilot/skills`, `~/.claude/skills`, `~/.config/agents/skills`, `~/.config/amp/skills`), honor it and skip the symlink.
+ 5. If the user explicitly asked for project-local output, use the project-local row for their host.
+-6. If the choice requires knowing the host (project-local output, the Hermes personal root, the OpenClaw state root, or the Claude Code symlink) and you cannot identify it, ask: "Which agent are you running in — OpenCode, OpenClaw, Hermes Agent, GitHub Copilot CLI, Amp, Codex, or Claude Code?"
++6. If the choice requires knowing the host (project-local output, a host-specific personal root, or the Claude Code symlink) and you cannot identify it, ask: "Which agent are you running in — Antigravity, OpenCode, OpenClaw, Hermes Agent, GitHub Copilot CLI, Amp, Codex, or Claude Code?"
+ 7. For OpenClaw personal output, use `${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/skills`. The shared `~/.agents/skills` root is a valid OpenClaw destination only when `OPENCLAW_STATE_DIR` is unset or equals the default `$HOME/.openclaw`; otherwise use the active state root or a project/extra directory.
+ 8. If the user explicitly asks for an OpenClaw-managed personal root, use the active state root and verify discovery with `openclaw skills list`.
++9. Antigravity personal installs use the documented root for the active interface/version, not the shared personal default; project installs use `.agents/skills`.
+ 
+ Set `SKILLS_HOME` to the selected root and check if `$SKILLS_HOME/<skill_name>/` already exists. On Claude Code, also check whether `~/.claude/skills/<skill_name>` exists as a **real directory** (not a symlink) — a previous install may live there; if so, offer to migrate it (move the directory into `~/.agents/skills/` and replace the original path with the symlink) before continuing.
+ If the skill already exists, prompt the user to choose:
+@@ -666,7 +678,7 @@
+ 
+ **Read the link back before you report anything about it.** The symlink is a claim, not a fact: fill the "Discoverable by" line from `CLAUDE_STATUS` (what is actually on disk), never from "the command was issued". **Do not hard-fail when the link is missing or is a copy** — the skill exists at the hub and every other host still finds it; the honest report is "written to `~/.agents/skills/<skill_name>`; Claude Code will not see it until the link is created", not an abort. (Windows lead, unverified: a directory junction — `mklink /J` in an elevated `cmd`, or `New-Item -ItemType Junction` in PowerShell — needs neither Developer Mode nor a symlink privilege; if you attempt it, it does not change the read-back-then-report rule.)
+ 
+-Skip this when the user chose a host-private or project-local root (Step 5, rules 3-4).
++Skip this personal-root linking when the user chose a host-private or project-local root. For an explicitly requested shared project install, verify the individual Claude Code project link described in Step 5 instead; leave conflicting real directories untouched and report the conflict. Antigravity project installs require no compatibility link.
+ 
+ Then clean up the extraction workdir:
+ 
+--- before/.agents/skills/book-to-skill/mkdocs.yml
++++ after/.agents/skills/book-to-skill/mkdocs.yml
+@@ -50,6 +50,7 @@
+   - 한국어 가이드:
+       - 가이드 홈: ko/index.md
+       - 시작하기: ko/getting-started.md
++      - 에이전트별 사용: ko/agents.md
+       - 변환과 업데이트: ko/workflow.md
+       - 추출과 실행 옵션: ko/extraction.md
+       - 검수와 테스트: ko/validation.md
+--- before/.agents/skills/book-to-skill/docs/ko/troubleshooting.md
++++ after/docs/troubleshooting.md
+@@ -54,7 +54,7 @@
+ 
+ ## 변환기 업데이트
+ 
+-README와 `docs/ko/`는 로컬 보완 문서라 설치 폴더 교체 시 사라질 수 있습니다. 업데이트 전에 문서·변경 내역을 보존하세요.
++사용자 문서는 루트 `README.md`와 `docs/`에 있고, 이전 설치본의 README·한국어 가이드 경로는 호환 링크입니다. 설치 폴더 교체 후에는 호환 링크와 Claude Code용 스킬 링크가 계속 원본을 가리키는지 확인합니다. 스킬 지침의 로컬 보완과 변경 내역도 보존하세요.
+ 
+ 새 버전의 CLI 옵션·메타데이터·범위·검수 도구를 다시 대조합니다. 변환기 업데이트와 생성된 책 스킬 업데이트는 별개이며 자동 재생성의 이유가 되지는 않습니다.
+ 
+--- before/.agents/skills/book-to-skill/docs/ko/getting-started.md
++++ after/docs/getting-started.md
+@@ -14,7 +14,7 @@
+ 
+ `ready`는 해당 추출 경로가 준비됐다는 뜻입니다. `fallback available`이면 대체 추출이 가능하지만 표·코드·본문 구분을 확인해야 합니다. `MISSING`인 형식은 필수 도구부터 준비합니다. [추출 안내](extraction.md)에 형식별 설명이 있습니다.
+ 
+-새 환경에서는 호스트의 설치 기능으로 원본 저장소의 루트 `SKILL.md`와 보조 스크립트를 함께 프로젝트 스킬 폴더에 설치합니다. 현재 프로젝트에서는 재설치 없이 사용하면 됩니다. 다른 호스트는 [기존 설치 안내](../install.md)를 참조하세요.
++새 환경에서는 호스트의 설치 기능으로 원본 저장소의 루트 `SKILL.md`와 보조 스크립트를 함께 프로젝트 스킬 폴더에 설치합니다. 현재 프로젝트에서는 재설치 없이 사용하면 됩니다. 다른 호스트는 [기존 설치 안내](../.agents/skills/book-to-skill/docs/install.md)를 참조하세요.
+ 
+ ## 2. 대화창에서 목적과 범위 지정
+ 
+@@ -61,15 +61,17 @@
+ $yuriring-game-system-design 내 기획서의 규칙·예외·데이터 연결을 검토해줘.
+ ```
+ 
+-책을 다시 변환할 때만 `$book-to-skill`을 사용합니다. 생성 파일이 목록에 없으면 호스트의 재탐색·새 세션 동작을 확인합니다. 다른 호스트에서는 `/book-to-skill`처럼 호출할 수 있으며 문법이 동일하다고 가정하지 않습니다.
++책을 다시 변환할 때만 변환기를 사용합니다. Claude Code에서는 `/book-to-skill` 또는 `/yuriring-game-system-design`으로 호출합니다. Antigravity에서는 이름을 명시한 자연어 요청을 사용할 수 있습니다. 설치 경로·버전별 호출·앱 인식 확인은 [에이전트별 사용](agents.md)을 읽으세요.
+ 
+ ## 프로젝트 범위와 개인 범위
+ 
+ 변환기가 프로젝트에 있어도 생성 결과의 기본 위치가 자동으로 프로젝트에 고정되는 것은 아닙니다.
+ 
+ - Codex 프로젝트 범위: `.agents/skills/<스킬 이름>/`
+-- 상위 변환 지침의 일반 개인 범위: `~/.agents/skills/<스킬 이름>/`
+-- 다른 호스트: [SKILL.md의 저장 위치 규칙](../../SKILL.md)을 따릅니다.
++- Claude Code 공유 프로젝트 구성: `.claude/skills/<스킬 이름>`에서 `.agents/skills/<스킬 이름>`으로 연결합니다.
++- Antigravity 프로젝트 범위: `.agents/skills/<스킬 이름>/`를 직접 읽습니다.
++- 일반 개인 범위: `~/.agents/skills/<스킬 이름>/`; Antigravity와 Hermes의 개인 경로는 별도입니다.
++- 다른 호스트: [SKILL.md의 저장 위치 규칙](../.agents/skills/book-to-skill/SKILL.md)을 따릅니다.
+ 
+ `BOOK_TO_SKILL_SCOPE=project`는 에이전트 워크플로의 범위 선택 힌트입니다. 추출기의 저장 옵션은 아니며 이 값을 지정했다고 최종 스킬이 자동 생성되는 것은 아닙니다.
+ 
+--- before/.agents/skills/book-to-skill/docs/ko/index.md
++++ after/docs/index.md
+@@ -2,19 +2,20 @@
+ 
+ 책·문서에서 판단 도구를 추출해 프로젝트 스킬로 만들고, 검수·활용하는 안내입니다. 설치본 `1.4.0`의 로컬 코드와 `SKILL.md`를 기준으로 작성했습니다.
+ 
+-[README로 돌아가기](../../README.md)
++[README로 돌아가기](../README.md)
+ 
+ ## 필요한 안내 선택하기
+ 
+ | 상황 | 문서 | 핵심 질문 |
+ |---|---|---|
+ | 처음 사용한다 | [시작하기](getting-started.md) | 어디서 호출하고 어디에 저장하는가? |
++| Claude Code·Antigravity도 사용한다 | [에이전트별 사용](agents.md) | 같은 원본을 어떻게 탐색하고 호출하는가? |
+ | 분석·생성·업데이트를 선택한다 | [변환과 업데이트](workflow.md) | 어떤 모드가 맞고 무엇이 생성되는가? |
+ | 추출 품질을 확인한다 | [추출과 실행 옵션](extraction.md) | 실제 추출 도구와 대체 경로는 무엇인가? |
+ | 사실성과 동작을 검증한다 | [검수와 테스트](validation.md) | 어떤 증거로 정확성을 판단하는가? |
+ | 실패하거나 결과가 의심스럽다 | [문제 해결](troubleshooting.md) | 무엇을 확인하고 어떻게 복구하는가? |
+ 
+-처음이라면 **시작하기 → 변환과 업데이트 → 검수와 테스트** 순서로 읽으세요. 추출 문제가 있을 때 실행 옵션과 문제 해결을 함께 확인하면 됩니다.
++처음이라면 **시작하기 → 에이전트별 사용 → 변환과 업데이트 → 검수와 테스트** 순서로 읽으세요. 추출 문제가 있을 때 실행 옵션과 문제 해결을 함께 확인하면 됩니다. 사용자 가이드의 실제 파일은 이 프로젝트의 루트 `docs/`에 있습니다.
+ 
+ ## 변환기와 생성 스킬 구분하기
+ 
+@@ -31,12 +32,12 @@
+ 
+ ## 문서의 역할과 근거
+ 
+-[SKILL.md](../../SKILL.md)는 에이전트의 실행 지침입니다. 이 가이드는 사용자가 작업을 요청하고 결과를 판단하기 위한 설명이며, 호스트 권한 정책이나 기존 사용자 지시를 대신하지 않습니다.
++[SKILL.md](../.agents/skills/book-to-skill/SKILL.md)는 에이전트의 실행 지침입니다. 이 가이드는 사용자가 작업을 요청하고 결과를 판단하기 위한 설명이며, 호스트 권한 정책이나 기존 사용자 지시를 대신하지 않습니다.
+ 
+-CLI 옵션·지원 확장자·메타데이터의 근거는 [utils.py](../../book_to_skill/utils.py), [config.py](../../book_to_skill/config.py), [의존성 처리](../../book_to_skill/dependencies.py)에 있습니다. 선택적 PDF 검사는 [pdf-inspector 연동](../../book_to_skill/pdf_inspector_integration.py)을 확인하세요.
++CLI 옵션·지원 확장자·메타데이터의 근거는 [utils.py](../.agents/skills/book-to-skill/book_to_skill/utils.py), [config.py](../.agents/skills/book-to-skill/book_to_skill/config.py), [의존성 처리](../.agents/skills/book-to-skill/book_to_skill/dependencies.py)에 있습니다. 선택적 PDF 검사는 [pdf-inspector 연동](../.agents/skills/book-to-skill/book_to_skill/pdf_inspector_integration.py)을 확인하세요.
+ 
+-영문 문서는 [동작 방식](../how-it-works.md), [설치](../install.md), [사용](../usage.md), [아키텍처](../architecture.md), [성능 측정](../performance.md), [FAQ](../faq.md)에 있습니다. 호스트별 설정과 측정 배경이 필요할 때 참조하세요.
++영문 문서는 [동작 방식](../.agents/skills/book-to-skill/docs/how-it-works.md), [설치](../.agents/skills/book-to-skill/docs/install.md), [사용](../.agents/skills/book-to-skill/docs/usage.md), [아키텍처](../.agents/skills/book-to-skill/docs/architecture.md), [성능 측정](../.agents/skills/book-to-skill/docs/performance.md), [FAQ](../.agents/skills/book-to-skill/docs/faq.md)에 있습니다. 호스트별 설정과 측정 배경이 필요할 때 참조하세요.
+ 
+ ## 이 프로젝트의 예시
+ 
+-[yuriring-game-system-design](../../../yuriring-game-system-design/SKILL.md)은 이 변환기로 만든 게임 시스템 기획 스킬입니다. 21개 장과 용어·패턴·판단표를 갖추고 별도 원문 대조·실제 요청 테스트를 거쳤습니다. 이 사례의 쪽수 규약이나 설계 수치를 다른 책의 기본값으로 사용하지 마세요.
++[yuriring-game-system-design](../.agents/skills/yuriring-game-system-design/SKILL.md)은 이 변환기로 만든 게임 시스템 기획 스킬입니다. 21개 장과 용어·패턴·판단표를 갖추고 별도 원문 대조·실제 요청 테스트를 거쳤습니다. 이 사례의 쪽수 규약이나 설계 수치를 다른 책의 기본값으로 사용하지 마세요.
+--- /dev/null
++++ after/docs/agents.md
+@@ -0,0 +1,73 @@
++# 에이전트별 사용
++
++[가이드 홈](index.md) · [시작하기](getting-started.md)
++
++이 프로젝트는 Codex·Claude Code·Google Antigravity가 스킬 두 개를 공유하도록 구성합니다. 사용자 문서는 루트 `README.md`·`docs/`에, 스킬 원본은 `.agents/skills/`에 둡니다.
++
++## 실제 프로젝트 구성
++
++```text
++README.md
++docs/
++  index.md, agents.md, getting-started.md, ...
++.agents/skills/
++  book-to-skill/                    # 변환기 원본
++  yuriring-game-system-design/      # 생성된 게임 기획 스킬 원본
++.claude/skills/
++  book-to-skill -> ../../.agents/skills/book-to-skill
++  yuriring-game-system-design -> ../../.agents/skills/yuriring-game-system-design
++```
++
++Claude Code는 개별 스킬 폴더 링크의 대상 `SKILL.md`를 읽는다고 명시합니다. [공식 스킬 위치 안내](https://code.claude.com/docs/en/skills#choose-where-skills-load)
++
++Antigravity의 현재 공식 문서는 프로젝트 `.agents/skills/`를 지원합니다. `.agent/skills/`는 이전 버전 호환 경로이며, 이 프로젝트에는 추가 복제나 링크가 필요하지 않습니다. [공식 스킬 안내](https://antigravity.google/docs/skills)
++
++두 스킬은 공통 YAML `name`·`description`과 Markdown 본문을 갖춥니다. `agents/openai.yaml`은 Codex용 선택 UI 메타데이터이며 다른 호스트의 별도 설치 manifest로 사용하지 않습니다.
++
++## Codex
++
++프로젝트를 열고 대화창에서 호출합니다.
++
++```text
++$book-to-skill "./책 파일.pdf"를 한국어 프로젝트 스킬로 만들어줘.
++$yuriring-game-system-design 길드 기부 시스템의 규칙과 예외를 검토해줘.
++```
++
++## Claude Code
++
++프로젝트 루트에서 Claude Code를 시작하고 호출합니다. 현재 로컬 CLI 버전은 확인 당시 `2.1.296`입니다.
++
++```text
++/book-to-skill "./책 파일.pdf"를 분석해서 한국어 스킬로 만들어줘.
++이 프로젝트의 .agents/skills/에 저장하고 Claude Code에서도 사용할 수 있게 해줘.
++
++/yuriring-game-system-design 길드 기부 시스템의 규칙과 예외를 검토해줘.
++```
++
++현재 두 스킬의 링크는 이미 생성돼 있습니다. 새 생성 스킬도 공유하려면 `.agents/skills/<이름>` 원본과 `.claude/skills/<이름>` 개별 링크를 함께 확인합니다. 기존 실제 폴더가 있다면 덮어쓰지 않고 충돌 내용을 확인합니다.
++
++Claude Code에서 `/` 명령 메뉴에 이름이 나타나는지 확인하세요. 메뉴에 없으면 프로젝트·링크·frontmatter를 점검하고 새 세션에서 다시 확인합니다. 일반 요청도 `description`에 따라 스킬이 선택될 수 있습니다. [호출과 자동 선택](https://code.claude.com/docs/en/skills)
++
++## Antigravity
++
++이 프로젝트를 작업공간으로 열고 스킬 이름을 명시합니다. 로컬 `/Applications/Antigravity.app`의 앱 메타데이터에서 확인한 버전은 `2.0.1`입니다. 이는 앱 내 스킬 탐색을 실행한 결과와 구분합니다.
++
++```text
++book-to-skill 스킬을 사용해 "./책 파일.pdf"를 분석하고,
++한국어 스킬을 이 프로젝트의 .agents/skills/에 만들어줘.
++Claude Code에서도 같은 원본을 사용하게 해줘.
++
++yuriring-game-system-design 스킬을 사용해 길드 기부 시스템을 검토해줘.
++```
++
++공식 문서는 Antigravity 2.0·CLI의 `/<skill-name>` 호출도 설명합니다. IDE에서는 이름을 명시한 자연어 요청을 공통 예시로 사용하고 에이전트 패널의 **Customizations**에서 활성 스킬을 확인합니다. 모든 버전의 UI가 동일하다고 가정하지 않습니다. [공식 문서](https://antigravity.google/docs/skills)
++
++개인 설치가 필요하면 현재 인터페이스를 먼저 확인합니다. 공식 문서 기준 2.0·IDE는 `~/.gemini/config/skills/`, CLI는 `~/.gemini/antigravity-cli/skills/`, 이전 IDE 호환 경로는 `~/.gemini/antigravity/skills/`입니다. 이번 작업은 프로젝트 범위만 구성합니다.
++
++## 검증 범위와 확인 방법
++
++- 원본·Claude Code 링크·참조 파일·추출기 실행을 확인하면 파일 구성이 준비됐다는 증거입니다.
++- Claude Code 명령 메뉴, Antigravity Customizations에서 실제 이름을 확인하면 해당 앱의 탐색 증거입니다.
++- 실제 질문에서 관련 장을 읽고 제약을 지키는지는 [사용 테스트](validation.md)로 별도 확인합니다.
++
++로컬 파일 확인을 앱에서 실행했다는 결과로 보고하지 않습니다. 공식 경로·호출 설명은 2026-10-12 확인 기준이며, 호스트 버전이 달라지면 공식 문서와 실제 UI를 대조합니다.
+--- /dev/null
++++ after/.agents/skills/book-to-skill/references/antigravity.md
+@@ -0,0 +1,39 @@
++# Antigravity host reference
++
++Read only when selecting an Antigravity destination or explaining invocation.
++Verified against the [official skills documentation](https://antigravity.google/docs/skills)
++on 2026-10-12. Host versions can change; use the active interface's documented root.
++
++## Project scope
++
++Use `<workspace>/.agents/skills/<skill_name>/SKILL.md`. The legacy
++`.agent/skills` root is supported for compatibility but is not needed when the
++shared `.agents/skills` source already exists. Keep relative references and helper
++scripts inside the skill so the same files serve all requested hosts.
++
++Both `name` and `description` are present in this package; Antigravity requires
++`description` and accepts the common YAML-frontmatter + Markdown structure.
++Do not add a second manifest or infer support for another host's tool grants.
++
++## Personal scope
++
++| Interface | Root |
++|---|---|
++| Antigravity 2.0 / IDE | `~/.gemini/config/skills/` |
++| Antigravity CLI | `~/.gemini/antigravity-cli/skills/` |
++| Legacy IDE compatibility | `~/.gemini/antigravity/skills/` |
++
++Identify the active interface before choosing a personal destination. A generic
++personal `~/.agents/skills` install is not an Antigravity discovery claim.
++
++## Invocation and evidence
++
++Use a natural-language request naming `book-to-skill` and the source document.
++Antigravity 2.0/CLI documents `/<skill-name>` invocation; the IDE can use the
++named natural-language request and inspect enabled skills under Customizations.
++
++After writing files, verify the selected root, frontmatter, links, and helper
++execution. These checks prove filesystem readiness. Report actual app discovery
++only after observing it in the active host. This project uses the physical
++`.agents/skills` directory, so no assumption about Antigravity symlink support
++is required.
+--- /dev/null
++++ after/.agents/skills/book-to-skill/tests/test_antigravity_host_support.py
+@@ -0,0 +1,50 @@
++"""Exercise the extractor lookup with Antigravity-only installation layouts."""
++
++import os
++from pathlib import Path
++import subprocess
++
++import pytest
++
++
++ROOT = Path(__file__).resolve().parent.parent
++SKILL = (ROOT / "SKILL.md").read_text(encoding="utf-8")
++
++
++@pytest.mark.parametrize(
++    "layout",
++    ["project", "legacy-project", "personal-ide", "personal-cli", "legacy-personal"],
++)
++@pytest.mark.skipif(os.name == "nt", reason="the spec's lookup uses POSIX Bash paths")
++def test_antigravity_extractor_lookup(tmp_path, layout):
++    home = tmp_path / "home"
++    project = tmp_path / "project"
++    project.mkdir()
++    subprocess.run(["git", "init", "-q"], cwd=project, check=True)
++    nested = project / "src" / "nested"
++    nested.mkdir(parents=True)
++    destinations = {
++        "project": project / ".agents" / "skills",
++        "legacy-project": project / ".agent" / "skills",
++        "personal-ide": home / ".gemini" / "config" / "skills",
++        "personal-cli": home / ".gemini" / "antigravity-cli" / "skills",
++        "legacy-personal": home / ".gemini" / "antigravity" / "skills",
++    }
++    extractor = destinations[layout] / "book-to-skill" / "scripts" / "extract.py"
++    extractor.parent.mkdir(parents=True)
++    extractor.touch()
++    start = SKILL.index('SCRIPT_PATH=""')
++    end = SKILL.index('\nif [ -z "$SCRIPT_PATH" ]', start)
++    probe = SKILL[start:end] + '\nprintf "%s" "$SCRIPT_PATH"\n'
++    env = os.environ.copy()
++    env["HOME"] = str(home)
++    for key in ["HERMES_AGENT", "HERMES_HOME", "OPENCLAW_STATE_DIR"]:
++        env.pop(key, None)
++    result = subprocess.run(
++        ["bash", "-c", probe], cwd=nested, env=env, check=True,
++        capture_output=True, text=True,
++    )
++    selected = Path(result.stdout.strip())
++    if not selected.is_absolute():
++        selected = nested / selected
++    assert selected.resolve() == extractor.resolve()

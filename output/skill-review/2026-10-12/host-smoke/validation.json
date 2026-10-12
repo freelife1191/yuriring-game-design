@@ -1,0 +1,24 @@
+{
+  "skill_files": 28,
+  "copied_skill_matches_original": true,
+  "claude_link_readable": true,
+  "host_input_matches_readme": true,
+  "skill_path_or_body_injected": false,
+  "output_folder": "/Users/freelife/ai/yuriring-game-design/output/skill-review/2026-10-12/host-smoke",
+  "markdown_documents": 39,
+  "local_links_checked": 401,
+  "broken_links": [],
+  "advanced_chapter_examples": 42,
+  "advanced_followups": 21,
+  "advanced_fences": 73,
+  "chapter_anchor_adjacency": "PASS",
+  "modified_original_files": [
+    "docs/advanced-usage.md",
+    "docs/validation.md"
+  ],
+  "unchanged_skill_files": 28,
+  "README_unchanged": true,
+  "skill_quick_validate": "PASS",
+  "record_json_formats": "PASS",
+  "documentation_and_behavior_link_check": "PASS"
+}

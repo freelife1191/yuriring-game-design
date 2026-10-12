@@ -1,0 +1,2070 @@
+{
+  "verdict": "검수 범위 내 수정 후 통과",
+  "date": "2026-10-12",
+  "round": 2,
+  "skill": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design",
+  "standard": "skill-creator",
+  "summary": {
+    "date": "2026-10-12",
+    "standard": "skill-creator",
+    "chapter_files_read": 21,
+    "chapter_claims_checked": 133,
+    "supporting_checks": 18,
+    "findings_resolved": 6,
+    "fix_types": [
+      "직접 근거 장 연결 3건",
+      "운영 도구 조정 범위 한정",
+      "UI 공통 항목과 조건부 항목 구분",
+      "저자 사례와 스킬 재구성 절차의 귀속 구분"
+    ],
+    "initial_behavior_tests": {
+      "total": 3,
+      "passed": 2,
+      "partial": 1
+    },
+    "behavior_partial_reason": "거래소 지급시점 모호함을 실제 답변에서 누락. 기존 스킬에는 해당 한계가 이미 명시되어 있어 지침 누적 없이 새 독립 요청으로 재확인.",
+    "report": "../../../output/skill-review/2026-10-12/round-2/report.json",
+    "limits": [
+      "장별 사실 주장의 표본 대조이며 모든 문장/도판 전수 검증은 아님",
+      "모델 답변 테스트이며 실제 게임 실행 테스트는 아님",
+      "초기 테스트의 부분 통과 기록을 보존하며 향후 모든 답변의 정확성을 보장하지 않음"
+    ],
+    "fresh_independent_tests": {
+      "total": 2,
+      "passed": 2
+    },
+    "visual_pdf_pages_checked": [
+      111,
+      124,
+      125,
+      126,
+      144,
+      168,
+      184,
+      207,
+      208,
+      227,
+      240,
+      254,
+      261,
+      274,
+      289,
+      317,
+      351,
+      352
+    ]
+  },
+  "coverage": {
+    "chapters_read": 21,
+    "chapter_claims_checked": 133,
+    "supporting_checks": 18,
+    "visual_pdf_pages_checked": [
+      111,
+      124,
+      125,
+      126,
+      144,
+      168,
+      184,
+      207,
+      208,
+      227,
+      240,
+      254,
+      261,
+      274,
+      289,
+      317,
+      351,
+      352
+    ],
+    "not_full_source_audit": true
+  },
+  "initial_content_reviews": [
+    {
+      "review": {
+        "scope": "ch01-ch09",
+        "mode": "independent factual review",
+        "edited_skill_files": false,
+        "source_files": [
+          "source/ch01.txt",
+          "source/ch02.txt",
+          "source/ch03.txt",
+          "source/ch04.txt",
+          "source/ch05.txt",
+          "source/ch06.txt",
+          "source/ch07.txt",
+          "source/ch08.txt",
+          "source/ch09.txt"
+        ],
+        "coverage": "각 장의 참조문과 원문 범위를 전체 읽고 장별 5개 실질 주장을 대조했다. ch07의 D20/D200 표기는 PDF 111쪽 이미지를 직접 확인했다.",
+        "verdict": "PARTIAL",
+        "summary": "핵심 정의·절차·사례 수치·페이지 연결은 전반적으로 정확하다. 실질적인 개념 왜곡은 없었으나, 해당 장 범위 밖 내용을 해당 장의 주장처럼 둔 출처 연결 3건과 원문의 한정된 운영 도구 조정 대상을 넓게 일반화한 1건이 있다."
+      },
+      "chapters": [
+        {
+          "chapter": "ch01",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch01-system-planning.md",
+          "claims": [
+            {
+              "skill_lines": "7",
+              "claim": "시스템은 콘텐츠가 의미를 갖게 하는 법칙이며 퀘스트 문장도 대상·판정·보상 과정으로 분해한다.",
+              "result": "PASS",
+              "evidence": "원문은 시스템을 놀이가 작동하는 법칙으로 정의하고, 슬라임 10마리 퀘스트를 대상 오브젝트·처치 인정·보상 지정/지급으로 분해한다.",
+              "pages": "책 18-19 / PDF 20-21"
+            },
+            {
+              "skill_lines": "9",
+              "claim": "시스템·콘텐츠·서비스 역할과 하루 1회 상품의 저장·갱신 전제가 설명된다.",
+              "result": "PASS",
+              "evidence": "원문은 규칙/데이터 기반, 구체 놀이 재료, 판매 전략을 나누고 구매 횟수 저장·일일 갱신이 없으면 하루 1회 상품이 불가능하다고 명시한다.",
+              "pages": "책 20-23 / PDF 22-25"
+            },
+            {
+              "skill_lines": "13-17",
+              "claim": "의도→규칙→예외/무결성→데이터/UI→전달 문서의 설계 절차가 원문에 근거한다.",
+              "result": "PASS",
+              "evidence": "재접속의 보존/복귀 조건, 강화의 조건·예외·성공 판정·결과, 중복 입력/종료 시 무결성, 테이블/UI 질문, 직군별 문서 정보가 차례로 제시된다.",
+              "pages": "책 21-22, 30-33 / PDF 23-24, 32-35"
+            },
+            {
+              "skill_lines": "21-25",
+              "claim": "길드장 삭제 제약, 다양한 퀘스트 조건, 출석 예외, 시스템/콘텐츠 책임 구분이 원문 사례에 근거한다.",
+              "result": "PASS",
+              "evidence": "위임/탈퇴 후 삭제, 사냥 외 수집·상호작용·탐색·호위·잠입, 출석의 서버 시간/계정/UI 불일치, 퀘스트 기능과 내용의 구분이 모두 원문에 있다.",
+              "pages": "책 24-27 / PDF 26-29"
+            },
+            {
+              "skill_lines": "23",
+              "claim": "UI부터 그리기는 1장의 안티패턴이다.",
+              "result": "PARTIAL",
+              "evidence": "1장은 기획 의도·규칙·예외·테이블·인터페이스 범위를 설명하지만 UI 선행을 명시적으로 비판하지 않는다. 이 표현은 5장 책 80쪽/PDF 82쪽에서 직접 제시된다.",
+              "pages": "직접 근거: 책 80 / PDF 82",
+              "note": "주장 자체는 책 전체와 일치하지만 ch01 출처 연결은 부정확하다."
+            }
+          ]
+        },
+        {
+          "chapter": "ch02",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch02-designer-perspective.md",
+          "claims": [
+            {
+              "skill_lines": "7-9",
+              "claim": "플레이어 결과를 조건·흐름·예외·피드백과 감정/구조의 결합으로 되읽는다.",
+              "result": "PASS",
+              "evidence": "원문은 보이는 결과 뒤의 조건·상태·예외·우선순위를 설계하고 플레이어 시야와 시스템 시야를 겹쳐야 한다고 설명한다.",
+              "pages": "책 36-40 / PDF 38-42"
+            },
+            {
+              "skill_lines": "13-17",
+              "claim": "러닝 게임 사례의 이동, 체력/장애물, 젤리 데이터와 피드백 분해가 정확하다.",
+              "result": "PASS",
+              "evidence": "맵 횡스크롤, 체력 초기값/감소/무적, 젤리 획득 판정·삭제·사운드·속성/값의 데이터 테이블 관리가 원문에 구체적으로 제시된다.",
+              "pages": "책 37-38 / PDF 39-40"
+            },
+            {
+              "skill_lines": "21-22",
+              "claim": "겉보기 이동과 실제 조작 구조, 거대화/무적 상태의 감정 구현 설명이 원문과 일치한다.",
+              "result": "PASS",
+              "evidence": "X축 이동을 조작하지 않고 회피에 집중시키는 의도와, 8초 Giant Mode·3배 크기·무적·충돌 연출 사례가 원문에 있다.",
+              "pages": "책 39-40 / PDF 41-42"
+            },
+            {
+              "skill_lines": "23",
+              "claim": "돌림판 보상은 돌리기 시점에 결정되고 정지는 연출이며 데이터 일치·중복 방지·복구까지 설계한다.",
+              "result": "PASS",
+              "evidence": "원문은 돌리기 버튼 입력 때 보상을 랜덤 결정하고 멈추기 입력 때는 이미 정해진 보상을 향하게 하며 서버/클라이언트 일치와 중복/복구를 언급한다.",
+              "pages": "책 42-43 / PDF 44-45"
+            },
+            {
+              "skill_lines": "33-43",
+              "claim": "캐릭터 진화의 조건·슬롯·소모·상위 ID·재료 부족 구조와 추가 예시의 경계가 정확하다.",
+              "result": "PASS",
+              "evidence": "50레벨, 맞는 재료, 슬롯 입력, 원본/재료 삭제, 상위 캐릭터 지급, ID 연결, 재료 부족 경고가 원문에 있고 추가 실패 검증은 새 적용 예시로 분리되어 있다.",
+              "pages": "책 41-42 / PDF 43-44"
+            }
+          ]
+        },
+        {
+          "chapter": "ch03",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch03-design-intent.md",
+          "claims": [
+            {
+              "skill_lines": "7",
+              "claim": "기획 의도는 왜 필요한가와 왜 이 방식이어야 하는가를 포함한다.",
+              "result": "PASS",
+              "evidence": "원문은 존재 이유뿐 아니라 구조·흐름·조건·연출·예외·UX 선택의 방향까지 기획 의도에 포함한다.",
+              "pages": "책 48 / PDF 50"
+            },
+            {
+              "skill_lines": "12-15",
+              "claim": "부활 사례의 허무·관전 피로·중후반 리듬과 변경 판단, 운영 유지 기준이 정확하다.",
+              "result": "PASS",
+              "evidence": "세 가지 문제, 블루칩 상호작용을 지키는 수정 판단, 일일 성장 던전의 횟수 대신 보상량 조정 사례가 원문에 있다.",
+              "pages": "책 49-54 / PDF 51-56"
+            },
+            {
+              "skill_lines": "21-29",
+              "claim": "블루칩 드롭·회수·송신 타워·비행기 재진입·적 루팅 구조가 원문과 일치한다.",
+              "result": "PASS",
+              "evidence": "원문이 각 구조와 팀 몰입·위험한 전투 구도·전장 재합류·적의 회수 메타를 설명한다.",
+              "pages": "책 49-51 / PDF 51-53"
+            },
+            {
+              "skill_lines": "34-36",
+              "claim": "출석 수령 불일치, 슈퍼아머의 넉백/경직 포함 목적, 구사일생 피드백 부재 사례가 정확하다.",
+              "result": "PASS",
+              "evidence": "세 수령 방식의 혼란, 피격 모션만 제거했을 때 직군별 해석 차이, 체력 1 생존을 인지하지 못하는 실패가 원문에 있다.",
+              "pages": "책 52-55 / PDF 54-57"
+            },
+            {
+              "skill_lines": "33",
+              "claim": "매출·리텐션·만족도 같은 한 줄 KPI를 의도로 삼지 말라는 내용이 3장 근거다.",
+              "result": "PARTIAL",
+              "evidence": "3장은 의도 부재의 문제를 다루지만 이 KPI 목록과 '판단 기준이 되지 못한다'는 직접 논지는 4장 책 62쪽/PDF 64쪽에 있다.",
+              "pages": "직접 근거: 책 62 / PDF 64",
+              "note": "내용은 책과 일치하지만 ch03 원문 범위에 연결한 배치가 부정확하다."
+            }
+          ]
+        },
+        {
+          "chapter": "ch04",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch04-intent-design.md",
+          "claims": [
+            {
+              "skill_lines": "7-14",
+              "claim": "문제 정의→역할 정의→감정 설계→플레이 흐름 설계의 네 단계와 일일 퀘스트 사례가 정확하다.",
+              "result": "PASS",
+              "evidence": "원문 로드맵과 본문이 동일 순서로 접속/반복/성장 문제, 루틴·성장·학습·콘텐츠 역할, 완료 피드백, UI→목표→병행→보상 흐름을 제시한다.",
+              "pages": "책 58-61 / PDF 60-63"
+            },
+            {
+              "skill_lines": "18",
+              "claim": "리텐션·매출 같은 한 줄 의도 대신 대상·경험·설계 방향·기대 효과가 필요하다.",
+              "result": "PASS",
+              "evidence": "무기 강화 파괴와 신규 출석 예시가 대상 플레이어, 의도한 경험, 설계 방향, 기대 효과로 확장된다.",
+              "pages": "책 62-66 / PDF 64-68"
+            },
+            {
+              "skill_lines": "20-29",
+              "claim": "기획 의도 증명 프레임의 여섯 질문과 근거 해석 지침이 정확하다.",
+              "result": "PASS",
+              "evidence": "필요/시점, 부재 문제/우선순위, 결과, 기존 기능 차이, 리스크, 근거의 6문항이 원문에 같은 순서로 있다. 피드백·이론·사례·데이터는 맥락 해석이 필요하다고 설명한다.",
+              "pages": "책 67-73 / PDF 69-75"
+            },
+            {
+              "skill_lines": "33-41",
+              "claim": "장비 프리셋 사례의 문제·리스크·슬롯 제한·해금·명칭 방향이 원문과 일치하며 재구성으로 표시됐다.",
+              "result": "PASS",
+              "evidence": "수동 교체 피로/실수, 파밍 압박, 2-3개 슬롯, 계정 20레벨 또는 특정 콘텐츠 이후 노출, 직관적 이름이 원문에 있다.",
+              "pages": "책 70-72 / PDF 72-74"
+            },
+            {
+              "skill_lines": "45-47",
+              "claim": "레퍼런스의 맥락 분석→우리 게임 위험→핵심 원리 변형과 UI/보상 결정의 이유 요구가 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 장르·대상·템포·과금·UX 맥락, 예상 문제, 감정/리듬/목적의 변형을 묻고 7일/28일·자동/클릭·아이콘 위치·보상 종류의 이유를 요구한다.",
+              "pages": "책 65-66, 74-75 / PDF 67-68, 76-77"
+            }
+          ]
+        },
+        {
+          "chapter": "ch05",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch05-system-decomposition.md",
+          "claims": [
+            {
+              "skill_lines": "7",
+              "claim": "UI보다 기능/행위와 속성부터 분해한다는 핵심 관점이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 UI를 기능의 결과물로 규정하고 기능 단위 분해 후 공통 속성과 작동 규칙을 추출한다.",
+              "pages": "책 80-89 / PDF 82-91"
+            },
+            {
+              "skill_lines": "11-15",
+              "claim": "우편 사례의 보이는 기능·자동 처리·필요 정보·예외·호출/UI 순서가 정확하다.",
+              "result": "PASS",
+              "evidence": "보내기/읽기/수령/삭제, 자동 발송/만료 삭제, 발신자 등 데이터, 인벤토리/우편함/삭제 캐릭터/만료 예외, 호출 관계와 UI 동선이 원문에 있다.",
+              "pages": "책 80-84 / PDF 82-86"
+            },
+            {
+              "skill_lines": "19-23",
+              "claim": "속성 분해, 화염구/칼날폭풍 공통 속성, 고정 데이터와 상태 구분, 속성 작동 규칙이 정확하다.",
+              "result": "PASS",
+              "evidence": "대미지 발생·대상 수·범위·기준 능력치·배율, 레벨 체력 기본값과 장비 반영 상태, 지속/중첩/상한 규칙이 원문에 있다.",
+              "pages": "책 85-89 / PDF 87-91"
+            },
+            {
+              "skill_lines": "22",
+              "claim": "기획자는 규칙을 설계하고 서버 프로그래머는 상태 저장/불러오기를 맡는 원문 역할 구분을 기술 불변 규칙으로 확대하지 않았다.",
+              "result": "PASS",
+              "evidence": "원문 역할 구분을 정확히 요약한 뒤 실제 적용은 프로젝트 아키텍처에 맞춘다고 명시해 과잉 일반화를 방지한다.",
+              "pages": "책 87-88 / PDF 89-90"
+            },
+            {
+              "skill_lines": "27-35",
+              "claim": "퀘스트 속성·사냥/수집/대화 규칙과 새 적용 요소의 경계가 정확하다.",
+              "result": "PASS",
+              "evidence": "제목·조건·대상·횟수·보상·수량 및 마지막 타격/시작 전, 획득/버림/소모, 대사 완료/중도 이탈 규칙이 원문에 있다. UI·예외 확장은 재구성 표 안에 있다.",
+              "pages": "책 89-90 / PDF 91-92"
+            }
+          ]
+        },
+        {
+          "chapter": "ch06",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch06-system-composition.md",
+          "claims": [
+            {
+              "skill_lines": "7",
+              "claim": "규칙이 정보를 생성·전달·해석하는 구조를 추적하되 모든 구현 연결을 문서화하라는 뜻은 아니라는 설명이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 규칙 간 데이터 전달을 강조하면서 실무 문서에 모든 상호작용을 적으라는 의미는 아니고 사고 훈련이라고 한정한다.",
+              "pages": "책 94-97 / PDF 96-99"
+            },
+            {
+              "skill_lines": "11-15",
+              "claim": "공격→대미지→체력→승패/UI 흐름과 시스템 경계 트리거가 원문 사례에 근거한다.",
+              "result": "PASS",
+              "evidence": "전투 규칙 연결, 타워 체력 기본/계산/표시, 타워 체력 0 이하 시 디펜스 패배 조건 트리거가 원문에 있다.",
+              "pages": "책 94-96 / PDF 96-98"
+            },
+            {
+              "skill_lines": "19-26",
+              "claim": "타워 파괴 점검표는 원문 사례를 새 실무 형식으로 재구성했다고 명확히 표시됐다.",
+              "result": "PASS",
+              "evidence": "원문에 있는 적중·피해량·체력 갱신·UI·패배 판정을 바탕으로 하며 음수/중복 종료 등 추가 점검은 재구성 표의 실무 확장으로 읽힌다.",
+              "pages": "책 94-96 / PDF 96-98"
+            },
+            {
+              "skill_lines": "28",
+              "claim": "보스 보상 문제를 처치 판정→보상 분배→우편 발송으로 분해해 진단한다.",
+              "result": "PASS",
+              "evidence": "원문에 동일한 세 규칙 연결을 따라 문제 지점을 좁히는 예시가 있다.",
+              "pages": "책 97 / PDF 99"
+            },
+            {
+              "skill_lines": "32-40",
+              "claim": "상점과 미션의 공통 모듈, 모듈별 설정 질문, 운영/개발 이점이 정확하다.",
+              "result": "PASS",
+              "evidence": "네 상점을 구매·판매물품 설정·구매 제한·랜덤 물품으로 조합하고, 미션 공통 규칙과 일/주 초기화·후보/확률·중복 여부 질문을 제시한다.",
+              "pages": "책 98-100 / PDF 100-102"
+            }
+          ]
+        },
+        {
+          "chapter": "ch07",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch07-rule-components.md",
+          "claims": [
+            {
+              "skill_lines": "4",
+              "claim": "D20/D200 표기는 원문 자체에서 혼재하므로 확정하지 않는다.",
+              "result": "PASS",
+              "evidence": "PDF 111쪽 이미지에서 행동/계산은 D20, 예외 행은 실제로 'D200이 10', 'D200이 200'으로 인쇄되어 있다. 스킬의 유보가 정확하다.",
+              "pages": "책 109 / PDF 111"
+            },
+            {
+              "skill_lines": "8-10",
+              "claim": "규칙은 행동 범위·세계 변화·요소 간 영향과 인지/비인지 규칙을 포함한다.",
+              "result": "PASS",
+              "evidence": "강화 조건, 방랑 상인 갱신, 속성 추가 피해와 한 턴 공격/30초 리스폰 사례가 원문에 있다.",
+              "pages": "책 106-108 / PDF 108-110"
+            },
+            {
+              "skill_lines": "30-39",
+              "claim": "상황·적용 범위·필요 정보·행동·정보 활용·판단·결과·예외 구성과 헤드샷 사례가 정확하다.",
+              "result": "PASS",
+              "evidence": "원문 표의 8개 구성 요소와 FPS 헤드샷의 히트박스, 무기/탄환, 궤적 비교, 2배/일반 피해, 특수 예외가 대응한다.",
+              "pages": "책 109-110 / PDF 111-112"
+            },
+            {
+              "skill_lines": "43-53",
+              "claim": "버그/에러/예외 구분과 5개 예외 패턴 및 안내/로그 정책이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 코드 실수, 플레이어 행동 문제, 예상 대비 상황을 구분하고 결과 없음·조건 미충족·상태 불일치·비정상 접근·자동 대상 없음 사례를 제시한다.",
+              "pages": "책 111-115 / PDF 113-117"
+            },
+            {
+              "skill_lines": "65-69",
+              "claim": "결과만 쓰기·무반응 실패·상태 재검증 누락·자동 대상 없음의 위험이 원문에 근거한다.",
+              "result": "PASS",
+              "evidence": "재료/소지금 사전 검사, 거래 완료 상태 재검증, 빈 대상 시 스킵, 안내 없는 실패의 버그 오해가 원문에 있다.",
+              "pages": "책 112-115 / PDF 114-117"
+            }
+          ]
+        },
+        {
+          "chapter": "ch08",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch08-rule-design.md",
+          "claims": [
+            {
+              "skill_lines": "4",
+              "claim": "레벨 10·5건·10분·5분·±200%·10%·5초가 원문 거래소 예시 수치이며 지급 시점 서술은 충돌한다.",
+              "result": "PASS",
+              "evidence": "모든 수치가 원문에 예시로 나오며, 같은 책 123쪽에 구매 완료 시 전송과 정산 버튼 시 지급이 함께 적혀 있다.",
+              "pages": "책 120-124 / PDF 122-126"
+            },
+            {
+              "skill_lines": "8, 18-20",
+              "claim": "기획 의도→설계 기준→기능 분해→상세 규칙→검토/보완 순서와 거래소 의도가 정확하다.",
+              "result": "PASS",
+              "evidence": "원문 로드맵과 본문이 이 순서를 사용하고 자원 순환·신뢰 거래·현금 거래/시세/독점/투기 방지를 제시한다.",
+              "pages": "책 118-125 / PDF 120-127"
+            },
+            {
+              "skill_lines": "24-28",
+              "claim": "자원 흐름·신뢰/편의·부정 거래 방지의 설계 기준 묶음이 원문과 일치한다.",
+              "result": "PASS",
+              "evidence": "간결한 절차/묶음/수수료, 안내/시세/검색/서버 재고, 검증 대기/쿨타임/건수/계정/기록 감지가 원문에 있다.",
+              "pages": "책 119-120 / PDF 121-122"
+            },
+            {
+              "skill_lines": "30",
+              "claim": "수치와 허용 범위 일반을 운영 도구에서 조정 가능하게 두는 것이 원문 방향이다.",
+              "result": "PARTIAL",
+              "evidence": "원문이 운영 도구 조정을 명시한 대상은 '시세 검증 기준, 범위, 허용치'다. 모든 수치와 허용 범위로 일반화한 직접 근거는 없다.",
+              "pages": "책 120 / PDF 122",
+              "note": "문장을 시세 검증 관련 값으로 한정해야 한다."
+            },
+            {
+              "skill_lines": "34-48",
+              "claim": "등록·취소·검증 대기·구매·검색 흐름과 지급 시점 한계, 사후 검토 질문이 정확하다.",
+              "result": "PASS",
+              "evidence": "각 기능의 기본/예외 흐름, 대기 건 재검토, 충돌 우선, 오류 시 환불/재고 복구, 검색 처리, 수수료/인벤토리/투명성 검토가 원문에 있다.",
+              "pages": "책 121-125 / PDF 123-127"
+            }
+          ]
+        },
+        {
+          "chapter": "ch09",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch09-flowcharts.md",
+          "claims": [
+            {
+              "skill_lines": "8, 19-21",
+              "claim": "플로 차트의 목적과 조건/예외가 복잡한 흐름에 선택적으로 사용한다는 설명이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 자연어 해석 차이를 줄이고 과정·분기·예외를 보이게 하며, 조건 판정/예외가 많을 때 쓰고 직선 흐름은 텍스트로 충분하다고 한다.",
+              "pages": "책 134-135, 152-153 / PDF 136-137, 154-155"
+            },
+            {
+              "skill_lines": "25-29",
+              "claim": "범위/목적→텍스트 흐름→기호 구분→레이아웃→예외/가독성 검수 절차가 원문과 일치한다.",
+              "result": "PASS",
+              "evidence": "원문 제작 과정이 동일 순서이며 거래소 구매, 위→아래, 루프 화살표, 서버 오류/중복, 박스·색·화살표·분기 조건 검수를 제시한다.",
+              "pages": "책 138-140 / PDF 140-142"
+            },
+            {
+              "skill_lines": "31-38",
+              "claim": "시작/종료·입력·출력·처리·비교/판단·다른 프로세스 연결의 의미가 정확하다.",
+              "result": "PASS",
+              "evidence": "원문의 기호 표와 설명에 같은 여섯 역할 및 사용 기준이 있다.",
+              "pages": "책 136-137 / PDF 138-139"
+            },
+            {
+              "skill_lines": "42",
+              "claim": "운명 조작보다 불사/수면 효과를 분리해 재사용하며 각 처리 흐름 요약이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 효과 단위 설계를 권장하고 불사의 치명 피해·10% 회복·상태 제거·쿨타임 초기화·1회 발동, 수면의 행동 불가·피해 해제·턴 감소를 제시한다.",
+              "pages": "책 146-147 / PDF 148-149"
+            },
+            {
+              "skill_lines": "54-74",
+              "claim": "심리/UI 전체/코드 1:1/차트 단독 사용의 안티패턴과 3매치·승패 사례 요약이 정확하다.",
+              "result": "PASS",
+              "evidence": "원문은 네 오해를 직접 설명하며 3매치 실패 복귀·파괴/낙하/추가 매칭 루프와 승패 후 동작 중지·UI/연출·동시 파괴 예외를 다룬다.",
+              "pages": "책 142-153 / PDF 144-155"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "id": "F01",
+          "severity": "minor",
+          "type": "source-linkage",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch01-system-planning.md",
+          "skill_lines": "23",
+          "issue": "'UI부터 그리기'를 ch01 안티패턴으로 두었지만 ch01 원문 범위에는 이 명시적 비판이 없다. 직접 근거는 ch05에 있다.",
+          "evidence": "ch05 책 80쪽/PDF 82쪽은 UI를 기능의 결과물이라 하고 UI 선행 시 전면 수정과 로직 누락이 생긴다고 명시한다.",
+          "suggested_fix": "문장 끝에 '(ch05, 책 80쪽 / PDF 82쪽)'을 붙이거나 '책 전체 원칙을 적용한 점검'으로 표시한다."
+        },
+        {
+          "id": "F02",
+          "severity": "minor",
+          "type": "source-linkage",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch03-design-intent.md",
+          "skill_lines": "33",
+          "issue": "매출·리텐션·만족도 같은 한 줄 KPI가 판단 기준이 되지 않는다는 직접 근거는 ch03이 아니라 ch04다.",
+          "evidence": "책 62쪽/PDF 64쪽에 '리텐션, 만족도, 매출...' 목록과 이런 의도는 판단 기준이 되지 못한다는 설명이 있다.",
+          "suggested_fix": "'(ch04, 책 62쪽 / PDF 64쪽)'을 명시하거나 ch04 안티패턴으로 이동한다."
+        },
+        {
+          "id": "F03",
+          "severity": "minor",
+          "type": "overgeneralization",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch08-rule-design.md",
+          "skill_lines": "30",
+          "issue": "원문이 운영 도구에서 조정 가능하게 하라고 한 대상을 모든 '수치와 허용 범위'로 넓혔다.",
+          "evidence": "원문 표현은 시세 검증의 '검증 기준, 범위, 허용치'에 한정된다(책 120쪽/PDF 122쪽).",
+          "suggested_fix": "'시세 검증 기준·범위·허용치는 운영 도구에서 조정 가능하게 둔다'로 좁힌다."
+        },
+        {
+          "id": "F04",
+          "severity": "minor",
+          "type": "source-linkage",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch09-flowcharts.md",
+          "skill_lines": "29, 81",
+          "issue": "예외 목록의 '대상 없음'은 ch09 제작 절차의 직접 예시가 아니라 ch07의 자동 처리 대상 없음 패턴에서 온 내용이다.",
+          "evidence": "ch09 책 139쪽/PDF 141쪽의 제작 절차 예외는 서버 오류·재고 부족·중복 요청이다. 대상 없음 직접 사례는 ch07 책 114쪽/PDF 116쪽이다.",
+          "suggested_fix": "'대상 없음'에 ch07 출처를 붙이거나 ch09 직접 예시인 '재고 부족'으로 바꾼다."
+        }
+      ],
+      "counts": {
+        "claims_checked": 45,
+        "pass": 42,
+        "partial": 3,
+        "fail": 0,
+        "findings": 4
+      }
+    },
+    {
+      "review_scope": {
+        "skill_root": ".agents/skills/yuriring-game-system-design",
+        "chapters": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "source_text_root": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source",
+        "pdf": "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf",
+        "method": "이전 보고서를 보지 않고 ch10~ch16 원문 전체와 스킬 문서를 독립 대조했다. 수치·표 관계·명명·자료형·절차·일반화·인용 쪽을 확인하고 핵심 도판을 PDF 렌더링으로 재검증했다."
+      },
+      "verdict": "PASS",
+      "claims_checked": [
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 8,
+          "claim": "데이터 테이블은 게임이 읽는 실제 데이터 구조이며 조정 가능한 값을 코드 밖에서 관리한다.",
+          "source": "책 158~161쪽 / PDF 160~163쪽",
+          "evidence": "원문은 CSV·JSON·XML 외부 파일을 코드에서 불러오고 기획자·운영자가 코드 수정 없이 값을 조정하는 구조로 설명한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 24,
+          "claim": "전투 참가 캐릭터 수가 변경 가능성 없이 6개로 고정된 사례는 상수 관리가 효율적이다.",
+          "source": "책 163쪽 / PDF 165쪽",
+          "evidence": "원문이 같은 수치 6을 들어 테이블 초기 비용보다 상수 관리가 효율적인 사례로 제시한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 25,
+          "claim": "복잡한 보스 AI, 배치 좌표, 프레임 단위 연출 타이밍은 전용 도구가 더 적합할 수 있다.",
+          "source": "책 162쪽 / PDF 164쪽",
+          "evidence": "원문은 Behavior Tree·FSM, 레벨 에디터, 시퀀스 도구를 각각 예로 든다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 27,
+          "claim": "테이블 기획→제작→구현→사용·검증 순으로 칼럼 의미·자료형·작동·관계를 합의한다.",
+          "source": "책 162~163쪽 / PDF 164~165쪽",
+          "evidence": "원문의 네 단계와 각 단계의 항목을 빠짐없이 축약했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 34,
+          "claim": "원문 사례의 기본 키는 중복·빈값이 없는 하나의 기본 키 칼럼이며 오류·지표 대상을 식별한다.",
+          "source": "책 165~166쪽 / PDF 167~168쪽",
+          "evidence": "원문 기본 키 원칙 3개와 상품 ID 단위 판매 지표 설명이 일치한다. 스킬은 복합 키 배제 일반화를 명시적으로 피했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 10,
+          "skill_file": "chapters/ch10-table-foundations.md",
+          "skill_line": 35,
+          "claim": "요리 테이블은 재료 이름·아이콘을 중복하지 않고 재료 ID를 외래 키로 참조한다.",
+          "source": "책 167~168쪽 / PDF 169~170쪽",
+          "evidence": "요리의 Ingredients1/2가 재료 테이블 ID를 참조하는 원문 표와 설명을 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 21,
+          "claim": "출석부는 기간·회차별 보상·메타/리소스를 소유하고 아이템 상세는 아이템 ID로 참조한다.",
+          "source": "책 176~177쪽 / PDF 178~179쪽",
+          "evidence": "원문 데이터 선별 표와 아이템 상세 중복 금지 설명이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 25,
+          "claim": "1~30일 보상을 열로 펼치면 60개 이상 열이 생기고, 출석부 행 의미를 유지한 채 회차마다 행을 만들면 별도 출석부로 해석된다.",
+          "source": "책 178쪽 / PDF 180쪽",
+          "evidence": "원문은 보상·수량 2개×30일과 서로 다른 출석부 3개 사례를 그대로 제시한다. 스킬은 이를 모든 엔진의 불변 규칙으로 일반화하지 않았다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 29,
+          "claim": "출석부·출석부 보상·아이템·스트링을 객체별로 분리해 키로 연결한다.",
+          "source": "책 179~183쪽 / PDF 181~185쪽",
+          "evidence": "원문의 분리 원칙과 4개 테이블 ERD를 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 40,
+          "claim": "영문 칼럼명, 구체적 대상명, 리소스 파일명·확장자·경로, Reset ENUM의 초기화 시각을 명세한다.",
+          "source": "책 184~186쪽 / PDF 186~188쪽",
+          "evidence": "LoginBonusID·RewardItemID·RewardCount, XXX.png, Assets/LoginBonusBanner/, 월/주 0시 규칙이 원문과 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 42,
+          "claim": "EVENT_이벤트명과 EVENT_이벤트명_회차 형태의 문자 기반 발번 사례가 협업·검색·오타 방지에 유리하다.",
+          "source": "책 187쪽 / PDF 189쪽",
+          "evidence": "원문 발번 표와 EVENT_SANTA_05 설명에 대응하며 숫자 키 전면 금지로 확대하지 않았다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 11,
+          "skill_file": "chapters/ch11-table-design.md",
+          "skill_line": 46,
+          "claim": "가데이터는 구조·작동·참조·팀 이해를 검증하고 2~5행에 선택적으로 해설한다.",
+          "source": "책 188~190쪽 / PDF 190~192쪽",
+          "evidence": "원문의 가데이터 목적 4개와 2~5행 권장 수치가 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 8,
+          "claim": "장르·서버 구조·데이터 흐름·협업 방식에 따라 테이블 통합/분리 구조가 달라지며 사례는 정답이 아니다.",
+          "source": "책 194쪽 / PDF 196쪽",
+          "evidence": "원문이 스킬-캐릭터 통합과 효과/조건 분리를 예로 들어 같은 취지를 명시한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 23,
+          "claim": "스트링은 언어별 값, 다이얼로그는 챕터 소속·순서·화자·표정·음성으로 연결한다.",
+          "source": "책 195~197쪽 / PDF 197~199쪽",
+          "evidence": "스트링·다이얼로그 챕터·다이얼로그 표의 칼럼과 본문 설명이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 24,
+          "claim": "아이템 기본 정보와 장비 성능을 분리하고 제작 재료가 늘면 1:N 제작 재료 테이블을 검토한다.",
+          "source": "책 197~199쪽 / PDF 199~201쪽",
+          "evidence": "아이템-장비 1:1 참조와 제작 재료 1:N 확장 설명이 원문에 있다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 34,
+          "claim": "랜덤 풀 비중 합은 100일 필요가 없고 등급 확률과 분리해 같은 등급 내부 상대 비율을 계산한다.",
+          "source": "책 205~206쪽 / PDF 207~208쪽",
+          "evidence": "Bear 예시의 (1/4)×0.5=0.125% 계산과 목적을 원문 및 PDF 렌더링에서 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 34,
+          "claim": "랜덤 옵션 범위는 이상~미만인지 이상~이하인지 합의하고 경험치는 누적값인지 단일값인지 확정한다.",
+          "source": "책 207, 212쪽 / PDF 209, 214쪽",
+          "evidence": "장비 옵션 경계와 3레벨 600 경험치 해석 차이를 원문이 각각 명시한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 41,
+          "claim": "복합 스킬은 스킬과 효과를 분리하며 효과는 대상·범위·종류·확률·지속·연관 스탯·조건을 가진다.",
+          "source": "책 209~211쪽 / PDF 211~213쪽",
+          "evidence": "스킬/스킬 효과 표와 각 칼럼 설명이 축약 내용과 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 12,
+          "skill_file": "chapters/ch12-table-cases.md",
+          "skill_line": 43,
+          "claim": "소규모 범용 설정은 ID-Value 키-값 테이블로 모으며 Boolean·문자열 확장 가능성을 고려한다.",
+          "source": "책 215쪽 / PDF 217쪽",
+          "evidence": "Game Configuration 표와 바로 앞 설명이 동일하다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 7,
+          "claim": "UI는 직접 상호작용하는 요소이고 UX는 사용 중 느끼는 감정·태도·행동의 총체다.",
+          "source": "책 222~223쪽 / PDF 224~225쪽",
+          "evidence": "원문 UX/UI 정의와 예시가 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 15,
+          "claim": "UX는 기획자의 직관만으로 단정하지 않고 유사 게임 조사와 A/B 테스트로 더 나은 선택을 찾는다.",
+          "source": "책 223쪽 / PDF 225쪽",
+          "evidence": "원문이 불확실성 속 선택과 두 검증 방법을 직접 언급한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 22,
+          "claim": "시스템 기능의 첫 접점은 UI이며 UI가 불친절하면 시스템 장점 대신 단점이 부각된다.",
+          "source": "책 224쪽 / PDF 226쪽",
+          "evidence": "복잡한 성장 시스템과 비직관적 UI 사례를 원문이 같은 논리로 설명한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 27,
+          "claim": "하스스톤의 필드 하수인 최대 7명 제한은 밸런스뿐 아니라 카드·효과 시인성에 기반했다.",
+          "source": "책 225쪽 / PDF 227쪽",
+          "evidence": "원문 문장과 수치 7을 PDF 렌더링으로 직접 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 29,
+          "claim": "UI 없는 UX는 구현이 없고 UX 없는 UI는 맥락이 없어 둘을 하나의 흐름으로 다뤄야 한다.",
+          "source": "책 224쪽 / PDF 226쪽",
+          "evidence": "원문이 같은 대비와 결론을 직접 제시한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 13,
+          "skill_file": "chapters/ch13-ux-ui-foundations.md",
+          "skill_line": 40,
+          "claim": "크리스탈 100개 구매 팝업의 위치·색·간격 판단은 UX, 시각 구현은 UI 사례다.",
+          "source": "책 222~223쪽 / PDF 224~225쪽",
+          "evidence": "원문 구매 팝업과 UX/UI 담당 질문 목록이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 7,
+          "claim": "레이아웃은 무엇을 담고 어디에 둘지를 결정하며 우선순위는 현재 맥락의 필요성으로 정한다.",
+          "source": "책 228~229쪽 / PDF 230~231쪽",
+          "evidence": "원문 레이아웃 2분류와 중요도보다 현재 맥락을 보라는 규칙이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 12,
+          "claim": "중심·상단·하단 등 화면 영역은 시선과 조작 빈도에 따라 배치하되 장르·플랫폼에 맞춘다.",
+          "source": "책 229~234쪽 / PDF 231~236쪽",
+          "evidence": "캐주얼 디펜스·수집형 RPG·MMORPG HUD와 화면 영역별 표가 근거다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 13,
+          "claim": "자주 쓰는 기능은 1~2단계 안에 두고 드문 세부 정보는 탭·펼침으로 나눠 깊이와 밀도를 절충한다.",
+          "source": "책 235~236쪽 / PDF 237~238쪽",
+          "evidence": "최소 조작 원칙과 사용 빈도·시점에 따른 절충 기준이 원문과 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 27,
+          "claim": "취소/확인보다 유지/등록 취소처럼 버튼 결과를 직접 라벨링한다.",
+          "source": "책 237~238쪽 / PDF 239~240쪽",
+          "evidence": "거래소 등록 취소 팝업 문구와 인벤토리 회수 안내를 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 28,
+          "claim": "크기와 색은 행동 우선순위·오입력 위험·위험 의미를 전달한다.",
+          "source": "책 239~241쪽 / PDF 241~243쪽",
+          "evidence": "모바일 최소 40px 사례와 색상 대비·문화 맥락 설명이 근거다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 14,
+          "skill_file": "chapters/ch14-visual-interaction.md",
+          "skill_line": 30,
+          "claim": "연출은 즉각 피드백·계층·기대감·만족감의 목적을 가진다.",
+          "source": "책 246~247쪽 / PDF 248~249쪽",
+          "evidence": "원문 연출 필요 이유와 카드 뽑기 스토리보드 목적 열이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 11,
+          "claim": "IA는 정보 계층·그룹·연결을 그려 누락·중복·중첩과 확장성을 점검한다.",
+          "source": "책 250~251쪽 / PDF 252~253쪽",
+          "evidence": "IA 목적·고려사항 및 동일/하위 깊이 배치 규칙이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 12,
+          "claim": "UI 플로 차트는 행동 뒤 화면·조건·출력 순서를 분기로 정리한다.",
+          "source": "책 251~252쪽 / PDF 253~254쪽",
+          "evidence": "게임 클리어→경험치/레벨업→보상→다음 스테이지 분기를 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 13,
+          "claim": "와이어프레임은 색·이미지보다 기능·위치·반복·라벨에 집중한 흑백 기반 설계도다.",
+          "source": "책 252~253쪽 / PDF 254~255쪽",
+          "evidence": "원문 제작 유의사항과 결과 화면 와이어프레임 설명이 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 25,
+          "claim": "정렬 드롭다운은 외부 영역 또는 재선택 시 닫고 현재 기준은 다른 색으로 강조한다.",
+          "source": "책 258~259쪽 / PDF 260~261쪽",
+          "evidence": "인벤토리 UI 요소 설계표를 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 28,
+          "claim": "훈련 수량 기본값은 1회 최대치 또는 보유 자원으로 가능한 최대치로 동적 설정한다.",
+          "source": "책 261~262쪽 / PDF 263~264쪽",
+          "evidence": "700명 상한과 자원 부족 시 630명 계산 사례가 원문과 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 15,
+          "skill_file": "chapters/ch15-ux-ui-design.md",
+          "skill_line": 29,
+          "claim": "클라이언트 저장은 기기 변경 시 유지되지 않고 서버 저장은 계정 유지 대신 비용이 늘어난다.",
+          "source": "책 262쪽 / PDF 264쪽",
+          "evidence": "원문의 저장 방식 장단점을 정확히 축약했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 12,
+          "claim": "입력 UI는 문자·길이·범위·단위·선택 모델·기본값·상태·저장 시점을 유형별로 명세한다.",
+          "source": "책 266~274쪽 / PDF 268~276쪽",
+          "evidence": "텍스트, 드롭다운/콤보, 스피너/슬라이더/스테퍼, 라디오/체크/토글 항목과 대응한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 13,
+          "claim": "버튼 상태는 Default·Focus·Disabled·Hover·Pressed로 구분한다.",
+          "source": "책 274~275쪽 / PDF 276~277쪽",
+          "evidence": "원문 목록과 도판 명칭이 정확히 일치한다. 스킬은 Hover를 터치 전용 필수 상태로 일반화하지 않았다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 23,
+          "claim": "정밀 수치는 스피너, 대략 수치는 슬라이더, 자주 조정하는 수량은 스테퍼에 적합하다.",
+          "source": "책 269~272쪽 / PDF 271~274쪽",
+          "evidence": "각 구성요소 정의와 사용 예가 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 25,
+          "claim": "라디오는 단일 선택, 체크박스는 복수 선택, 토글은 지속 ON/OFF 상태 전환에 쓴다.",
+          "source": "책 272~274쪽 / PDF 274~276쪽",
+          "evidence": "아이템 수량 스테퍼 표와 라디오/체크/토글 본문을 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 29,
+          "claim": "알림 UI는 차단성과 정보 수명에 맞춰 토스트·툴팁·팝업/모달·배지·진행 표시를 구분한다.",
+          "source": "책 278~281쪽 / PDF 280~283쪽",
+          "evidence": "각 알림 유형의 목적, 유지, 조작 차단 및 진행률 기준이 원문과 일치한다.",
+          "result": "pass"
+        },
+        {
+          "chapter": 16,
+          "skill_file": "chapters/ch16-ui-components.md",
+          "skill_line": 31,
+          "claim": "복잡한 네 단계 UI는 재배치보다 단계 통합·자동화로 시스템 규칙을 단순화할 수 있다.",
+          "source": "책 287쪽 / PDF 289쪽",
+          "evidence": "영지 경영 게임의 건물 종류→단계→재료→옵션 사례와 해법을 PDF 렌더링으로 확인했다.",
+          "result": "pass"
+        }
+      ],
+      "visual_checks": [
+        {
+          "pdf_page": 168,
+          "book_page": 166,
+          "subject": "기본 키 원칙",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 184,
+          "book_page": 182,
+          "subject": "출석부·보상·아이템·스트링 ERD",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 208,
+          "book_page": 206,
+          "subject": "랜덤 풀 비중 1/4×0.5=0.125%",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 227,
+          "book_page": 225,
+          "subject": "하스스톤 필드 하수인 최대 7명",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 240,
+          "book_page": 238,
+          "subject": "거래소 등록 취소 팝업과 토글 상태",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 254,
+          "book_page": 252,
+          "subject": "게임 클리어 결과 UI 플로 차트",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 261,
+          "book_page": 259,
+          "subject": "인벤토리 정렬 UI 명세표",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 274,
+          "book_page": 272,
+          "subject": "아이템 수량 스테퍼와 라디오 버튼",
+          "result": "pass"
+        },
+        {
+          "pdf_page": 289,
+          "book_page": 287,
+          "subject": "감정 설계와 역방향 점검",
+          "result": "pass"
+        }
+      ],
+      "findings": [],
+      "gaps": []
+    },
+    {
+      "review_scope": {
+        "skill_root": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design",
+        "chapters": [
+          "ch17-document-purpose.md",
+          "ch18-document-workshop.md",
+          "ch19-document-quality.md",
+          "ch20-production-lifecycle.md",
+          "ch21-designer-growth.md"
+        ],
+        "source_files": [
+          "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch17.txt",
+          "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch18.txt",
+          "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch19.txt",
+          "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch20.txt",
+          "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch21.txt"
+        ],
+        "method": "이전 검수 보고서를 읽지 않고 장별 Markdown 주장과 원문 추출 텍스트의 PDF/책 쪽 표식을 독립 대조했다. 표와 수치가 텍스트에서 명확하여 별도 PDF 시각 판독은 필요하지 않았다.",
+        "overall_verdict": "PARTIAL",
+        "summary": "핵심 수치, 조건, 단계, 사례 범위는 대체로 원문과 일치한다. 수정이 필요한 것은 수치 오류가 아니라 저자 원문보다 넓게 일반화한 2개 문장의 출처 경계다."
+      },
+      "claims_checked": [
+        {
+          "chapter": 17,
+          "skill_line": 3,
+          "claim": "원문 범위가 PDF 292~301쪽/책 290~299쪽이며, 기획서로 발전할 가능성 약 10%는 아이디어 제안 단계의 예시다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 292/책 290에서 장이 시작하고 PDF 301/책 299에서 끝난다. PDF 295/책 293은 아이디어 제안서가 기획서로 발전할 가능성을 10% 정도라고 서술한다."
+        },
+        {
+          "chapter": 17,
+          "skill_line": 7,
+          "claim": "기획서는 아이디어부터 개발·유지보수까지 수정되는 살아 있는 문서이며 단계별 목적과 정보 밀도가 다르다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 294~296/책 292~294는 아이디어 제안서, 초안, 상세 기획서, 개발 중 추가·수정의 단계와 Why/What/How/Review & Update 질문을 제시한다."
+        },
+        {
+          "chapter": 17,
+          "skill_line": "13-16",
+          "claim": "아이디어 제안은 Why, 초안은 What, 상세 기획은 How, 개발 단계는 Review & Update를 중심으로 한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 294~296/책 292~294의 기획서 완성 과정 도식과 본문이 네 단계를 같은 질문 구조로 설명한다."
+        },
+        {
+          "chapter": 17,
+          "skill_line": 20,
+          "claim": "디렉터·PM, 프로그래머, 아티스트, QA·로컬라이징, 다른 기획자는 서로 다른 관점에서 기획서를 읽는다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 297~298/책 295~296은 직군별 목적과 판단 질문을 구체적으로 나열한다."
+        },
+        {
+          "chapter": 17,
+          "skill_line": "24-26",
+          "claim": "문서 내용은 Why→What→How로 전개하며 각 단계에 목적·효과·타깃·기능·플로·데이터·UI·리소스를 배치한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 300~301/책 298~299가 Why, What, How의 항목과 각 세부 내용을 직접 제시한다."
+        },
+        {
+          "chapter": 17,
+          "skill_line": 35,
+          "claim": "필요 리소스에는 아트, 번역, 로그, 개발 확인용 치트가 포함된다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 301/책 299의 How 항목이 아이콘 등의 아트 리소스, 번역, 로그, 개발 확인용 치트를 명시한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 3,
+          "claim": "파견 사례의 핵심 설계값은 5개 지역, 미션당 3명, 등장 후 1시간 편성 가능, 점수별 보상 배율이다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 307/책 305는 5개 지역, PDF 308/책 306은 1시간 편성 및 슬롯 3개, PDF 310/책 308은 0점 기본·1~3점 +20%·4~5점 +50%·6점 이상 +100%를 명시한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": "7,13",
+          "claim": "개요는 목적·배경·기대 효과·목표·포지션·타깃·방향·플레이 시나리오·구현 목록에서 시작한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 304~306/책 302~304에서 해당 섹션과 항목이 차례로 제시된다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 13,
+          "claim": "달성 목표 예시는 보유 캐릭터 주간 활용률 60% 이상과 일일 플레이어의 UI 진입률 40% 이상이다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 305/책 303의 달성 목표에 두 수치가 정확히 나온다. 스킬은 수치를 일반 기준으로 승격하지 않고 관측 예시로 제한한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 17,
+          "claim": "미션은 지역별 갱신되고, 파견 중 캐릭터는 선택할 수 없으며, 3명 미만이면 시작할 수 없다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 307~308/책 305~306은 지역별 1개 등장·수령 후 같은 그룹에서 갱신, 파견 중 캐릭터 비활성, 슬롯 3개 고정과 3명 완편성 조건을 설명한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 17,
+          "claim": "미션 유형은 일반·특별·이벤트이며, 중도 복귀는 가능하지만 보상은 지급되지 않고 미션 슬롯도 교체되지 않는다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 309/책 307에 세 유형과 강제 복귀 규칙, 복귀해도 슬롯을 교체하지 않는 무한 뽑기 방지 목적이 나온다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 17,
+          "claim": "모두 수령은 수령 가능한 미션이 있을 때만 활성화되고 비활성 상태 클릭 시 토스트가 나온다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 310/책 308은 활성 조건과 '받을 수 있는 보상이 없습니다.' 토스트를 명시하고, PDF 321/책 319의 컴포넌트 규칙도 같은 조건을 반복한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 19,
+          "claim": "자동 파견은 미편성·모집 마감 전·파견 가능 캐릭터 3명 이상일 때 가능하고, 조건 점수→등급→레벨→캐릭터 고유 ID 순으로 배치한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 311/책 309에 자동 편성 가능 조건, 부족 시 팝업, 정렬 기준, 완료 토스트가 나오며 PDF 323/책 321의 캐릭터 목록 규칙이 정렬 순서를 재확인한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 19,
+          "claim": "자동 파견은 모든 상황에서 수동 편성보다 낫다고 보장하지 않아 전략적 선택 여지를 둔다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 311/책 309가 해당 문장을 직접 서술한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 23,
+          "claim": "MissionTable은 고유 ID·문자열 키·카테고리·그룹·등장 확률·시간·조건·기간·보상 정보를 구조화하고 클라이언트 UI와 서버 로직의 동기화 기반이 된다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 311~313/책 309~311의 설계 방향과 칼럼 규칙이 MISSION_ID, MISSION_NAME, CATEGORY, MISSION_GROUP, APPEAR_RATE, DURATION_HOURS, CONDITION 1~3, START_DATE/END_DATE, REWARD 1~3을 정의한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 23,
+          "claim": "APPEAR_RATE는 만분율이고, DURATION_HOURS는 시간 단위이며, 이벤트 기간은 시작일 0시부터 종료일 24시까지의 DATETIME 칼럼이다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 312~313/책 310~311의 칼럼 표가 단위와 자료형을 정확히 명시한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 23,
+          "claim": "보상은 최대 3종이며 서버가 조건 충족 배율을 계산해 최종 지급 수량을 처리한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 312/책 310의 설계 방향이 REWARD_n_ID/VALUE 쌍 최대 3종과 서버 배율 계산·최종 지급 처리를 명시한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 27,
+          "claim": "플레이 흐름은 화면 진입→미션 선택→조건 확인·캐릭터 배치→파견→진행→보상 수령→다음 루프다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 315~316/책 313~314의 1~6단계 시나리오와 자동 파견 보너스 경로가 이 흐름을 설명한다."
+        },
+        {
+          "chapter": 18,
+          "skill_line": 27,
+          "claim": "컴포넌트마다 이름·역할·표시 데이터·활성 조건·클릭 결과·비활성 피드백·시각 상태·배치 근거를 모두 적는다.",
+          "verdict": "OVERSTATED",
+          "evidence": "PDF 317~324/책 315~322의 공통 표 머리는 주로 UI 명칭, 역할, 구성 요소, 작동 규칙, 디자인 의도, 배치 이유다. 활성 조건·클릭 결과·비활성 피드백·시각 상태는 필요한 컴포넌트에만 일부 나타난다.",
+          "finding_id": "F18-01"
+        },
+        {
+          "chapter": 18,
+          "skill_line": 32,
+          "claim": "조건 기반 보너스는 종족·속성·스토리 배경·등급 등의 조건을 캐릭터가 충족할 때 보상 배율을 바꾸는 사례다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 310/책 308은 최대 3개 조건과 점수별 배율을, PDF 312/책 310은 RACE·ATTRIBUTE·STORY·GRADE 조건 유형을 제시한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 3,
+          "claim": "10pt 이하 지양, 정보 밀도 60~70%, 복합 기능 약 40쪽, UX 중심 50쪽 이상은 원문의 현장 권고다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 328~329/책 326~327에 네 수치가 그대로 나온다. 스킬은 이를 보편 의무값이 아닌 휴리스틱으로 제한한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": "7,13",
+          "claim": "가독성은 여백·문단·대비·표·플로·와이어프레임의 보조 사용을 포함하며 문서 신뢰와 개발 속도에 영향을 준다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 328/책 326은 읽기 어려운 문서가 신뢰 상실·개발 지연을 낳을 수 있다고 설명하고 가독성 질문을 제시한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 15,
+          "claim": "적정 분량은 필수 정보와 중복 제거의 문제이며 복합 기능 40쪽 내외, UX 중심 시스템 50쪽 이상도 가능하다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 329/책 327의 분량 절이 같은 예시를 제시한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 19,
+          "claim": "단일 기능은 개요→흐름 요약→상세 규칙→예외→데이터→UI→리소스/로컬라이징/로그 순서를 기본형으로 하고, 복합 시스템은 기능 단위로 묶는다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 329/책 327의 구성 요소와 순서 및 복합 시스템 배치 설명과 일치한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 23,
+          "claim": "AI 브레인스토밍은 일일 보상 시스템의 여러 콘셉트와 메커니즘·심리 구조·리스크를 후보로 만든다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 331~332/책 329~330의 프롬프트와 세 가지 출력 예시가 이를 보여 준다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 24,
+          "claim": "AI 구조화 예시는 스킬트리 메모를 의도·구조·성장 규칙·사용 제약·UX/UI·밸런스·누락 데이터/로그로 재분류한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 333~335/책 331~333의 프롬프트와 출력 섹션이 해당 분류를 직접 제시한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 25,
+          "claim": "AI 논리 보강 예시의 일반적 데이터 패턴·심리·도파민·LTV 문구는 책이 검증한 사실이 아니라 AI 출력 사례다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 335~337/책 333~335은 해당 문구를 AI 프롬프트의 생성 결과로 싣는다. 스킬이 이를 독립 검증 대상으로 제한한 것은 원문 범위를 정확히 보존한다."
+        },
+        {
+          "chapter": 19,
+          "skill_line": 26,
+          "claim": "문장 교정은 능동형, 중복 제거, 한 문장 한 의미를 목표로 한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 337~338/책 335~336의 교정 예시와 개선 이유가 세 기준을 명시한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": 3,
+          "claim": "장 전체가 디자인·프리 프로덕션·프로덕션·라이브 서비스의 네 단계를 다룬다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 340~341/책 338~339의 장 소개와 로드맵이 네 단계를 제시한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": 13,
+          "claim": "지휘관 사례는 기능 설명보다 조합 고민·전략적 편성이라는 핵심 재미를 먼저 정의하고 이를 선택지 다양성·연계 가시성·상황별 유효성 기준으로 내린다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 342~345/책 340~343의 핵심 재미와 방향 설정 절이 같은 사례와 기준을 설명한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": 15,
+          "claim": "제안서는 문제와 시스템 역할, 간략 흐름, 플레이어 경험·사업·개발 기대 효과를 제시한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 345~346/책 343~344의 제안서 작성 절과 기대 효과 표에 일치한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": "19-21",
+          "claim": "프리 프로덕션에서는 핵심/선택 기능과 대안을 준비하고, 범위를 구조 단위로 확정하며, 기능 단위 상세 문서와 병렬 작업이 가능한 킥오프 기준선을 만든다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 347~349/책 345~347이 미팅 준비, 범위 확정, 상세 문서, 킥오프 준비를 같은 내용으로 설명한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": "25-30",
+          "claim": "원문의 이슈 대응은 유형 분류→사실·가설 분리→축소·재활용·단계 배포안→문서 반영·알림의 고정 순서다.",
+          "verdict": "ATTRIBUTION_NEEDS_LABEL",
+          "evidence": "PDF 350~352/책 348~350은 방향 변경, 문서-구현 불일치, 버그, 일정 지연을 유형별 원인·전략으로 제시한다. 재현 조건, 수정 이유·범위·영향, 재활용, 우선순위 배포, 문서 반영은 원문에 있으나 '사실과 가설로 나눈다'와 이 네 항목의 고정 순서는 원문 문구가 아니라 스킬의 재구성이다.",
+          "finding_id": "F20-01"
+        },
+        {
+          "chapter": 20,
+          "skill_line": 32,
+          "claim": "기획자는 데이터·조건 분기·엔진 파라미터·밸런스 시뮬레이션을 다룰 수 있고 자체 테스트로 의도와 누락을 확인해야 한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 353/책 351은 해당 작업 목록과 QA가 기획 의도의 재미·구조적 완성도까지 보장하지 않는다는 설명, 직접 빌드 테스트의 필요성을 제시한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": "32,36",
+          "claim": "반복 조정 값은 도구/테이블화하고 출시 후 필요한 로그를 미리 요청한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 354/책 352는 지휘관 패시브 수치·조건의 도구/테이블화와 지휘관별 사용 횟수·스테이지별 사용 종류 로그를 예시한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": 36,
+          "claim": "패치 노트는 변경 이유·전후·영향 대상·기대 효과·예시를 포함하고, 지표는 1주 단면보다 2~3주 추이와 정성 피드백을 함께 본다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 355~357/책 353~355가 패치 노트 구조, 지표의 한계, 2~3주 차 추이, 커뮤니티·리뷰·고객센터 피드백을 직접 제시한다."
+        },
+        {
+          "chapter": 20,
+          "skill_line": 38,
+          "claim": "폴리싱은 버그 수정 외에 사용 흐름·UX·진입 장벽·기능 재설계·제거까지 포함한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 357/책 355의 폴리싱 정의와 개선 예시가 일치한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 7,
+          "claim": "시스템 기획자는 구조·관계·흐름을 설계하고 아이디어를 구현 가능한 형태로 옮기는 사람이다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 360/책 358이 이 정의와 필요한 기술·논리·UX·커뮤니케이션·전체 시야를 설명한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 13,
+          "claim": "우편 보상 수령은 조건·입력·처리·출력으로 분해되며 처리에는 수령 여부·유효기간·인벤토리·최대 보유량 검사가 포함된다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 361/책 359의 우편함 사례가 네 요소와 검사 항목을 그대로 제시한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 17,
+          "claim": "레진 분석은 사용 경로, 실시간 충전·보충·저장, 보상 선택 시점의 소모, 최대치, 반복 콘텐츠·성장 재화·운영 리듬·관리 전략을 본다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 362~363/책 360~361의 원신 레진 분석 항목과 일치한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 17,
+          "claim": "레퍼런스 분석의 누적은 UX·흐름의 패턴 라이브러리가 되어 새 설계의 도구 상자로 쓰인다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 363/책 361이 패턴 라이브러리라는 표현과 기능을 직접 설명한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 21,
+          "claim": "장비 조각 기능은 기존 성장 루프·공유 또는 전용 재화·강화 UI와 인벤토리·루프 과포화·신규 진입 장벽에 영향을 줄 수 있다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 363~364/책 361~362가 각 충돌 영역과 결과를 구체적으로 설명한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 25,
+          "claim": "파견 미션은 수령과 재파견, 남은 10분 같은 시간 기대를 통해 일일 루틴의 시작·끝과 추가 행동을 유도할 수 있다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 364~365/책 362~363이 1시간·4시간·8시간 파견과 퇴근 후 접속, 남은 10분의 사례를 제시한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 29,
+          "claim": "랜덤 상점의 '랜덤 품목 등장'은 플레이어별 여부와 슬롯 수 고정 여부가 빠지면 프로그래머와 QA가 다르게 해석할 수 있다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 365~366/책 363~364의 사례가 공통/개인별 품목과 3~10개 슬롯 오해를 설명한다. 04:00·상품 ID·6개 슬롯 문장은 스킬이 새 예시라고 명시한다."
+        },
+        {
+          "chapter": 21,
+          "skill_line": 33,
+          "claim": "2주 이벤트에서는 기존 UI·테이블 재사용, 필수 기능 우선, 보조 기능 후속 패치를 검토한다.",
+          "verdict": "SUPPORTED",
+          "evidence": "PDF 366/책 364가 같은 2주 이벤트 예시와 우선순위 판단을 제시한다."
+        }
+      ],
+      "findings": [
+        {
+          "id": "F18-01",
+          "severity": "LOW",
+          "chapter": 18,
+          "skill_file": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/chapters/ch18-document-workshop.md",
+          "skill_line": 27,
+          "issue": "컴포넌트 표의 필드를 원문보다 보편적으로 단정한다.",
+          "evidence": "PDF 317~324/책 315~322의 실제 공통 항목은 UI 명칭, 역할, 구성 요소, 작동 규칙, 디자인 의도, 배치 이유다. 활성 조건, 클릭 결과, 비활성 피드백, 시각 상태는 모든 컴포넌트에 공통으로 기재되지 않는다.",
+          "suggested_revision": "이어 컴포넌트별로 UI 명칭, 역할, 구성 요소, 작동 규칙, 디자인 의도, 배치 이유를 적고, 해당되는 경우 표시 데이터·활성 조건·클릭 결과·비활성 피드백·시각 상태를 명시한다(PDF 317~324쪽)."
+        },
+        {
+          "id": "F20-01",
+          "severity": "LOW",
+          "chapter": 20,
+          "skill_file": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/chapters/ch20-production-lifecycle.md",
+          "skill_line": "25-30",
+          "issue": "원문에 흩어진 이슈 대응 사례를 하나의 저자 고정 순서처럼 표현하고, 원문에 없는 '사실과 가설 분리'를 같은 출처에 묶었다.",
+          "evidence": "PDF 350~352/책 348~350은 유형별 원인과 대응 전략을 제시하지만 단일 4단계 절차를 명명하지 않는다. 수정 이유·범위·영향, 재현 조건, 자산 재활용, 우선순위 배포, 문서 반영은 근거가 있으나 '사실과 가설로 나눈다'는 스킬의 추가 실무 기준이다.",
+          "suggested_revision": "예를 들어 전투 HUD 공간이 없으면 효과 설명을 전투 전 브리핑에 두고 전투 중에는 아이콘만 보여 주는 방안을 비교한다. 원문의 여러 이슈 대응 사례를 실무 체크리스트로 재구성하면 다음과 같다. 1) 유형을 분류한다. 2) 원인, 변경 범위, 영향 시스템, 일정, 재현 조건을 정리한다. 사실과 가설의 구분은 프로젝트 적용 시 추가할 수 있다. 3) 핵심 경험을 유지하는 축소·재활용·단계 배포안을 만든다. 4) 결정과 새 사양을 문서에 반영하고 관련 파트에 알린다."
+        }
+      ],
+      "gaps": [],
+      "risks": [
+        "추출 텍스트의 OCR 표기 오류는 있었지만 검수 대상 주장과 핵심 수치는 문맥과 반복 표기로 식별 가능했다.",
+        "수정 대상 두 건은 설계 내용의 오류보다 저자 원문과 스킬 재구성의 경계 문제다."
+      ]
+    }
+  ],
+  "postfix_content_reviews": [
+    {
+      "review": {
+        "scope": "ch01-ch09 postfix verification",
+        "basis": "second-facts-01-09.json findings F01-F04",
+        "mode": "changed-lines-only recheck",
+        "edited_skill_files": false,
+        "verdict": "PASS",
+        "summary": "이전 사실 검수에서 지적한 4건이 모두 원문 근거와 일치하도록 수정되었다. 잔여 미해결 사실 오류 또는 출처 연결 문제는 없다."
+      },
+      "resolved_findings": [
+        {
+          "id": "F01",
+          "status": "RESOLVED",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch01-system-planning.md",
+          "skill_line": 23,
+          "change": "UI 선행 안티패턴에 ch05와 책/PDF 쪽을 직접 표기했다.",
+          "evidence": "ch05 원문은 UI를 기능의 결과물로 정의하고 기능 확정 전 UI 선행 시 재작업과 로직 누락이 생긴다고 명시한다.",
+          "pages": "책 80 / PDF 82",
+          "verdict": "PASS"
+        },
+        {
+          "id": "F02",
+          "status": "RESOLVED",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch03-design-intent.md",
+          "skill_line": 33,
+          "change": "한 줄 KPI 안티패턴에 ch04와 책/PDF 쪽을 직접 표기했다.",
+          "evidence": "ch04 원문은 리텐션·만족도·매출 등의 단편적 의도는 구체적 판단 기준이 되지 못한다고 설명한다.",
+          "pages": "책 62 / PDF 64",
+          "verdict": "PASS"
+        },
+        {
+          "id": "F03",
+          "status": "RESOLVED",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch08-rule-design.md",
+          "skill_line": 30,
+          "change": "운영 도구 조정 대상을 시세 검증 기준·범위·허용치로 한정하고 모든 수치에 대한 요구가 아님을 명시했다.",
+          "evidence": "원문 표현은 '검증 기준, 범위, 허용치는 운영 도구에서 조정 가능하도록 설계'로 한정된다.",
+          "pages": "책 120 / PDF 122",
+          "verdict": "PASS"
+        },
+        {
+          "id": "F04",
+          "status": "RESOLVED",
+          "skill_file": ".agents/skills/yuriring-game-system-design/chapters/ch09-flowcharts.md",
+          "skill_lines": "29, 81",
+          "change": "ch07에서 온 '대상 없음'을 ch09 직접 예시인 '재고 부족'으로 교체했다.",
+          "evidence": "ch09 제작 절차는 예외로 서버 오류, 재고 부족, 중복 요청을 직접 열거한다.",
+          "pages": "책 139 / PDF 141",
+          "verdict": "PASS"
+        }
+      ],
+      "remaining": {
+        "open_findings": 0,
+        "factual_errors": 0,
+        "source_linkage_gaps": 0,
+        "additional_full_review_required": false
+      },
+      "counts": {
+        "rechecked": 4,
+        "resolved": 4,
+        "unresolved": 0
+      }
+    },
+    {
+      "review_scope": {
+        "type": "postfix_recheck",
+        "files": [
+          "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/chapters/ch18-document-workshop.md",
+          "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/chapters/ch20-production-lifecycle.md"
+        ],
+        "findings_rechecked": [
+          "F18-01",
+          "F20-01"
+        ],
+        "overall_verdict": "PASS",
+        "scope_note": "기존 findings 2건의 수정 문장만 원문과 재대조했다."
+      },
+      "findings": [
+        {
+          "id": "F18-01",
+          "status": "RESOLVED",
+          "verdict": "PASS",
+          "skill_line": 27,
+          "rechecked_text": "원문의 컴포넌트 표는 UI 명칭, 역할, 구성 요소, 작동 규칙, 디자인 의도, 배치 이유를 정리한다. 표시 데이터·활성 조건·클릭 결과·비활성 시 피드백·시각 상태는 해당 요소에 필요한 경우 명시한다(PDF 317~324쪽).",
+          "evidence": "PDF 317~324/책 315~322의 컴포넌트 표는 UI 명칭·역할·구성 요소·작동 규칙·디자인 의도·배치 이유를 반복 사용한다. 활성 조건, 클릭 결과, 비활성 피드백, 시각 상태는 보상 수령·자동 파견·모두 수령·파견 시작 등 필요한 요소에만 나타난다.",
+          "resolution_reason": "공통 기재 항목과 조건적으로 적용되는 항목을 분리했으므로 원문 범위와 일치한다."
+        },
+        {
+          "id": "F20-01",
+          "status": "RESOLVED",
+          "verdict": "PASS",
+          "skill_line": "25-30",
+          "rechecked_text": "원문의 유형별 대응 사례(PDF 351~352쪽)를 다음 점검 항목으로 재구성했다. 이는 저자가 제시한 고정 순서가 아니다. 확인된 사실과 가설의 구분은 스킬이 보완한 적용 기준이다.",
+          "evidence": "PDF 351~352/책 349~350은 방향 변경·문서와 구현 불일치·버그·일정 지연을 유형별 원인과 전략으로 설명한다. 변경 사유·범위·영향·일정, 재현 조건, 자산 재활용, 우선순위 배포, 문서 반영은 원문에 있으나 단일 고정 순서와 사실·가설 구분은 원문에 없다.",
+          "resolution_reason": "절차가 원문 사례의 재구성임을 명시하고 고정 순서가 아니라고 밝혔다. 사실·가설 구분도 스킬의 추가 적용 기준으로 정확히 라벨링했다."
+        }
+      ],
+      "remaining_findings": [],
+      "gaps": []
+    }
+  ],
+  "primary_support_checks": {
+    "scope": "마스터·보조 자료의 사실과 출처 귀속 대조",
+    "checks": [
+      {
+        "file": "source.json",
+        "claim": "서명·저자·출판사",
+        "source": "PDF 1–3",
+        "result": "표지·판권과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "source.json",
+        "claim": "초판 1쇄 발행일 2026-01-05",
+        "source": "PDF 3",
+        "result": "판권 원문과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "SKILL.md / cheatsheet.md / patterns.md",
+        "claim": "기획 의도 증명 6질문",
+        "source": "책 69–70 / PDF 71–72",
+        "result": "필요·시점/미도입 문제/결과/차이/리스크/근거 여섯 축과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "SKILL.md / patterns.md",
+        "claim": "문제→역할→감정→플레이 흐름",
+        "source": "책 58–61 / PDF 60–63",
+        "result": "원문의 네 소제목 및 출석 사례에 부합",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "가데이터",
+        "source": "책 188 / PDF 190",
+        "result": "실데이터 생성 전 작동 확인 목적과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "하드코딩",
+        "source": "책 159 / PDF 161",
+        "result": "코드 내 값을 수정하는 원문 예시와 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "ENUM",
+        "source": "책 169 / PDF 171",
+        "result": "미리 정한 목록/의미·동작 설명과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "스트링 키",
+        "source": "책 195 / PDF 197",
+        "result": "고유 키와 언어별 출력의 관계와 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "메타포",
+        "source": "책 242 / PDF 244",
+        "result": "친숙한 개념으로 UI 의미 전달 설명과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "모달",
+        "source": "책 279–280 / PDF 281–282",
+        "result": "배경 컨트롤 차단 설명과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "배지",
+        "source": "책 280 / PDF 282",
+        "result": "미확인 신규 항목 점/숫자 알림과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "역방향 점검",
+        "source": "책 287 / PDF 289",
+        "result": "UI 복잡성에서 규칙 구조 재검토와 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "IA·정보 구조도",
+        "source": "책 250–251 / PDF 252–253",
+        "result": "정보/콘텐츠 계층·연결·탐색 흐름과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md",
+        "claim": "와이어프레임·UI 플로 차트",
+        "source": "책 250–252 / PDF 252–254",
+        "result": "구조/레이아웃과 화면 전환 역할 구분과 일치",
+        "verdict": "PASS"
+      },
+      {
+        "file": "glossary.md / SKILL.md",
+        "claim": "랜덤 풀 비중",
+        "source": "책 205–206 / PDF 207–208",
+        "result": "후보/같은 등급 비중/등급 확률 구분에 부합",
+        "verdict": "PASS"
+      },
+      {
+        "file": "patterns.md",
+        "claim": "출석부·보상·아이템 책임 분리",
+        "source": "책 176–181 / PDF 178–183",
+        "result": "원문 구조 재구성이고 별도 원본표 복제 주장 없음",
+        "verdict": "PASS"
+      },
+      {
+        "file": "patterns.md / cheatsheet.md",
+        "claim": "AI 효과 주장 검증",
+        "source": "ch19 + 적용 지침 표기",
+        "result": "저자 통계 사실로 단정하지 않고 스킬 보완 지침으로 표시",
+        "verdict": "PASS"
+      },
+      {
+        "file": "patterns.md / cheatsheet.md",
+        "claim": "양식·상황별 체크",
+        "source": "문서 머리말/해당 장 참조",
+        "result": "새 적용 양식임을 명시하고 책 원본으로 귀속하지 않음",
+        "verdict": "PASS"
+      }
+    ],
+    "findings": [],
+    "limits": "지원 자료 전체 읽기와 위 주장별 대조; 모든 용어의 별도 원문 페이지 전수 검사라고 주장하지 않음"
+  },
+  "primary_visual_checks": [
+    {
+      "pdf_page": 317,
+      "book_page": 315,
+      "result": "PASS",
+      "evidence": "타이틀 영역 표의 UI 명칭/역할/구성 요소/작동 규칙/디자인 의도/배치 이유 확인. 활성·비활성 필드를 모든 요소에 요구하지 않음."
+    },
+    {
+      "pdf_page": 351,
+      "book_page": 349,
+      "result": "PASS",
+      "evidence": "기획 방향 변경·문서-구현 불일치·버그 이슈 유형별 원인/대응으로 제시. 저자 고정 4단계 또는 사실/가설 분리 표현 없음."
+    }
+  ],
+  "initial_tests": {
+    "cases": [
+      {
+        "id": "request_1",
+        "request": "책에 나온 랜덤 풀 데이터 구조와 비중·확률의 차이를 알려줘. 새 가챠에서 후보 A/B/C의 비중이 2/3/5일 때 각 확률을 계산하고, 독립 2회 뽑기에서 최소 한번 A일 확률도 계산해줘. 책의 예시값과 내 입력을 구분해줘.",
+        "actual_response": "책의 구조부터 보면, 가챠는 세 층으로 분리합니다. ① 가챠 상품 테이블은 가격·기간과 함께 ‘사용할 등급별 확률 그룹’과 ‘랜덤 풀’을 연결하고, ② 등급별 등장 확률 테이블은 픽업/SSR/SR/R/N처럼 상위 등급·범주의 절대 등장 확률을 정하며, ③ 랜덤 풀 테이블은 실제 후보 목록과 후보별 비중을 둡니다. 랜덤 풀의 주요 칼럼은 랜덤 풀 ID, 랜덤 풀 그룹 ID, 비중, 타입, 구성품 ID, 픽업 대상 여부입니다. 타입이 CHARACTER면 구성품 ID는 캐릭터 테이블을, EQUIPMENT면 장비 테이블을 참조합니다. 픽업 대상 여부는 Boolean이며 책 예시에서는 천장 도달 시 확정 후보로 쓸지를 나타냅니다. (ch12, 책 203~206쪽)\n\n비중은 확률값 자체가 아니라 같은 추첨 집합 안에서 몫을 나누는 상대값입니다. 따라서 합계가 100일 필요가 없습니다. 후보 i의 풀 내부 조건부 확률은 `비중_i / 해당 추첨 집합의 비중 합`이고, 상위 등급 확률까지 있는 구조라면 최종 절대 확률은 `상위 등급 확률 × 비중_i / 비중 합`입니다.\n\n[책의 예시값] 책은 동일 SSR 집합의 Bear, SpecialSword, Lion, SpecialArmor가 각각 비중 1이고, PICKUP 그룹의 SSR_RATE가 0.5%일 때 Bear의 최종 확률을 `(1/4) × 0.5% = 0.125%`로 계산합니다. 이 네 후보의 비중 합은 4입니다. (책 205~206쪽)\n\n[사용자 입력 계산] A/B/C가 같은 추첨 집합에 있고, 이 셋 중 하나를 비중만으로 뽑는다고 가정하면 비중 합은 `2+3+5=10`입니다. 따라서 A는 `2/10=20%`, B는 `3/10=30%`, C는 `5/10=50%`입니다. 별도의 상위 등급 확률이 있다면 이 20%/30%/50%는 그 등급이 이미 선택되었다는 조건부 확률이고, 각 최종 확률에는 상위 등급 확률을 한 번 더 곱해야 합니다.\n\n각 뽑기가 서로 독립이고 매회 풀과 비중이 그대로인 복원 추첨이라면, 2회 중 최소 한 번 A가 나올 확률은 여사건으로 계산합니다. `1 - P(두 번 모두 A가 아님) = 1 - (1-0.2)^2 = 1 - 0.64 = 0.36`, 즉 `36%`입니다.",
+        "evidence": [
+          {
+            "source": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch12.txt",
+            "location": "책 203~206쪽(PDF 205~208)",
+            "supports": "가챠 상품/등급별 확률/랜덤 풀의 3테이블 구조, 랜덤 풀 칼럼, 비중의 정의, 책의 1/4×0.5%=0.125% 예시"
+          },
+          {
+            "source": "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf",
+            "location": "PDF 207~208쪽",
+            "supports": "등급별 확률 표와 랜덤 풀 표의 실제 열 연결 및 수치 시각 검증; OCR의 PICKUP행 SR_RATE 오독을 원본의 9로 확인"
+          },
+          {
+            "check": "A/B/C 확률 합",
+            "result": "20% + 30% + 50% = 100%"
+          },
+          {
+            "check": "독립 2회 중 최소 1회 A",
+            "result": "1-(1-0.2)^2 = 0.36 = 36%"
+          }
+        ],
+        "self_evaluation": {
+          "원문_근거": "충족. 원문 텍스트와 원본 PDF 207~208쪽을 대조했다.",
+          "사용자_조건": "충족. 책의 예시값과 사용자 입력을 명시적으로 분리했고, 독립·복원·동일 풀 가정을 밝혔다.",
+          "수학_검증": "충족. 단일 확률 합이 100%이며 여사건 계산은 36%다.",
+          "사실_혼동": "없음. 비중을 절대 확률로 단정하지 않았고 상위 등급 확률이 있을 때의 조건부/절대 확률을 구분했다."
+        },
+        "verdict": "PASS"
+      },
+      {
+        "id": "request_2",
+        "request": "책의 거래소 예시와 파티 초대 플로차트에 나온 제한·판정·예외를 정확히 알려줘. 정보가 그림에 있으면 원본을 확인하고, 애매한 정책은 단정하지 말아줘.",
+        "actual_response": "아래 내용은 책의 ‘예시 설계’입니다. 숫자를 모든 게임에 적용할 보편 규칙으로 보지 않아야 합니다. 특히 책이 `예:`로 표기한 값은 예시값으로 구분했습니다.\n\n[거래소 예시: 등록·취소·검증]\n- 등록 순서: 인벤토리 아이템 선택 → 수량·개당 가격 입력 → 예외 검증 → 통과 시 ‘검증 대기’ → 대기 중 다른 이용자에게 미노출 → 시세 범위 자동 검증 뒤 등록 확정 또는 거부입니다.\n- 등록 제한/예외: 계정 레벨 10 미만, 거래 불가 아이템, 보유 수량 부족, 같은 계정의 같은 아이템 등록 5건 초과를 막고 각각 안내합니다. 여기서 레벨 10과 5건은 이 거래소 사례의 설정값입니다.\n- 취소 판정: 판매 완료 전이며 취소 가능한 상태인지 확인합니다. 요청 도중 이미 거래되었으면 취소 불가, 등록 후 10분이 지나지 않았으면 취소 불가, 일정 시간 안에 반복 취소하면 경고 후 임시 거래 제한입니다. ‘일정 시간’과 임시 제한의 기간은 본문에 확정값이 없습니다.\n- 지연 등록: 최근 거래 평균가 허용 범위를 확인하고 초과 시 거부·사유 안내합니다. 허용 범위 `±200%`는 책이 든 예시값입니다. 대기 중 아이템을 회수하면 즉시 취소하고, 검증 기준이 바뀌면 기존 대기 건도 새 기준으로 재검토합니다. (ch08, 책 121~123쪽)\n\n[거래소 예시: 구매·정산·검색]\n- 구매: 서버 재고 확인 → 구매 수량과 총액 계산 → 소지금 확인 → 거래 완료 후 아이템을 우편함으로 지급 → 판매자에게 수수료 차감 금액을 보냅니다. 재고 없음, 소지금 부족, 동시 구매 충돌을 예외로 처리합니다. 충돌 시 첫 시도자 우선이며 후속 시도자는 재고 없음 안내를 받습니다. 서버 오류로 미확정 거래가 생기면 취소·환불·재고 복구합니다.\n- 수수료/정산: 구매 완료 시 판매자 금액에서 수수료를 차감하고, 고정 수수료율과 소수점 반올림을 사용합니다. `10%`는 예시값입니다. 판매자는 완료 상품의 정산 버튼으로 금액을 받고, 계정 보유 한도를 넘으면 정산하지 못합니다. 한도 수치는 제시되지 않습니다.\n- 검색/열람: 카테고리·하위 카테고리는 데이터 테이블로 관리합니다. 하위 카테고리 목록은 등급순→이름순, 개별 아이템 목록은 낮은 가격순→오래된 등록순입니다. 검색어는 완전 일치→부분 일치 순으로 정렬합니다. 새 상품이 생겨도 보고 있던 화면을 강제 갱신하지 않고 수동 새로고침을 제공하며, 서버 부하 방지를 위한 새로고침 쿨타임은 사례에서 5초입니다. 검색 결과 없음, 빈 검색어, 특수 문자 입력도 각각 메시지 출력/검색 미실행/특수 문자 자동 제거로 처리합니다. (책 123~124쪽)\n\n[파티 초대 플로차트: 원본 그림 확인 결과]\n판정은 아래 순서로 직렬 수행되며, 각 조건이 YES이면 해당 안내를 낸 뒤 현재 프로세스를 종료합니다. 모두 NO일 때만 게스트 대상 파티 초대 알림 프로세스를 시작합니다.\n1. 호스트 파티 정원이 가득 참 → 호스트에게 `[정원 초과 알림 팝업]`\n2. 게스트가 오프라인 → 호스트에게 `[초대 불가 알림 팝업]`\n3. 게스트가 호스트를 차단함 → 같은 `[초대 불가 알림 팝업]`\n4. 게스트가 자동 거절 옵션을 활성화함 → 같은 `[초대 불가 알림 팝업]`\n5. 게스트가 파티 불가 콘텐츠를 이용 중임 → 같은 `[초대 불가 알림 팝업]`\n6. 게스트가 이미 호스트 또는 다른 사람의 파티에 합류함 → 호스트에게 `[합류 중 알림 팝업]`\n7. 게스트가 다른 파티 초대 알림을 확인하는 대기 상태임 → 호스트에게 `[대기 중 알림 팝업]`\n8. 모두 해당 없음 → `게스트 대상 파티 초대 알림 프로세스 시작` 후 현재 검증 프로세스 종료\n\n원본 그림은 위 순서와 합류선을 보여 주지만, 초대 알림 이후 게스트의 수락/거절, 응답 제한 시간, 초대 중 정원이 찬 경쟁 상황, 팝업의 정확한 문구까지는 정의하지 않습니다. 또한 차단/자동 거절/파티 불가 콘텐츠가 같은 ‘초대 불가’ 팝업으로 합류한다는 것은 확인할 수 있지만, 세 사유를 팝업 안에서 별도로 공개하는지는 알 수 없습니다. 이 부분은 미정 정책으로 남겨야 합니다. (ch09, 책 141~142쪽; PDF 144쪽 원본 도식 확인)",
+        "evidence": [
+          {
+            "source": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch08.txt",
+            "location": "책 121~124쪽(PDF 123~126)",
+            "supports": "거래소 등록, 취소, 지연 등록, 구매, 정산, 검색의 제한·판정·예외"
+          },
+          {
+            "source": "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf",
+            "location": "PDF 124~126쪽",
+            "supports": "거래소 예시의 숫자와 안내 문구, 구매·검색 예외를 원본 페이지로 확인"
+          },
+          {
+            "source": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch09.txt",
+            "location": "책 141~142쪽(PDF 143~144)",
+            "supports": "파티 초대 검증 항목과 설계 포인트"
+          },
+          {
+            "source": "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf",
+            "location": "PDF 144쪽 원본 플로차트",
+            "supports": "판정 순서, YES/NO 분기, 공통 초대 불가 팝업으로의 합류, 성공 시 하위 프로세스 시작, 각 경로의 종료"
+          }
+        ],
+        "self_evaluation": {
+          "원문_근거": "충족. 숫자·표현은 ch08 원문 및 PDF 124~126쪽, 도식 흐름은 PDF 144쪽으로 직접 확인했다.",
+          "사용자_조건": "부분 충족. 제한·판정·예외 및 그림 정보는 확인했으나, 거래 완료 시 금액 전송과 정산 버튼 시 금액 지급이 함께 적힌 원문의 지급 시점 모호성을 답변에서 명시하지 않았다.",
+          "수학_검증": "해당 없음. 다만 ±200%, 10%, 5초를 예시값으로 명시했다.",
+          "사실_혼동": "지급 시점 설명에 결함이 있다. 실제 답변은 ‘판매자에게 수수료 차감 금액을 보낸다’와 ‘정산 버튼으로 금액을 받는다’를 함께 서술하면서, 즉시 잔액 반영인지 정산 대기 금액 적립인지 원문만으로 확정할 수 없다는 점을 밝히지 않았다. 파티 플로차트의 미정 사항 구분은 적절하다."
+        },
+        "reviewer_notes": {
+          "recheck_performed": "기존 ch08 원문을 다시 읽었다. source/ch08.txt의 아이템 구매 규칙·수수료 처리 및 정산 규칙(책 123~124쪽)과 규칙 검토·보완 단계의 지급/차감 시점 점검 문단(책 125쪽)을 대조했다.",
+          "finding": "원문은 구매 완료 시 ‘판매자에게 수수료를 차감한 판매 금액 전송’ 및 ‘구매가 완료된 시점에서 ... 금액 전송’이라고 쓰면서, 이어 ‘판매자가 ... 정산 버튼을 누르면 금액 지급’이라고도 쓴다. 판매 대금이 구매 완료 때 정산 대기 잔액으로 이동하고 버튼 때 실제 보유 금액으로 수령되는지 등 상태 모델이 정의되지 않아 지급 시점이 상충하거나 최소한 모호하다.",
+          "impact": "actual_response는 두 문장을 나란히 옮겼지만 이 모호성을 명시하지 않았으므로, 사용자의 ‘애매한 정책은 단정하지 말아줘’ 조건을 완전히 만족하지 못한다.",
+          "required_correction": "원래 actual_response는 보존한다. 올바른 보완은 ‘책 예시에는 구매 완료 시 판매 금액 전송과 정산 버튼 시 금액 지급이 함께 적혀 있어 실제 잔액 반영 시점/정산 대기 상태는 확정할 수 없다’고 명시하고, 구현 전 판매 대금의 상태 전이와 수수료 차감 시점을 결정하도록 요구하는 것이다.",
+          "verdict_reason": "핵심 거래소 규칙과 파티 도식 대부분은 정확하지만, 명시적으로 요구된 모호성 비단정 조건에서 한 건의 실질적 누락이 있어 PARTIAL이다."
+        },
+        "verdict": "PARTIAL"
+      },
+      {
+        "id": "request_3",
+        "request": "게임패드 전용 오프라인 게임이야. 텍스트 입력 없이 여러 필터를 켜고 끄는 인벤토리 탐색 UI를 작성해줘. 기획 의도를 정리하되 기존 장비 선택 흐름은 유지하고 기본값/저장범위는 미정으로 남겨줘.",
+        "actual_response": "## 인벤토리 복합 필터 UI 명세\n\n### 기획 의도\n- 많은 장비 중 원하는 후보를 게임패드만으로 빠르게 좁힌다.\n- 텍스트 검색을 요구하지 않고, 미리 정의된 조건을 여러 개 동시에 켜고 끌 수 있게 한다.\n- 필터는 장비 목록의 표시 범위만 바꾸며, 기존의 `목록에서 장비로 이동 → 장비 선택 → 상세 확인/장착 등 기존 행동` 흐름은 유지한다.\n- 필터 조작의 현재 상태와 결과 건수를 즉시 보여 줘 입력이 반영됐는지 분명하게 알린다.\n\n### 화면 구조\n- 기존 인벤토리의 장비 목록과 선택 강조, 상세 패널, 장착/비교 버튼은 그대로 둔다.\n- 목록 상단에 `필터 적용 수`와 `현재 결과 수`를 표시한다. 예: `필터 3개 · 18개`.\n- 전용 버튼(예: Y)으로 목록 위에 필터 패널을 연다. 패널은 목록을 교체하는 새 화면이 아니라 오버레이 또는 측면 패널로 열어 기존 선택 맥락을 보존한다.\n- 필터 그룹 예시: 장비 종류, 장착 부위, 등급, 사용 가능 여부, 신규 획득 여부. 실제 항목은 프로젝트 장비 데이터에 맞춰 확정한다.\n- 한 그룹 안의 항목은 체크 상태 행으로 표시해 복수 선택을 허용한다. 상태는 체크 아이콘, 명도/색, `켜짐/꺼짐` 레이블 중 둘 이상으로 구분한다. 색만으로 구분하지 않는다.\n- 항목 수가 화면을 넘으면 수직 스크롤을 쓰고, 아래 항목이 더 있다는 화살표나 일부 잘림 표시를 둔다. 향후 필터 추가를 고려해 그룹 단위 접기/펼치기를 허용한다.\n\n### 게임패드 조작\n- Y: 필터 패널 열기. 열 때 포커스는 마지막으로 조작한 필터 또는 패널의 첫 항목으로 이동한다. 어느 방식을 쓸지는 `포커스 복귀 정책 미정`으로 둔다.\n- 방향키/왼쪽 스틱: 그룹과 필터 항목 사이 포커스 이동.\n- A: 포커스 중인 필터를 켜기/끄기. 조작 즉시 체크 상태, 적용 필터 수, 결과 수, 뒤쪽 장비 목록을 갱신한다.\n- LB/RB: 필터 그룹이 많을 때 이전/다음 그룹으로 빠르게 이동한다. 그룹 수가 적으면 미사용한다.\n- X: `현재 그룹 전체 켜기/전체 끄기` 후보 동작. 이 기능의 필요 여부와 한 버튼에서 두 동작을 어떻게 구분할지는 `미정`이다.\n- B: 패널을 닫고 장비 목록으로 돌아간다. 텍스트 입력 필드는 제공하지 않는다.\n\n### 기존 장비 선택 흐름 보존 규칙\n1. 필터 패널을 열어도 기존 선택 장비 ID는 유지한다.\n2. 필터 결과에 기존 선택 장비가 남아 있으면 패널을 닫을 때 그 장비에 포커스를 복귀한다.\n3. 기존 선택 장비가 필터로 숨겨졌다면 선택을 임의 해제하거나 다른 장비를 자동 장착하지 않는다. 패널을 닫을 때 결과 목록의 첫 항목에 탐색 포커스만 두고, 상세 패널에는 `선택 장비가 현재 필터에서 숨겨짐` 상태를 표시한다. 실제 선택 변경은 플레이어가 A로 새 장비를 선택할 때만 발생한다.\n4. 결과가 0개면 빈 결과 안내와 `필터 다시 열기(Y)`를 표시한다. 장착 상태와 기존 선택 데이터는 바꾸지 않는다.\n5. 필터 적용 중에도 기존 장비 선택·상세 확인·장착 버튼과 그 확인 절차는 기존 규칙을 그대로 사용한다.\n\n### 필터 조합·예외\n- 같은 그룹의 여러 항목은 OR, 서로 다른 그룹은 AND로 조합하는 안을 제안한다. 예: `(검 또는 활) AND (에픽 또는 전설) AND 장착 가능`. 다만 이 조합 규칙은 프로젝트의 기존 필터 규칙이 있다면 그 규칙을 우선하고, 없다면 정책 확정이 필요하다.\n- 필터 상태를 바꿀 때마다 결과를 즉시 갱신하되, 목록 재배치 애니메이션 동안 추가 입력을 막기보다 짧은 시각·음향 피드백으로 상태 변화를 알린다. 대량 목록에서 지연이 생기면 로딩 표시 기준을 별도 정의한다.\n- 비활성화할 수 없는 필터가 생긴다면 잠금 이유를 보조 설명 영역에 표시한다.\n- 전체 해제 기능을 넣는 경우에도 장비 선택·장착 상태는 변경하지 않고 필터 상태만 해제한다.\n\n### 미정 정책\n- `필터 기본값: 미정` — 전부 꺼짐, 전부 켜짐, 콘텐츠별 권장값 중 선택 필요.\n- `저장 범위: 미정` — 화면을 닫을 때 폐기, 해당 세이브 슬롯, 로컬 프로필/기기 범위 중 선택 필요. 오프라인 게임이므로 서버 저장은 전제하지 않지만, 어떤 로컬 범위에 보존할지는 정하지 않는다.\n- `저장 시점: 미정` — 토글 즉시, 패널 닫기, 인벤토리 종료 중 선택 필요.\n- `포커스 복귀 정책: 미정` — 마지막 필터 기억 또는 첫 항목 고정.\n\n책의 체크박스 원칙은 복수 선택에 적합하고, 토글 원칙은 켜짐/꺼짐 상태를 명확히 표시하며 저장 시점을 정의하라고 합니다. 탐색 UI는 콘텐츠 양과 입력 환경에 맞게 구성하고, 리스트·복합 필터는 확장을 전제로 설계해야 합니다. 위 명세는 이 원칙을 게임패드 전용 오프라인 인벤토리에 새로 적용한 설계안입니다. (ch15, 책 258~263쪽; ch16, 책 272~287쪽)",
+        "evidence": [
+          {
+            "source": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch15.txt",
+            "location": "책 258~263쪽",
+            "supports": "인벤토리 정렬 UI의 역할·상호작용·기본값·저장 여부 명세 방식, 기본값과 클라이언트/서버 저장 범위의 구분"
+          },
+          {
+            "source": "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch16.txt",
+            "location": "책 272~274쪽, 282~287쪽",
+            "supports": "복수 선택에는 체크박스, 즉시 ON/OFF에는 토글, 명확한 상태 표현, 스크롤 단서, UI 일관성·확장성·피드백 원칙"
+          },
+          {
+            "check": "사용자 제약 추적",
+            "result": "게임패드 전용 조작 명시, 텍스트 입력 제거, 복수 필터 토글 제공, 기존 장비 선택 ID·장착 상태 보존, 기본값·저장 범위·저장 시점을 미정으로 유지"
+          }
+        ],
+        "self_evaluation": {
+          "원문_근거": "충족. ch15의 요소 명세·저장 원칙과 ch16의 복수 선택·토글·탐색·확장성 원칙을 필요한 범위만 적용했다.",
+          "사용자_조건": "충족. 게임패드만 사용하며 텍스트 입력이 없고, 여러 필터를 개별 토글한다. 기존 장비 선택/장착 흐름을 보존하며 기본값과 저장 범위를 확정하지 않았다.",
+          "수학_검증": "해당 없음.",
+          "사실_혼동": "없음. 책의 일반 원칙과 새 프로젝트 적용안을 구분했다. OR/AND 조합, X 버튼, 포커스 복귀는 제안 또는 미정으로 표시했다."
+        },
+        "verdict": "PASS"
+      }
+    ]
+  },
+  "fresh_independent_tests": {
+    "test": "yuriring-game-system-design independent fresh regression",
+    "skill": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/SKILL.md",
+    "constraints": {
+      "language": "ko",
+      "sources_used": [
+        "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch08.txt",
+        "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch18.txt",
+        "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/source/ch20.txt",
+        "/var/folders/99/kpfx0mdj3fvbczqpbncjl0bm0000gn/T/yuriring-second-review-v_sj2pym/manifest.json",
+        "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf"
+      ],
+      "prior_reviews_or_agent_results_read": false
+    },
+    "cases": [
+      {
+        "id": "marketplace-settlement-and-relist",
+        "request": "책 거래소 예시에서 판매 완료된 재화는 자동으로 들어오나, 정산 버튼을 눌러야 하나? 취소 직후 바로 재등록 가능한지도 알려줘. 책만으로 확정 가능한 사실과 미정인 사항을 나눠줘.",
+        "actual_response": "책의 거래소 예시는 정산 시점에 관해 서로 충돌하는 문장을 담고 있어, ‘판매 완료 즉시 지갑에 자동 입금된다’고는 확정할 수 없습니다.\n\n책만으로 확정 가능한 사실\n- 수수료 처리 및 정산 규칙에는 ‘판매자가 판매 아이템 목록에서 거래가 완료된 상품의 정산 버튼을 누르면 금액 지급’이라고 명시되어 있습니다(책 123쪽). 따라서 실제 조작 명세로는 정산 버튼을 누르는 수동 수령 절차가 제시됩니다.\n- 판매 등록 취소는 판매 완료 이전에만 가능합니다. 등록 직후 10분 동안은 취소할 수 없고, 취소 요청 도중 거래가 끝나면 취소할 수 없습니다(책 122쪽).\n- 설계 기준의 예시에는 ‘취소 후 5분간 재등록 불가’가 있습니다(책 120쪽). 그러므로 책의 예시 수치를 그대로 적용하면 취소 직후 즉시 재등록할 수 없습니다.\n\n책만으로 확정할 수 없는 사항\n- 같은 장의 구매 규칙에는 거래 완료 뒤 판매자에게 수수료를 뺀 판매 금액을 ‘전송’한다고 쓰고, 정산 규칙 첫 단계에도 구매 완료 시 금액을 전송한다고 쓰면서, 이어서 정산 버튼을 눌러야 지급된다고 씁니다(책 123쪽). 이 ‘전송’이 판매 대금의 정산 대기 기록을 만든다는 뜻인지, 실제 보유 재화에 자동 입금한다는 뜻인지 정의되어 있지 않습니다. 가장 자연스러운 구현 해석은 ‘거래 완료 시 정산 대금을 생성하고, 버튼 클릭 시 보유 재화로 지급’이지만 이는 문맥에 따른 보완 해석이지 책의 명시 규칙은 아닙니다. 구현 전 용어와 상태를 확정해야 합니다.\n- 재등록 쿨타임 자체의 필요성은 분명하지만 5분은 ‘예’로 제시된 값입니다. 뒤의 상세 취소 규칙에는 재등록 가능 시점과 상태 전이가 다시 명세되지 않습니다. 따라서 실제 프로젝트의 확정 시간값이라고 볼 수 없습니다. 책은 쿨타임이 너무 짧으면 시세 조작, 너무 길면 가격 조정과 거래 기회를 막는다고 하므로 최종 값은 경제 설계와 운영 기준으로 정해야 합니다.",
+        "evidence": [
+          {
+            "source": "ch08.txt",
+            "location": "221-225, 책 120쪽",
+            "supports": "등록 취소 및 재등록 쿨타임을 두며 예시로 등록 후 10분 취소 불가, 취소 후 5분 재등록 불가를 제시한다."
+          },
+          {
+            "source": "ch08.txt",
+            "location": "348-379, 책 122쪽",
+            "supports": "판매 완료 전 취소, 등록 후 10분 취소 제한, 취소 중 거래 완료 시 취소 불가, 반복 취소 제재를 명시한다."
+          },
+          {
+            "source": "ch08.txt",
+            "location": "425-446, 책 123쪽",
+            "supports": "구매 완료 처리 뒤 판매자에게 수수료 차감 금액을 전송한다고 적는다."
+          },
+          {
+            "source": "ch08.txt",
+            "location": "451-477, 책 123-124쪽",
+            "supports": "구매 완료 시 금액 전송과 정산 버튼 클릭 시 금액 지급을 같은 기본 흐름에 함께 적어 자동 입금 여부의 용어 충돌이 생긴다."
+          },
+          {
+            "source": "ch08.txt",
+            "location": "595-600, 책 125쪽",
+            "supports": "재등록 쿨타임이 너무 짧거나 긴 경우의 상반된 위험을 점검하도록 한다."
+          }
+        ],
+        "verdict": {
+          "status": "PASS",
+          "rationale": "정산 버튼이라는 상세 규칙, 취소·재등록 제한, 예시값과 확정값의 차이를 원문대로 구분했고, 자동 전송/버튼 지급의 문구 충돌을 숨기지 않고 미정 사항으로 판정했다.",
+          "gaps": [
+            "원문 자체가 ‘금액 전송’과 ‘정산 버튼 후 지급’을 함께 사용하므로 판매 대금의 중간 상태와 지갑 반영 시점은 확정할 수 없다.",
+            "취소 후 5분은 예시이며 상세 상태 전이 명세가 없어 실제 제품의 고정값으로 확정할 수 없다."
+          ]
+        }
+      },
+      {
+        "id": "ui-component-spec-and-development-issue-response",
+        "request": "18장과 20장에서 책이 실제 제시한 UI 컴포넌트 명세 항목과 개발 이슈 대응 방식을 요약해줘. 저자가 직접 제시한 기준과 스킬이 덧붙여 재구성한 절차를 구분하고, 고정 제목(입력 없음)에도 클릭·비활성 상태 명세가 필요한지 판단해줘.",
+        "actual_response": "저자가 직접 제시한 내용과 스킬의 재구성을 나누면 다음과 같습니다.\n\n저자가 18장에서 실제 사용한 UI 컴포넌트 명세 항목\n- 표의 반복 항목은 ‘UI 명칭, 역할, 구성 요소, 작동 규칙, 디자인 의도, 배치 이유’입니다(책 315-322쪽). 구성 요소에는 표시 텍스트·버튼·데이터 테이블 필드 같은 실제 하위 요소와 데이터 출처를 적고, 작동 규칙에는 클릭 결과, 활성 조건, 실시간 갱신, 정렬, 팝업/토스트 같은 동작을 해당 요소에 맞게 적습니다.\n- 모든 행에 모든 종류의 상태를 기계적으로 채우지는 않습니다. 예를 들어 ‘파견 현황 패널 제목’은 패널 제목 표기라는 역할, 제목 텍스트, ‘고정 영역이며 다른 UI의 영향을 받지 않음’이라는 작동 규칙을 명세합니다(책 317쪽). 반면 보상 수령·파견·자동 파견·모두 수령 버튼에는 활성 조건과 클릭 결과를 구체적으로 적습니다(책 317-319쪽).\n\n저자가 20장에서 실제 제시한 개발 이슈 대응 방식\n- 먼저 개발자가 모호하게 느끼는 지점과 막힌 기능을 확인하고, 기획 의도를 유지하는 현실적 우회안을 제시합니다. HUD 공간 부족 사례에서는 효과명·설명 노출을 줄이되 버프 적용 여부는 유지하는 대안을 듭니다(책 348-349쪽).\n- 방향 변경: 전체 재설계보다 기존 구조에서 바꿀 수 있는 범위를 분석하고, 변경 사유·수정 범위·영향 시스템·일정을 공유 문서로 남기며, 기존 자산을 재활용하는 우회안을 기획서에 즉시 반영하고 변경/유지 범위를 전 파트에 알립니다.\n- 기획서와 구현 불일치: 현재 구현 상태를 먼저 정확히 파악하고, 구현이 더 효율적이라면 기획 의도를 기준으로 방향을 조정할 여지도 둡니다.\n- 버그·예상 밖 동작: 발생 조건과 흐름을 재현 가능하게 정리하고, 경우에 따라 설계의 예외 처리를 추가합니다.\n- 일정 지연·난이도 상승: 어려운 지점을 개발 담당자와 확인하고, 우선순위별 배포나 1차 제외 기능을 협의하며, 라이브 영향과 개발 리스크로 지금 수정할 것·나중에 고칠 것·빠지면 안 될 핵심을 나눕니다.\n- 수정 요청이 오면 이유, 범위, 다른 시스템/기존 구현에 미치는 파급력을 빠르게 정리하고, 변경 내용을 실시간으로 적어도 당일 기획서에 반영합니다. 기능이 구현되면 기획자도 직접 빌드에서 의도대로 동작하는지 테스트합니다(책 350-351쪽).\n\n스킬이 덧붙여 재구성한 절차\n- 스킬의 ‘요소의 이름·역할·입력·상호 작용·기본값·저장 여부’는 18장의 표 제목을 그대로 옮긴 목록이 아니라, 13-16장까지의 UX/UI 내용을 실무 체크리스트로 재구성한 것입니다. 또한 검토 결과를 ‘문제 → 플레이·구현 영향 → 수정안’ 순서로 쓰라는 것도 스킬의 산출물 규칙입니다.\n- 이를 18·20장에 적용해 ‘이슈 분류 → 현재 구현/재현 조건 확인 → 지킬 기획 의도 확인 → 영향·우선순위 판단 → 우회안 합의 → 기획서 즉시 갱신 → 빌드 검증’으로 정리할 수는 있습니다. 다만 이것은 책에 같은 이름과 순서로 제시된 7단계 절차가 아니라, 책의 여러 기준을 스킬이 연결한 적용 절차입니다.\n\n고정 제목 판단\n- 입력도 상호 작용도 없는 고정 제목 자체에는 클릭 결과나 활성/비활성 상태를 억지로 명세할 필요가 없습니다. 책의 고정 패널 제목 예시도 클릭·비활성 상태 대신 고정 영역이라는 성질을 적습니다. 제목의 문구/데이터 출처, 역할, 위치, 고정 여부, 다른 UI 변화의 영향 여부를 명세하면 충분합니다.\n- 제목 영역 안에 뒤로 가기 버튼처럼 별도 조작 요소가 있으면 그 버튼의 클릭 결과는 따로 명세해야 합니다. 실제 타이틀 영역 예시는 고정 타이틀 텍스트와 뒤로 가기 버튼을 구성 요소로 나누고, 작동 규칙에는 뒤로 가기 버튼 클릭 시 이전 화면으로 돌아간다고 적습니다(책 315쪽). 제목 자체가 클릭되거나 조건에 따라 숨김·비활성화되는 제품 요구가 생긴 경우에만 해당 상태를 추가하면 됩니다.",
+        "evidence": [
+          {
+            "source": "ch18.txt",
+            "location": "1093-1114, 책 315쪽",
+            "supports": "타이틀 영역에 UI 명칭·역할·구성 요소·작동 규칙·디자인 의도·배치 이유를 쓰고, 클릭 규칙은 구성 요소인 뒤로 가기 버튼에만 부여한다."
+          },
+          {
+            "source": "ch18.txt",
+            "location": "1232-1248, 책 317쪽",
+            "supports": "고정 패널 제목은 제목 텍스트와 ‘고정 영역, 다른 UI의 영향을 받지 않음’을 명세하며 클릭·비활성 상태를 두지 않는다."
+          },
+          {
+            "source": "ch18.txt",
+            "location": "1280-1417, 책 317-319쪽",
+            "supports": "상호 작용 버튼에는 완료 상태, 빈 슬롯, 클릭 결과, 비활성 클릭 토스트 같은 조건별 규칙을 명세한다."
+          },
+          {
+            "source": "ch18.txt",
+            "location": "1463-1678, 책 319-322쪽",
+            "supports": "표시 영역·선택 슬롯·취소·파견 실행 버튼마다 같은 기본 명세 틀을 적용하되 필요한 작동 규칙만 선택적으로 기재한다."
+          },
+          {
+            "source": "ch20.txt 및 원본 PDF 351-352쪽",
+            "location": "ch20.txt 567-714, 책 348-350쪽",
+            "supports": "모호성/막힌 기능 확인, 의도 보존 우회안, 방향 변경·불일치·버그·일정 지연 대응, 이유·범위·파급력 정리, 기획서 즉시 반영을 제시한다. OCR 누락 문구는 원본 PDF 351-352쪽에서 확인했다."
+          },
+          {
+            "source": "ch20.txt",
+            "location": "746-768, 책 351쪽",
+            "supports": "구현 후 기획자가 직접 빌드를 확인하고 의도대로 작동하는지 테스트해야 한다고 말한다."
+          },
+          {
+            "source": "SKILL.md",
+            "location": "사용과 산출물, 핵심 사고 도구 8-9",
+            "supports": "불명확 사항을 가정/미결정으로 표시하고 저자 직접 내용과 스킬 재구성을 구분하며, UI를 이름·역할·입력·상호 작용·기본값·저장 여부로 정의하고 검토를 문제→영향→수정안 순으로 쓰도록 재구성한다."
+          }
+        ],
+        "verdict": {
+          "status": "PASS",
+          "rationale": "18장의 실제 표 항목과 20장의 실제 이슈 대응 기준을 원문에 맞게 요약했고, 스킬 체크리스트와 새 7단계 절차를 저자의 직접 목록으로 오인하지 않도록 명시적으로 분리했다. 고정 제목 판단도 책의 정적 제목/버튼 사례 차이에 직접 근거한다.",
+          "gaps": [
+            "18장의 표는 사례 명세이므로 모든 프로젝트에 동일한 열을 강제하는 보편 규격이라고 단정할 수는 없다.",
+            "원본 PDF의 일부 색상 텍스트가 텍스트 추출본에서 누락되어, 20장의 ‘현재 구현 상태 파악’, ‘기획 의도와 기능 완성도 선택’, ‘파급력’ 문구는 manifest가 가리킨 PDF 페이지를 시각 확인했다."
+          ]
+        }
+      }
+    ],
+    "overall_verdict": {
+      "status": "PASS",
+      "summary": "두 답변 모두 책에서 확정되는 내용, 원문의 충돌/미정, 스킬이 재구성한 적용 절차를 구분하며 직접 근거로 재현 가능하다."
+    }
+  },
+  "primary_math_check": {
+    "test": "실제 답변의 비중·독립 반복 확률을 Fraction으로 독립 계산",
+    "probabilities": [
+      0.2,
+      0.3,
+      0.5
+    ],
+    "at_least_one_A_in_2": 0.36,
+    "source_Bear_absolute_probability": 0.00125,
+    "verdict": "PASS",
+    "conditions": [
+      "동일 집합/비중만으로 선택",
+      "독립 2회와 매회 동일 확률",
+      "등급 확률 있을 때 별도 곱 필요"
+    ]
+  },
+  "primary_behavior_review": {
+    "actual_outputs_read": true,
+    "initial_case_2_verdict": "PARTIAL",
+    "issues": [
+      "판매금 전송/정산버튼 지급을 함께 확정형으로 요약하고 원문 지급시점 충돌을 명시하지 않음",
+      "취소 후 재등록 5분 예시 누락"
+    ],
+    "existing_skill_guidance": "ch08 머리말·지급시점 한계에 이미 지침이 있으므로 새로운 절대 규칙을 추가하지 않음",
+    "fresh_case_1_result": "원문 충돌/추가해석/예시5분 구분, PASS",
+    "fresh_case_2_result": "실제 원문 UI필드/조건부 항목/저자 직접 기준과 재구성 절차 구분, PASS"
+  },
+  "final_static_checks": {
+    "chapters": 21,
+    "chapter_files_present": true,
+    "links_checked": 103,
+    "broken_links": [],
+    "placeholders": [],
+    "source_sha256_matches": true,
+    "page_offset_consistent": true,
+    "implicit_invocation": true,
+    "review_report_path_correct": true
+  },
+  "final_commands": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "d456c6",
+        "wall_time_seconds": 7.458e-06,
+        "exit_code": 0,
+        "original_token_count": 4,
+        "output": "Skill is valid!\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "5f6897",
+        "wall_time_seconds": 0.06605725,
+        "exit_code": 0,
+        "original_token_count": 20,
+        "output": "Generated-skill scan passed: no known injection or authority patterns found.\n"
+      }
+    }
+  ],
+  "changed_files": [
+    "chapters/ch01-system-planning.md",
+    "chapters/ch03-design-intent.md",
+    "chapters/ch08-rule-design.md",
+    "chapters/ch09-flowcharts.md",
+    "chapters/ch18-document-workshop.md",
+    "chapters/ch20-production-lifecycle.md",
+    "source.json"
+  ],
+  "skill_file_hashes": [
+    {
+      "file": "SKILL.md",
+      "before": "9df9260e513bd080096cba7acf41c659749c3348c9c835642e0c0ff35dec7a22",
+      "after": "9df9260e513bd080096cba7acf41c659749c3348c9c835642e0c0ff35dec7a22",
+      "changed": false
+    },
+    {
+      "file": "agents/openai.yaml",
+      "before": "b94bf970f022b49c8888597183da8b36203e6cee6155facb825fd6b8841e600a",
+      "after": "b94bf970f022b49c8888597183da8b36203e6cee6155facb825fd6b8841e600a",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch01-system-planning.md",
+      "before": "13e8de2ac8d8018dbbcf94fa3546015bec55141a434cf4623ae87e8c967d0119",
+      "after": "a80a072b7aed65957b888a095d9f806f5deaf068455b712bd7418626d342aed5",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch02-designer-perspective.md",
+      "before": "4f1946ec71799ca70ffe2d98767162c382467956283c1f527aaff44b913922cc",
+      "after": "4f1946ec71799ca70ffe2d98767162c382467956283c1f527aaff44b913922cc",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch03-design-intent.md",
+      "before": "d4cb535c2226de6c31e506b9dc3d15388ef53b35f7b498b1c4fe1b5900f3344c",
+      "after": "194ce9956e678b55b648d389dfb4ca185bf61f10c3e909b64da4f18b2af1421f",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch04-intent-design.md",
+      "before": "83a0a6c2dbd720fb9d19da20b9a9d3dd845fd632003a629a770bf0c0d0006cf7",
+      "after": "83a0a6c2dbd720fb9d19da20b9a9d3dd845fd632003a629a770bf0c0d0006cf7",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch05-system-decomposition.md",
+      "before": "a9338c14639244c94d8e12fe1a2d988c73b42fbb3ddcd2eede3b14315a053870",
+      "after": "a9338c14639244c94d8e12fe1a2d988c73b42fbb3ddcd2eede3b14315a053870",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch06-system-composition.md",
+      "before": "efd2a5a0969ef0db046ec8de9e3587d2f7ed0f1a86ba0c0c758ede3056e5c379",
+      "after": "efd2a5a0969ef0db046ec8de9e3587d2f7ed0f1a86ba0c0c758ede3056e5c379",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch07-rule-components.md",
+      "before": "716d27322f452aa994e1ee048d5bff41ab6a8265a3a91f6832a69583f28a3988",
+      "after": "716d27322f452aa994e1ee048d5bff41ab6a8265a3a91f6832a69583f28a3988",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch08-rule-design.md",
+      "before": "32670ea0083d72d9e576bb7cb3a1dd6da989131a326ee32e32ce8985fa9103be",
+      "after": "60145ade83b200fa89e0b683edc24adf46e5798b482745cd2eccac7eb69bc772",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch09-flowcharts.md",
+      "before": "0d1ef86955bdd991c9e1401dd63564c4894e32413682e592aa308c48b9ae17c3",
+      "after": "e5cd89f222e537527f2f46404b1a873bb969efb793f7eafe60252478cf443114",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch10-table-foundations.md",
+      "before": "f1957c02231cb8a420bfd26d4e5e617c5eea26784d6506299e0b0aa6799df852",
+      "after": "f1957c02231cb8a420bfd26d4e5e617c5eea26784d6506299e0b0aa6799df852",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch11-table-design.md",
+      "before": "12f273f58f2bd9f37508d81787a84ee7300c88236b629af495a5e5f6c3980626",
+      "after": "12f273f58f2bd9f37508d81787a84ee7300c88236b629af495a5e5f6c3980626",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch12-table-cases.md",
+      "before": "c81237787eb665c28613604b63f0ffa58bf1236cc0f40c1e3682f8ecbf68a2a3",
+      "after": "c81237787eb665c28613604b63f0ffa58bf1236cc0f40c1e3682f8ecbf68a2a3",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch13-ux-ui-foundations.md",
+      "before": "a1c3ee24c7f965892bf04c2a856e3cc3ec20e9515c1e27e0b3dd9485982e802d",
+      "after": "a1c3ee24c7f965892bf04c2a856e3cc3ec20e9515c1e27e0b3dd9485982e802d",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch14-visual-interaction.md",
+      "before": "aa63017b2a534f5815050ffb78d0ffbd84662e79e92bbc24ea28bcf7ed241727",
+      "after": "aa63017b2a534f5815050ffb78d0ffbd84662e79e92bbc24ea28bcf7ed241727",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch15-ux-ui-design.md",
+      "before": "a7891776457bdf36ee5f2c7de839467048f53934d197794c42c779784e2992ee",
+      "after": "a7891776457bdf36ee5f2c7de839467048f53934d197794c42c779784e2992ee",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch16-ui-components.md",
+      "before": "db11196c92eb08de31eb2e2202fe34bd28aaf09c89375e6864682b33ca64b23a",
+      "after": "db11196c92eb08de31eb2e2202fe34bd28aaf09c89375e6864682b33ca64b23a",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch17-document-purpose.md",
+      "before": "2ea957a2f19af5dfbd91b965c3a0914da393cfaedb9a13666a8842a9019fbeec",
+      "after": "2ea957a2f19af5dfbd91b965c3a0914da393cfaedb9a13666a8842a9019fbeec",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch18-document-workshop.md",
+      "before": "ac518dd6a45a0bc6c9eb079678115f71ff93b95a1ac96dfff1f98c5bf25a18df",
+      "after": "38fcf71ac29f8e0112642fc06e4f2bb667db6ce56ab18fcc6d8ac3263704ac55",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch19-document-quality.md",
+      "before": "5163116f7dc51b908a900b34ad845691afd9fd742bf754481b50713c811a90f7",
+      "after": "5163116f7dc51b908a900b34ad845691afd9fd742bf754481b50713c811a90f7",
+      "changed": false
+    },
+    {
+      "file": "chapters/ch20-production-lifecycle.md",
+      "before": "7b4c37954a52a4cb7e2a10f42e8d426211247f0e221d94796f8181a9c9d8e58b",
+      "after": "4507f0aa36918ec6422e2ebcfb4268bb7473219302d4e2d7fddb2137465d1981",
+      "changed": true
+    },
+    {
+      "file": "chapters/ch21-designer-growth.md",
+      "before": "922b3feaea27dacce06138abb265bb68fe37bf1f5a1c79d27f35854d7283bb84",
+      "after": "922b3feaea27dacce06138abb265bb68fe37bf1f5a1c79d27f35854d7283bb84",
+      "changed": false
+    },
+    {
+      "file": "cheatsheet.md",
+      "before": "7ad057083a57a50e635d44e69ee3abd41977ff44f6b8efc2a829f75120ee1b4b",
+      "after": "7ad057083a57a50e635d44e69ee3abd41977ff44f6b8efc2a829f75120ee1b4b",
+      "changed": false
+    },
+    {
+      "file": "glossary.md",
+      "before": "40f7940facd9ab8e4ba81b8f8a57deed3df8d84134cd8cecf94fbc37b0c2efee",
+      "after": "40f7940facd9ab8e4ba81b8f8a57deed3df8d84134cd8cecf94fbc37b0c2efee",
+      "changed": false
+    },
+    {
+      "file": "patterns.md",
+      "before": "7aa9c5b4676f23fc255ba73469cde74071eea316a93501daf09a71705035d15f",
+      "after": "7aa9c5b4676f23fc255ba73469cde74071eea316a93501daf09a71705035d15f",
+      "changed": false
+    },
+    {
+      "file": "source.json",
+      "before": "4b71d373ce6b08b7b41d6a6a69acc22682c9d180618daa74206fbff040cf40b8",
+      "after": "1faada88d51ca56cdf93349f65722360b40437d894895d2e9ceeb892dedc0cd3",
+      "changed": true
+    }
+  ],
+  "source_fingerprint": {
+    "path": "/Users/freelife/ai/yuriring-game-design/유리링의 실전 게임 시스템 기획.pdf",
+    "sha256": "e451485b313401714c19b87649d16c3974881d11a4ac5b7b6967cd6735a8712e"
+  },
+  "evidence_path_policy": "에이전트 결과의 임시 원문·이미지 경로는 실행 당시 이력이며 보고서 저장 후 삭제. 재검증은 원본 PDF와 책/PDF 쪽, 실제 스킬 파일을 이용한다.",
+  "limits": [
+    "장별 사실 주장의 표본 대조이며 모든 문장/도판 전수 검증은 아님",
+    "모델 답변 테스트이며 실제 게임 실행 테스트는 아님",
+    "초기 테스트의 부분 통과 기록을 보존하며 향후 모든 답변의 정확성을 보장하지 않음"
+  ]
+}

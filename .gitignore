@@ -1,0 +1,12 @@
+# Keep the separately installed converter outside this repository.
+/.agents/skills/book-to-skill/
+/.claude/skills/book-to-skill
+
+# Local runtime state, transcripts, and machine files.
+/.omx/
+.DS_Store
+*.log
+**/events.jsonl
+.env
+.env.*
+!.env.example

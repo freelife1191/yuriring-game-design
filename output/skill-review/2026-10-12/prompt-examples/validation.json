@@ -1,0 +1,18 @@
+{
+  "changed_documents": [
+    "README.md",
+    "docs/index.md",
+    "docs/advanced-usage.md"
+  ],
+  "documents_checked": 35,
+  "local_links_checked": 376,
+  "broken_links": 0,
+  "chapter_examples": 42,
+  "chapter_followups": 21,
+  "new_common_examples": 4,
+  "linked_scenarios": 3,
+  "advanced_fenced_blocks": 73,
+  "skill_files_unchanged": 28,
+  "chapter_anchors": "passed",
+  "converter_description": "absent"
+}

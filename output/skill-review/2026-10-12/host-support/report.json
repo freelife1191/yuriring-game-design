@@ -1,0 +1,378 @@
+{
+  "verdict": "PASS: 지원 파일 구성·문서 위치·회귀 검증 완료",
+  "date": "2026-10-12",
+  "standard": "skill-creator",
+  "physical_readme": "/Users/freelife/ai/yuriring-game-design/README.md",
+  "physical_guides": "/Users/freelife/ai/yuriring-game-design/docs",
+  "symlinks": {
+    ".agents/skills/book-to-skill/README.md": "../../../README.md",
+    ".agents/skills/book-to-skill/docs/ko": "../../../../docs",
+    ".claude/skills/book-to-skill": "../../.agents/skills/book-to-skill",
+    ".claude/skills/yuriring-game-system-design": "../../.agents/skills/yuriring-game-system-design"
+  },
+  "host_support": {
+    "Claude Code": "개별 .claude/skills 링크 2개 확인; 해당 경로로 추출기 --check 실행 성공",
+    "Antigravity": "공식 프로젝트 경로 .agents/skills의 두 물리 원본 사용; 별도 복제 없음"
+  },
+  "local_versions": {
+    "Claude Code": "2.1.296 (CLI --version)",
+    "Antigravity": "2.0.1 (/Applications/Antigravity.app/Contents/Info.plist)"
+  },
+  "official_sources": [
+    {
+      "name": "Claude Code skills",
+      "url": "https://code.claude.com/docs/en/skills#choose-where-skills-load"
+    },
+    {
+      "name": "Antigravity skills",
+      "url": "https://antigravity.google/docs/skills"
+    }
+  ],
+  "static_checks": {
+    "root_readme": "physical file",
+    "root_docs": "physical directory",
+    "guide_files": 7,
+    "local_links_checked": 70,
+    "broken_links": [],
+    "claude_links": "2 targets/read-back verified",
+    "antigravity_project_root": "2 physical skills in .agents/skills",
+    "generated_book_skill_content": "unchanged",
+    "generated_template_references": [
+      "glossary.md",
+      "patterns.md",
+      "cheatsheet.md"
+    ]
+  },
+  "before_after_extractor_probe": {
+    "test": "실제 SKILL.md의 셸 경로 탐색",
+    "cases": [
+      {
+        "layout": "project",
+        "before": true,
+        "after": true
+      },
+      {
+        "layout": "legacy-project",
+        "before": false,
+        "after": true
+      },
+      {
+        "layout": "personal-ide",
+        "before": false,
+        "after": true
+      },
+      {
+        "layout": "personal-cli",
+        "before": false,
+        "after": true
+      },
+      {
+        "layout": "legacy-personal",
+        "before": false,
+        "after": true
+      }
+    ],
+    "before_supported": 1,
+    "after_supported": 5,
+    "scope": "격리된 파일 경로 탐색; 실제 앱 호출 아님",
+    "skill_lines": {
+      "before": 879,
+      "after": 891
+    }
+  },
+  "commands": {
+    "initial_commands": [
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "7adecb",
+          "wall_time_seconds": 1.000896958,
+          "session_id": 56428,
+          "original_token_count": 7,
+          "output": "........................."
+        }
+      },
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "8b5f87",
+          "wall_time_seconds": 0.855315541,
+          "exit_code": 0,
+          "original_token_count": 407,
+          "output": "WARN ruff==0.16.9 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.8 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.7 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.6 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.5 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.4 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.3 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.2 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.16.1 needs to be downloaded from a registry\nWARN ruff==0.16.0 needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff needs to be downloaded from a registry\nWARN ruff==0.15.21 needs to be downloaded from a registry\nWARN ruff==0.15.20 needs to be downloaded from a registry\nWARN ruff==0.15.19 needs to be downloaded from a registry\nWARN ruff==0.15.18 needs to be downloaded from a registry\nWARN ruff==0.15.17 needs to be downloaded from a registry\nWARN ruff==0.15.16 needs to be downloaded from a registry\nWARN ruff==0.15.15 needs to be downloaded from a registry\nWARN ruff==0.15.14 needs to be downloaded from a registry\nWARN ruff==0.15.13 needs to be downloaded from a registry\nInstalled 1 package in 5ms\nAll checks passed!\n"
+        }
+      },
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "aa3e0b",
+          "wall_time_seconds": 0.008019792,
+          "exit_code": 0,
+          "original_token_count": 37,
+          "output": "  WARN  body: 891 lines > 500 (soft guideline for optimal performance)\n✓ SKILL.md [Claude Code]: no Claude Code-breaking issues (1 warning(s))\n"
+        }
+      },
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "90db24",
+          "wall_time_seconds": 8.916e-06,
+          "exit_code": 0,
+          "original_token_count": 4,
+          "output": "Skill is valid!\n"
+        }
+      }
+    ],
+    "claude_alias_smoke": {
+      "chunk_id": "2cf670",
+      "wall_time_seconds": 8.291e-06,
+      "exit_code": 0,
+      "original_token_count": 505,
+      "output": "book-to-skill · turns a document into a structured agent skill\nfree and MIT-licensed · maintained in personal time · github.com/virgiliojr94/book-to-skill\n\nbook-to-skill — dependency check\n\n  PDF (smart inspection / native Markdown)\n      ✗ python: pdf-inspector>=1.15,<2\n      → fallback available (install for best quality) — optional fast classifier/provenance layer; falls back to the existing PDF chain\n\n  PDF (text-heavy)\n      ✓ python: pypdf\n      ✓ python: pdfminer.six\n      ✓ system: pdftotext (poppler-utils)\n      → ready — any one of pdftotext / pypdf / pdfminer is enough\n\n  PDF (technical: tables, code, formulas)\n      ✗ python: docling\n      → fallback available (install for best quality) — needed only for --mode technical; otherwise falls back to the text chain\n\n  EPUB\n      ✗ python: ebooklib\n      ✓ python: beautifulsoup4\n      → fallback available (install for best quality) — falls back to a stdlib zipfile parser if missing\n\n  DOCX\n      ✓ python: python-docx\n      → ready — falls back to a stdlib ZIP/XML parser if missing\n\n  HTML\n      ✗ python: trafilatura\n      ✓ python: beautifulsoup4\n      → ready — trafilatura does real boilerplate detection; falls back to bs4, then the stdlib html.parser, if missing\n\n  RTF\n      ✗ python: striprtf\n      → fallback available (install for best quality) — falls back to a basic regex cleanup if missing\n\n  MOBI / AZW / AZW3\n      ✗ system: ebook-convert (Calibre)\n      → MISSING — required, no fallback — no fallback — Calibre is required for these formats\n\nTo enable the best extractor for every format, install the missing pieces:\n\n  /opt/homebrew/opt/python@3.14/bin/python3.14 -m pip install pdf-inspector>=1.15,<2 docling ebooklib trafilatura striprtf\n  # Calibre: install Calibre: https://calibre-ebook.com/download\n\nNote: missing Python packages are optional — most formats fall back to a stdlib parser. Calibre is the only hard requirement, and only for MOBI/AZW files.\n"
+    },
+    "final_pytest": {
+      "command": "PYTHONPATH=. PYTHONDONTWRITEBYTECODE=1 uv tool run --offline --from pytest pytest -q -p no:cacheprovider",
+      "exit_code": 0,
+      "output": "904 passed, 8 skipped in 9.04s"
+    },
+    "postfix_targeted": {
+      "exit_code": 0,
+      "output": "14 passed in 0.22s"
+    }
+  },
+  "independent_review": {
+    "review": "independent-read-only-host-support-verification",
+    "date": "2026-10-12",
+    "verdict": "PASS",
+    "scope": [
+      "root README.md and docs/*.md",
+      ".agents/skills/book-to-skill/SKILL.md",
+      ".agents/skills/book-to-skill/references/antigravity.md",
+      ".agents/skills/book-to-skill and .agents/skills/yuriring-game-system-design physical sources",
+      ".claude/skills/book-to-skill and .claude/skills/yuriring-game-system-design links"
+    ],
+    "criteria": {
+      "root_readme_docs_are_canonical": {
+        "verdict": "PASS",
+        "evidence": [
+          "README.md and docs/ are physical paths at the project root.",
+          ".agents/skills/book-to-skill/README.md is a symlink resolving to the root README.md.",
+          ".agents/skills/book-to-skill/docs/ko is a symlink resolving to the root docs/ directory.",
+          "README.md:103, docs/index.md:18, and docs/troubleshooting.md:57 consistently identify the root README.md/docs as the user-documentation source."
+        ]
+      },
+      "claude_project_links": {
+        "verdict": "PASS",
+        "evidence": [
+          ".claude/skills/book-to-skill is a symlink to ../../.agents/skills/book-to-skill; resolved target equality and SKILL.md byte equality both passed.",
+          ".claude/skills/yuriring-game-system-design is a symlink to ../../.agents/skills/yuriring-game-system-design; resolved target equality and SKILL.md byte equality both passed.",
+          "Claude official documentation says project skills load from .claude/skills/<skill-name>/SKILL.md and symlinked skill folders are supported: https://code.claude.com/docs/en/skills"
+        ]
+      },
+      "shared_project_root_vs_host_personal_roots": {
+        "verdict": "PASS",
+        "evidence": [
+          "The converter separates scope before host selection in SKILL.md:400-431.",
+          "Shared Codex/Claude Code/Antigravity project installs use a physical .agents/skills source, a per-skill .claude/skills symlink for Claude Code, and direct .agents/skills discovery for Antigravity (SKILL.md:418-420, 681).",
+          "Antigravity personal roots are explicitly interface-specific and are not conflated with the shared ~/.agents/skills default (references/antigravity.md:18-27; SKILL.md:409, 418, 431).",
+          "Antigravity official documentation confirms workspace .agents/skills, 2.0/IDE global ~/.gemini/config/skills, CLI global ~/.gemini/antigravity-cli/skills, and legacy IDE ~/.gemini/antigravity/skills: https://antigravity.google/docs/skills"
+        ]
+      },
+      "new_generated_skill_claude_sharing_connection": {
+        "verdict": "PASS",
+        "evidence": [
+          "The generated skill has a physical source at .agents/skills/yuriring-game-system-design and a verified per-skill Claude link at .claude/skills/yuriring-game-system-design.",
+          "The converter instructs shared project generation to create/verify the individual Claude project link without replacing an existing real directory (SKILL.md:420, 681).",
+          "Root guidance repeats the same requirement for future generated skills (docs/agents.md:47; docs/getting-started.md:70-73)."
+        ]
+      },
+      "no_false_actual_app_execution_claim": {
+        "verdict": "PASS",
+        "evidence": [
+          "README.md:83 distinguishes filesystem configuration from actual app skill recognition.",
+          "docs/agents.md:53 identifies only local Antigravity app metadata version and explicitly separates it from in-app skill discovery.",
+          "docs/agents.md:69-73 and references/antigravity.md:35-38 require observed host UI evidence before reporting actual app discovery.",
+          "The documented local versions were independently read as Claude Code 2.1.296 and Antigravity 2.0.1; no Claude Code command-menu or Antigravity Customizations discovery is claimed as completed."
+        ]
+      },
+      "documentation_links_and_generated_skill_structure": {
+        "verdict": "PASS",
+        "evidence": [
+          "93 material local Markdown links across root README/docs, Antigravity reference, and generated skill were checked; 0 were broken.",
+          "validate_skill.py reported no Claude Code-breaking issues and 0 warnings for the generated skill.",
+          "scan_generated_skill.py passed with no known injection or authority patterns.",
+          "extract.py --check ran successfully and reported extractor readiness/fallback state."
+        ]
+      }
+    },
+    "validation": [
+      {
+        "check": "Antigravity extractor lookup across project, legacy project, personal IDE, personal CLI, and legacy personal layouts",
+        "result": "PASS (5/5)"
+      },
+      {
+        "check": "Claude link target and SKILL.md read-back for both skills",
+        "result": "PASS (2/2)"
+      },
+      {
+        "check": "Material local Markdown links",
+        "result": "PASS (93 checked, 0 broken)"
+      },
+      {
+        "check": "Generated skill validator",
+        "result": "PASS (0 warnings)"
+      },
+      {
+        "check": "Generated skill advisory scanner",
+        "result": "PASS"
+      }
+    ],
+    "gaps": [
+      "The installed default Python environments do not contain pytest, so the existing pytest files were not executed through pytest. The Antigravity host lookup test logic was reproduced directly and passed all five layouts.",
+      "Actual Claude Code command-menu discovery and Antigravity Customizations discovery were not run. The documentation correctly labels those as separate host-app checks and does not claim they were completed."
+    ],
+    "risks": [
+      "Host discovery behavior can change in later Claude Code or Antigravity releases; the documentation already dates the official-path check and tells users to compare the active UI/version.",
+      "This directory is not a Git repository, so no diff/history-based scope proof was available; the verdict is based on the current on-disk files and fresh commands."
+    ],
+    "stop_condition": "All requested filesystem, documentation, official-host-contract, link, contradiction, and claim-boundary checks are evidence-backed; no blocking defect was found."
+  },
+  "integration_note": "검수자 기본 Python의 pytest 부재는 주 에이전트가 오프라인 캐시의 pytest로 전체 904통과·8skip 실행해 보완함. 실제 호스트 UI 탐색은 별도로 미실행.",
+  "changed_files": [
+    {
+      "before": ".agents/skills/book-to-skill/README.md",
+      "after": "README.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/SKILL.md",
+      "after": ".agents/skills/book-to-skill/SKILL.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/mkdocs.yml",
+      "after": ".agents/skills/book-to-skill/mkdocs.yml"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/extraction.md",
+      "after": "docs/extraction.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/troubleshooting.md",
+      "after": "docs/troubleshooting.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/validation.md",
+      "after": "docs/validation.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/workflow.md",
+      "after": "docs/workflow.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/getting-started.md",
+      "after": "docs/getting-started.md"
+    },
+    {
+      "before": ".agents/skills/book-to-skill/docs/ko/index.md",
+      "after": "docs/index.md"
+    },
+    {
+      "before": null,
+      "after": "docs/agents.md"
+    },
+    {
+      "before": null,
+      "after": ".agents/skills/book-to-skill/references/antigravity.md"
+    },
+    {
+      "before": null,
+      "after": ".agents/skills/book-to-skill/tests/test_antigravity_host_support.py"
+    }
+  ],
+  "file_hashes": [
+    {
+      "path": "README.md",
+      "before_sha256": "dbda2a0465f5ccbe8555facd76c90d793af05a664677ba65ab69ac98b744e77a",
+      "after_sha256": "588e1ee20aadb9e363b0847397cfc4e25a22e97b4bd8a731c43df80fb2ba2792"
+    },
+    {
+      "path": ".agents/skills/book-to-skill/SKILL.md",
+      "before_sha256": "6a3d7ce3d3689020cd4089f8cad9c0a9f8237abfaf896ff20677031dac4592b1",
+      "after_sha256": "616f480f130d0b5ca40063730ab163d2463468698fb4fdad12d848210b00df58"
+    },
+    {
+      "path": ".agents/skills/book-to-skill/mkdocs.yml",
+      "before_sha256": "35aa3d79bc40ec01ebd9620d8d65b766e270865762d27a0293cfe52b505962ed",
+      "after_sha256": "c47ad3735b5667cc9fad7ed92831ec4b97122f8ecca41a346d22100c1061aeb4"
+    },
+    {
+      "path": ".agents/skills/book-to-skill/docs/index.md",
+      "before_sha256": "aee0fd0eea8b69910905d08ffaf4b5d90993803740383e632d0cf28b9474a755",
+      "after_sha256": "aee0fd0eea8b69910905d08ffaf4b5d90993803740383e632d0cf28b9474a755"
+    },
+    {
+      "path": "docs/extraction.md",
+      "before_sha256": "450951c4b29e034e0b3d86b22009f15922ab576cc98a3f9b2b291e6a683fb1e8",
+      "after_sha256": "450951c4b29e034e0b3d86b22009f15922ab576cc98a3f9b2b291e6a683fb1e8"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "before_sha256": "98253151b869bc05fb06ad99d0dfbe7d9d5cc797ff873a95a6aeb18ada057292",
+      "after_sha256": "445149fc71de9d8f316217fbef3cca3dda424d39a79ff79e6254bb892ce23b80"
+    },
+    {
+      "path": "docs/validation.md",
+      "before_sha256": "e7280ff3cc53fdd77f6f215598cbf0d65c590475d8f675534319438184824903",
+      "after_sha256": "e7280ff3cc53fdd77f6f215598cbf0d65c590475d8f675534319438184824903"
+    },
+    {
+      "path": "docs/workflow.md",
+      "before_sha256": "74c87dede84bba566192559b53547de2ef422097bb9de6a841339db5cab48a03",
+      "after_sha256": "74c87dede84bba566192559b53547de2ef422097bb9de6a841339db5cab48a03"
+    },
+    {
+      "path": "docs/getting-started.md",
+      "before_sha256": "2a1b39eef82c6511fa531d59ca468e0e92cd390a4b044ba57c8d18fe13a4765c",
+      "after_sha256": "227c0d130695037b916e282e336c3e04bfe0f92f5fe2d77c6dda9f0bc8ce833e"
+    },
+    {
+      "path": "docs/index.md",
+      "before_sha256": "f4eca051db2cd9844cc59417810ae63fde11a891f87868862d12d3f0670e149a",
+      "after_sha256": "0c1b03018f424dea3e420349f9d10db432ab8d1882787b3f0d27e50d03bc597b"
+    }
+  ],
+  "generated_skill_hashes_unchanged": {
+    ".agents/skills/yuriring-game-system-design/source.json": "1faada88d51ca56cdf93349f65722360b40437d894895d2e9ceeb892dedc0cd3",
+    ".agents/skills/yuriring-game-system-design/glossary.md": "40f7940facd9ab8e4ba81b8f8a57deed3df8d84134cd8cecf94fbc37b0c2efee",
+    ".agents/skills/yuriring-game-system-design/cheatsheet.md": "7ad057083a57a50e635d44e69ee3abd41977ff44f6b8efc2a829f75120ee1b4b",
+    ".agents/skills/yuriring-game-system-design/patterns.md": "7aa9c5b4676f23fc255ba73469cde74071eea316a93501daf09a71705035d15f",
+    ".agents/skills/yuriring-game-system-design/SKILL.md": "9df9260e513bd080096cba7acf41c659749c3348c9c835642e0c0ff35dec7a22",
+    ".agents/skills/yuriring-game-system-design/chapters/ch01-system-planning.md": "a80a072b7aed65957b888a095d9f806f5deaf068455b712bd7418626d342aed5",
+    ".agents/skills/yuriring-game-system-design/chapters/ch15-ux-ui-design.md": "a7891776457bdf36ee5f2c7de839467048f53934d197794c42c779784e2992ee",
+    ".agents/skills/yuriring-game-system-design/chapters/ch16-ui-components.md": "db11196c92eb08de31eb2e2202fe34bd28aaf09c89375e6864682b33ca64b23a",
+    ".agents/skills/yuriring-game-system-design/chapters/ch08-rule-design.md": "60145ade83b200fa89e0b683edc24adf46e5798b482745cd2eccac7eb69bc772",
+    ".agents/skills/yuriring-game-system-design/chapters/ch20-production-lifecycle.md": "4507f0aa36918ec6422e2ebcfb4268bb7473219302d4e2d7fddb2137465d1981",
+    ".agents/skills/yuriring-game-system-design/chapters/ch21-designer-growth.md": "922b3feaea27dacce06138abb265bb68fe37bf1f5a1c79d27f35854d7283bb84",
+    ".agents/skills/yuriring-game-system-design/chapters/ch13-ux-ui-foundations.md": "a1c3ee24c7f965892bf04c2a856e3cc3ec20e9515c1e27e0b3dd9485982e802d",
+    ".agents/skills/yuriring-game-system-design/chapters/ch19-document-quality.md": "5163116f7dc51b908a900b34ad845691afd9fd742bf754481b50713c811a90f7",
+    ".agents/skills/yuriring-game-system-design/chapters/ch10-table-foundations.md": "f1957c02231cb8a420bfd26d4e5e617c5eea26784d6506299e0b0aa6799df852",
+    ".agents/skills/yuriring-game-system-design/chapters/ch14-visual-interaction.md": "aa63017b2a534f5815050ffb78d0ffbd84662e79e92bbc24ea28bcf7ed241727",
+    ".agents/skills/yuriring-game-system-design/chapters/ch07-rule-components.md": "716d27322f452aa994e1ee048d5bff41ab6a8265a3a91f6832a69583f28a3988",
+    ".agents/skills/yuriring-game-system-design/chapters/ch06-system-composition.md": "efd2a5a0969ef0db046ec8de9e3587d2f7ed0f1a86ba0c0c758ede3056e5c379",
+    ".agents/skills/yuriring-game-system-design/chapters/ch12-table-cases.md": "c81237787eb665c28613604b63f0ffa58bf1236cc0f40c1e3682f8ecbf68a2a3",
+    ".agents/skills/yuriring-game-system-design/chapters/ch03-design-intent.md": "194ce9956e678b55b648d389dfb4ca185bf61f10c3e909b64da4f18b2af1421f",
+    ".agents/skills/yuriring-game-system-design/chapters/ch09-flowcharts.md": "e5cd89f222e537527f2f46404b1a873bb969efb793f7eafe60252478cf443114",
+    ".agents/skills/yuriring-game-system-design/chapters/ch17-document-purpose.md": "2ea957a2f19af5dfbd91b965c3a0914da393cfaedb9a13666a8842a9019fbeec",
+    ".agents/skills/yuriring-game-system-design/chapters/ch05-system-decomposition.md": "a9338c14639244c94d8e12fe1a2d988c73b42fbb3ddcd2eede3b14315a053870",
+    ".agents/skills/yuriring-game-system-design/chapters/ch18-document-workshop.md": "38fcf71ac29f8e0112642fc06e4f2bb667db6ce56ab18fcc6d8ac3263704ac55",
+    ".agents/skills/yuriring-game-system-design/chapters/ch04-intent-design.md": "83a0a6c2dbd720fb9d19da20b9a9d3dd845fd632003a629a770bf0c0d0006cf7",
+    ".agents/skills/yuriring-game-system-design/chapters/ch11-table-design.md": "12f273f58f2bd9f37508d81787a84ee7300c88236b629af495a5e5f6c3980626",
+    ".agents/skills/yuriring-game-system-design/chapters/ch02-designer-perspective.md": "4f1946ec71799ca70ffe2d98767162c382467956283c1f527aaff44b913922cc",
+    ".agents/skills/yuriring-game-system-design/agents/openai.yaml": "b94bf970f022b49c8888597183da8b36203e6cee6155facb825fd6b8841e600a"
+  },
+  "limits": [
+    "Claude Code 명령 메뉴 및 Antigravity Customizations의 실제 앱 탐색은 실행하지 않음",
+    "8 tests skipped according to existing suite conditions",
+    "Converter SKILL.md의 기존 500줄 권고 초과 경고는 남아 있음; 형식 검사 오류 없음"
+  ],
+  "temporary_evidence": "보고서 저장 후 작업 스냅샷과 임시 fixture를 정리한다. 이전 경로는 실행 당시 기록이다."
+}

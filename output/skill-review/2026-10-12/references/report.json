@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-12",
+  "request": "전자책 반영 수준과 참조 자료 구성 재검토",
+  "source_sha256": "e451485b313401714c19b87649d16c3974881d11a4ac5b7b6967cd6735a8712e",
+  "source_hash_matched": true,
+  "chapter_count": 21,
+  "initial_content_verdicts": {
+    "ch01": "PASS",
+    "ch02": "PASS",
+    "ch03": "PASS",
+    "ch04": "PASS",
+    "ch05": "PASS",
+    "ch06": "PASS",
+    "ch07": "PASS",
+    "ch08": "PARTIAL",
+    "ch09": "PASS",
+    "ch10": "PARTIAL",
+    "ch11": "PASS",
+    "ch12": "PASS",
+    "ch13": "PASS",
+    "ch14": "PASS",
+    "ch15": "PASS",
+    "ch16": "PASS",
+    "ch17": "PASS",
+    "ch18": "PASS",
+    "ch19": "PASS",
+    "ch20": "PASS",
+    "ch21": "PASS"
+  },
+  "navigation_improvements": [
+    "사례·질문 26개에서 직접 장 파일로 연결",
+    "여러 장 연결 작업 6개",
+    "UX/UI 13–16장 세부 PDF 쪽 범위",
+    "보조 자료를 읽는 시점 명시"
+  ],
+  "content_findings": [
+    {
+      "chapter": 8,
+      "book_pages": [
+        126,
+        127
+      ],
+      "status": "resolved",
+      "change": "플레이어의 예측 가능성과 오해 가능성에 따른 설명 밀도 기준"
+    },
+    {
+      "chapter": 10,
+      "book_pages": [
+        171,
+        172
+      ],
+      "status": "resolved",
+      "change": "사용/업데이트 빈도·수정 범위·재사용성에 따른 분리·통합과 작동 명세"
+    }
+  ],
+  "supporting_consistency": "SKILL.md와 patterns.md의 UI 항목을 요소별 조건부로 정리",
+  "limits": [
+    "핵심 구조·판단 규칙·선별 사례 검토이며 원문 전수 보존/검증 아님",
+    "그림·표의 시각적 전수 판독 아님",
+    "앱 실행·메뉴 탐색 미검증",
+    "정확한 토큰 수 미계측"
+  ],
+  "tokenizer_added": false,
+  "behavioral_evaluation": {
+    "cases": 3,
+    "source_pdf_used": false,
+    "initial_verdicts": [
+      "PARTIAL",
+      "PARTIAL",
+      "PARTIAL"
+    ],
+    "initial_semantic_checks": "passed; relevant chapters and key limits reflected",
+    "initial_problem": "근거 링크 ../repo/...의 대상 경로가 존재하지 않음",
+    "correction": "실제 읽은 경로의 인용 지침 추가 후 답변 링크만 수정; 최초 결과 보존",
+    "postfix_verdicts": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "postfix_scope": "동일 답변의 의미 보존·실제 경로 및 파일 목록 재검증; 새 모델 세션의 완전 재생성 테스트는 아님",
+    "verified_link_targets": 12,
+    "evidence": "behavior/"
+  },
+  "validation": {
+    "documents": 35,
+    "local_links_checked": 352,
+    "standalone_skill_links": 144,
+    "broken_links": 0,
+    "standalone_skill_files": 28,
+    "chapters": 21,
+    "source_hash": "matched",
+    "claude_link": "matched",
+    "advanced_guide": "unchanged",
+    "extra_reference_advisory_scan": "passed",
+    "source_reports_json": "parsed"
+  },
+  "skill_format": "passed",
+  "advisory_scan": {
+    "standard_scope_markdown_files": 25,
+    "standard_scope_result": "passed",
+    "additional_reference_markdown_files": 1,
+    "additional_reference_result": "passed using the same scanner text rules"
+  }
+}

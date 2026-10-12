@@ -1,0 +1,91 @@
+{
+  "host": {
+    "prompt_source": "README.md / 간단한 사용법과 예시 / UI 명세",
+    "result": "PASS",
+    "criteria": [
+      {
+        "claim": "경로·스킬 본문 주입 없이 프로젝트 스킬을 발견하고 관련 자료를 읽음",
+        "evidence": "CLI 이벤트의 완료된 cat 명령이 SKILL.md, references/index.md, ch16, ch07을 읽고 종료 코드 0을 기록함"
+      },
+      {
+        "claim": "기본 수량 미정 보존",
+        "evidence": "기본 수량은 미정, 최초 오류 복원값도 확정 불가라고 명시함"
+      },
+      {
+        "claim": "보유량 12의 경계와 오류 처리",
+        "evidence": "q=12에서 증가 불가; 12 초과 직접 입력 보정은 제안 명세로 구분함"
+      },
+      {
+        "claim": "가정과 입력 환경 조건 구분",
+        "evidence": "최소 수량 1·직접 입력 지원은 가정이며 채택 결정이 필요하다고 밝힘; 포커스·호버는 입력 장치별 적용"
+      }
+    ]
+  },
+  "ch12": {
+    "prompt_source": "docs/advanced-usage.md / 12장 고급 예시 B",
+    "result": "PASS",
+    "criteria": [
+      {
+        "claim": "가상 입력과 미정 정책 구분",
+        "evidence": "하루 두 번은 가상 가정; 독립 추출·중복·이력 보존·갱신 시각은 결정 질문에 남김"
+      },
+      {
+        "claim": "확률과 비중의 해석 구분",
+        "evidence": "비중 30·70·20의 합계 120을 허용하는 가데이터 절차; 확률의 단위·합계 규약은 별도 검증"
+      },
+      {
+        "claim": "행 참조와 그룹 조회 구분",
+        "evidence": "PoolGroupID는 여러 행 조회이며 단일 행 외래 키와 다르다고 명시함"
+      },
+      {
+        "claim": "참조 오류·빈 풀·분모 0 반례와 책임",
+        "evidence": "타입 불일치·고아 ID·없는/빈 그룹·모든 비중 0을 각각 검토하며 결정 책임과 보류 이유를 표시함"
+      }
+    ]
+  },
+  "ch18_initial": {
+    "prompt_source": "docs/advanced-usage.md / 18장 고급 예시 A / 보강 전",
+    "result": "PARTIAL",
+    "criteria": [
+      {
+        "claim": "4개 비교 기준과 미정 방향 보존",
+        "result": "PASS",
+        "evidence": "조건 점수→등급→레벨→캐릭터 고유 ID 순서와 각 방향 미정 명시"
+      },
+      {
+        "claim": "가상 정원·제외 조건과 미정 보상·동기화 분리",
+        "result": "PASS",
+        "evidence": "정원 4명·중복 배정 금지·휴식 제외는 가상; 보상과 서버 방식은 질문"
+      },
+      {
+        "claim": "QA 반례 및 정적 요소의 입력 강제 방지",
+        "result": "PASS",
+        "evidence": "정원 부족·동점·후보 없음·상태 변경·취소를 모두 포함; 정적 안내는 입력·저장 강제 없음"
+      },
+      {
+        "claim": "결과 데이터의 행 의미·키·중복 검증 범위 일치",
+        "result": "PARTIAL",
+        "evidence": "ExpeditionFormationResult를 자동 편성 1회 결과로 설명하면서 SelectedCharacterID·Rank를 단일 필드로 두어 4명 결과의 행 단위와 기본 키가 불명확함"
+      }
+    ]
+  },
+  "ch18_postfix": {
+    "prompt_source": "docs/advanced-usage.md / 18장 고급 예시 A / 보강 후",
+    "result": "PASS",
+    "evaluation_scope": "같은 평가자가 갱신된 입력으로 전체 답변을 재생성함. 새 독립 세션 검사와 다름.",
+    "criteria": [
+      {
+        "claim": "한 행의 의미·기본 키·중복 범위 일치",
+        "evidence": "FormationRequest는 요청 1건, FormationSelection은 선택 후보 1명; 요청별 Rank와 CandidateSnapshotID 각각 유일, 선택 수 최대 4개를 명시함"
+      },
+      {
+        "claim": "단일 행 참조와 그룹 조회 구분",
+        "evidence": "CandidateSnapshotID는 후보 단일 행, FormationRequestID로 선택 행 집합을 조회해 4명 결과를 얻는다고 명시함"
+      },
+      {
+        "claim": "이전 핵심 조건 보존",
+        "evidence": "조건 점수→등급→레벨→캐릭터 고유 ID 순서, 정렬 방향·보상·서버 동기화 미정, 가상 정원·휴식·중복 금지, 5개 QA 예외와 정적 요소 구분을 유지함"
+      }
+    ]
+  }
+}

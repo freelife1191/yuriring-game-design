@@ -1,0 +1,15 @@
+{
+  "completed_turn": true,
+  "read_command_count": 1,
+  "successful_reads": 4,
+  "usage": {
+    "input_tokens": 94539,
+    "cached_input_tokens": 49280,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1242,
+    "reasoning_output_tokens": 56
+  },
+  "startup_warnings": [
+    "Codex is ignoring 2 unrecognized configuration settings. Check for typos or deprecated settings.\n  user (/Users/freelife/.codex/config.toml): `features.child_agents_md` is ignored.\n  user (/Users/freelife/.codex/config.toml): `mcp_servers.pencil.type` is ignored."
+  ]
+}

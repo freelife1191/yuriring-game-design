@@ -1,0 +1,10 @@
+{
+  "corrected_by": "parent",
+  "scope": "읽기 목록의 경로 1곳 정정; 답변 재생성이나 의미 변경 아님",
+  "before": "/Users/freelife/ai/yuriring-game-system-design/.agents/skills/yuriring-game-system-design/patterns.md",
+  "after": "/Users/freelife/ai/yuriring-game-design/.agents/skills/yuriring-game-system-design/patterns.md",
+  "basis": "평가자가 보고한 프로젝트 루트의 상대 경로를 부모가 절대 경로로 해석하고 직접 읽기 가능 여부를 확인",
+  "corrected_file_sha256": "dff7784453ce35a39a7cde5e9d27241072a31c4b1b2e1373a64c7f83efa0e9ea",
+  "original_record": "data-read-files-before-path-fix.json",
+  "limitation": "평가자의 수동 기록 정정이며 실제 CLI 명령 로그와 같은 증거로 표현하지 않음"
+}
