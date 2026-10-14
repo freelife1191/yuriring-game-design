@@ -1,6 +1,14 @@
 # 에이전트별 사용
 
-[가이드 홈](index.md) · [시작하기](getting-started.md)
+[가이드 홈](index.md) · [README](../README.md) · [릴리스](../release/README.md) · [시작하기](getting-started.md)
+
+## 목차
+
+- [실제 프로젝트 구성](#실제-프로젝트-구성)
+- [Codex](#codex)
+- [Claude Code](#claude-code)
+- [Antigravity](#antigravity)
+- [공통 요청 형식](#공통-요청-형식)
 
 이 프로젝트에서 배포·사용하는 스킬은 **`yuriring-game-system-design`** 하나입니다. 실제 스킬 원본은 `.agents/skills/yuriring-game-system-design/`에 있고, Claude Code용 경로는 그 원본을 가리키는 개별 링크입니다.
 

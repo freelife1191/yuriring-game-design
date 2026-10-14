@@ -1,4 +1,37 @@
-# 유리링 게임 시스템 기획 스킬
+<p align="center">
+  <a href="docs/index.md"><img src="docs/assets/banner.svg" alt="유리링 게임 시스템 기획 스킬 — 의도, 규칙, 데이터, UX/UI를 연결하는 21장 가이드" width="840"></a>
+</p>
+
+<a id="유리링-게임-시스템-기획-스킬"></a>
+
+<h1 align="center">유리링 게임 시스템 기획 스킬</h1>
+
+<p align="center"><strong>게임 시스템의 의도·규칙·데이터·UX/UI를 연결해 학습하고 설계하고 검토합니다.</strong></p>
+
+<p align="center">
+  정윤지(유리링)의 『유리링의 실전 게임 시스템 기획』 8부 21장을 바탕으로 만든<br>
+  <code>yuriring-game-system-design</code> 프로젝트 스킬입니다.
+</p>
+
+<p align="center">
+  <a href="https://github.com/freelife1191/yuriring-game-design/releases"><img src="https://img.shields.io/badge/GitHub-Releases-181717?style=flat-square&logo=github" alt="GitHub Releases"></a>
+  <a href="https://github.com/freelife1191/yuriring-game-design"><img src="https://img.shields.io/github/last-commit/freelife1191/yuriring-game-design?style=flat-square&label=last%20commit" alt="GitHub last commit"></a>
+  <img src="https://img.shields.io/badge/source-8%20parts%20%C2%B7%2021%20chapters-4b2e83?style=flat-square" alt="8 parts and 21 chapters">
+  <img src="https://img.shields.io/badge/skill-yuriring--game--system--design-0f766e?style=flat-square" alt="Skill ID">
+</p>
+
+<p align="center">
+  <a href="#설치하기">설치</a> &middot;
+  <a href="#시작하기">시작</a> &middot;
+  <a href="docs/index.md">문서 가이드</a> &middot;
+  <a href="docs/advanced-usage.md">고급 활용</a> &middot;
+  <a href="release/README.md">릴리스</a>
+</p>
+
+> [!NOTE]
+> **책의 원문을 복제한 저장소가 아닙니다.** 이 스킬은 책의 판단 기준을 재구성해 적용하도록 돕습니다. 정확한 수치·도식·인용은 원문 PDF와 [검수 가이드](docs/validation.md)를 함께 확인하세요.
+
+---
 
 정윤지(유리링)의 『유리링의 실전 게임 시스템 기획』 **8부 21장**을 바탕으로 개념 학습·시스템 설계·기획서 검토에 사용하는 프로젝트 스킬입니다. 실제 호출 이름은 **`yuriring-game-system-design`**입니다.
 
@@ -17,6 +50,7 @@
 - [입력과 준비 상태](#입력과-준비-상태)
 - [상세 가이드](#상세-가이드)
   - [고급 활용법 — 장별 프롬프트와 실무 시나리오](docs/advanced-usage.md)
+  - [릴리스 노트와 GitHub Release](release/README.md)
 - [Copyright & fair use](#copyright)
 - [프로젝트 정보](#프로젝트-정보)
 
@@ -238,6 +272,7 @@ Codex와 Antigravity는 `.agents/skills/yuriring-game-system-design/`을 사용�
 | 목적별 공통 프롬프트·21장별 전략·실무 시나리오 | [고급 활용법](docs/advanced-usage.md) |
 | 원문·조건·수치·실제 답변 검수 | [검수와 테스트](docs/validation.md) |
 | 인식·경로·내용 누락·원문 확인 문제 | [문제 해결](docs/troubleshooting.md) |
+| 릴리스 노트 작성·초안 검토·공개 절차 | [릴리스 가이드](release/README.md) · [현재 릴리스 노트](release/2026-10-15-documentation-and-release-guide.md) · [노트 템플릿](release/_template.md) |
 
 > [!TIP]
 > **기본 사용에서 고급 활용까지**

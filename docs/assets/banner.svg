@@ -1,0 +1,38 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">유리링 게임 시스템 기획 스킬</title>
+  <desc id="desc">의도, 규칙, 데이터, UX/UI를 연결하는 게임 시스템 기획 가이드</desc>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="35" x2="1122" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16213E"/>
+      <stop offset="0.55" stop-color="#29204D"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="card" x1="724" y1="52" x2="1002" y2="282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#C7D2FE"/>
+    </linearGradient>
+    <filter id="shadow" x="616" y="29" width="452" height="302" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#070B1D" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="102" cy="67" r="102" fill="#8B5CF6" fill-opacity="0.18"/>
+  <circle cx="1090" cy="318" r="170" fill="#2DD4BF" fill-opacity="0.14"/>
+  <path d="M0 294C161 243 259 359 419 307C573 257 643 208 778 254C952 313 1016 160 1200 193V360H0V294Z" fill="#0F172A" fill-opacity="0.22"/>
+  <text x="88" y="106" fill="#A7F3D0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700" letter-spacing="2">GAME SYSTEM DESIGN SKILL</text>
+  <text x="84" y="170" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, sans-serif" font-size="48" font-weight="800">의도에서 검토까지,</text>
+  <text x="84" y="224" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, sans-serif" font-size="48" font-weight="800">연결되는 게임 시스템 기획</text>
+  <text x="88" y="276" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20">8부 21장 · 규칙 · 데이터 · UX/UI · 기획서</text>
+  <g filter="url(#shadow)">
+    <rect x="714" y="50" width="374" height="244" rx="22" fill="url(#card)"/>
+    <rect x="746" y="84" width="136" height="30" rx="15" fill="#312E81"/>
+    <text x="764" y="105" fill="#E0E7FF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700">21 CHAPTERS</text>
+    <path d="M752 154H849" stroke="#4F46E5" stroke-width="9" stroke-linecap="round"/>
+    <path d="M752 183H1017" stroke="#94A3B8" stroke-width="9" stroke-linecap="round"/>
+    <path d="M752 212H961" stroke="#94A3B8" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="1007" cy="128" r="32" fill="#14B8A6"/>
+    <path d="M994 128L1003 137L1021 117" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="746" y="241" width="150" height="24" rx="12" fill="#CCFBF1"/>
+    <text x="763" y="258" fill="#115E59" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">설계와 검토를 분리</text>
+  </g>
+</svg>
