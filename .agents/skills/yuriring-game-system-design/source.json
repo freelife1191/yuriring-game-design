@@ -15,7 +15,7 @@
   "automatic_chapters_detected": 177,
   "verified_chapters": 21,
   "parts": 8,
-  "page_convention": "PDF쪽 = 책 인쇄쪽 + 2. 장 시작은 번호 없는 장 표지까지 포함한 위치이며, 끝에는 다음 부 표지가 포함될 수 있음.",
+  "page_convention": "PDF 쪽 = 책 인쇄 쪽 + 2. 장 시작은 번호 없는 장 표지까지 포함한 위치이며, 끝에는 다음 부 표지가 포함될 수 있음.",
   "visual_checks_by_primary_agent": [
     {
       "pdf_page": 71,
@@ -377,7 +377,7 @@
     "report": "../../../output/skill-review/2026-10-12/references/report.md",
     "limits": [
       "원문 전체의 모든 문장·수치·표·그림을 보존한 자료가 아님",
-      "정확한 원문 열 이름·도판 배치가 필요하면 해당 PDF쪽 재확인",
+      "정확한 원문 열 이름·도판 배치가 필요하면 해당 PDF 쪽 재확인",
       "파일·링크 검증과 앱의 실제 스킬 탐색·호출은 별도"
     ],
     "behavioral_checks": {

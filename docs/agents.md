@@ -50,6 +50,8 @@ docs/
 $yuriring-game-system-design 길드 기부 시스템의 규칙과 예외를 검토해줘.
 ```
 
+`$yuriring-game-system-design` 명시 호출을 기본으로 씁니다. 스킬 설명에 맞는 자연어 요청으로도 자동 선택될 수 있지만, 쓰이지 않으면 [문제 해결](troubleshooting.md#자연어-요청으로-호출되지-않을-때)의 직접 호출을 사용합니다.
+
 특정 장을 우선 적용하고 싶다면 장 번호와 원하는 산출물을 함께 적습니다.
 
 ```text
@@ -66,6 +68,8 @@ $yuriring-game-system-design 10~12장을 기준으로
 ```text
 /yuriring-game-system-design 길드 기부 시스템의 규칙과 예외를 검토해줘.
 ```
+
+슬래시 명시 호출 외에 `yuriring-game-system-design 스킬을 사용해서 …`처럼 스킬 이름을 넣은 요청이나, 스킬 설명에 맞는 자연어 요청도 사용할 수 있습니다. 자연어 요청에서 스킬이 쓰이지 않으면 슬래시 호출로 다시 요청합니다.
 
 스킬이 메뉴에 보이지 않으면 다음 순서로 확인합니다.
 
